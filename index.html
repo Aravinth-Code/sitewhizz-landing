@@ -899,6 +899,71 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* Hover States */
     .hover-primary-link:hover { color: #1d4ed8 !important; }
     .hover-primary-icon:hover { color: #1d4ed8 !important; }
+
+    /* FAQ Styles */
+    .faq-item {
+      transition: all var(--transition-base);
+    }
+
+    .faq-item:hover {
+      border-color: var(--primary-300);
+    }
+
+    .faq-question {
+      transition: background-color var(--transition-fast);
+    }
+
+    .faq-icon {
+      transition: transform var(--transition-base);
+    }
+
+    .faq-answer {
+      line-height: 1.7;
+    }
+
+    /* FAQ Tab Styles */
+    .faq-tab {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.75rem;
+      font-weight: 500;
+      color: var(--gray-600);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      white-space: nowrap;
+      text-align: left;
+      width: 100%;
+    }
+
+    .faq-tab:hover {
+      background: var(--gray-100);
+      color: var(--gray-900);
+    }
+
+    .faq-tab-active {
+      background: var(--primary-50);
+      color: #1d4ed8;
+      font-weight: 600;
+    }
+
+    .faq-tab-active:hover {
+      background: var(--primary-100);
+    }
+
+    .faq-tab svg {
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 1023px) {
+      .faq-tab {
+        padding: 0.625rem 1rem;
+        font-size: 0.875rem;
+      }
+    }
   </style>
 </head>
 
@@ -1272,6 +1337,280 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+<!-- ================= FAQ SECTION ================= -->
+<section id="faq" class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 md:mb-16">
+      <span class="inline-block bg-primary-50 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-primary-100" style="color: #1d4ed8;">FAQ</span>
+      <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+        Frequently Asked <span style="color: #1d4ed8;">Questions</span>
+      </h2>
+      <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+        Everything you need to know about SiteWhizz
+      </p>
+    </div>
+
+    <!-- FAQ Tabs Layout -->
+    <div class="flex flex-col lg:flex-row gap-6 lg:gap-8">
+
+      <!-- Left Sidebar Menu -->
+      <div class="lg:w-64 flex-shrink-0">
+        <div class="bg-white rounded-2xl border border-gray-200 p-2 lg:sticky lg:top-24">
+          <nav class="flex lg:flex-col gap-1 overflow-x-auto lg:overflow-visible pb-2 lg:pb-0">
+            <button class="faq-tab faq-tab-active" data-tab="general">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>General</span>
+            </button>
+            <button class="faq-tab" data-tab="setup">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+              </svg>
+              <span>Setup & Usage</span>
+            </button>
+            <button class="faq-tab" data-tab="ai">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+              <span>AI & Accuracy</span>
+            </button>
+            <button class="faq-tab" data-tab="pricing">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+              <span>Pricing</span>
+            </button>
+            <button class="faq-tab" data-tab="customization">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path>
+              </svg>
+              <span>Customization</span>
+            </button>
+            <button class="faq-tab" data-tab="security">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+              </svg>
+              <span>Security</span>
+            </button>
+            <button class="faq-tab" data-tab="support">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+              <span>Support</span>
+            </button>
+          </nav>
+        </div>
+      </div>
+
+      <!-- Right Content Area -->
+      <div class="flex-1">
+        <!-- General -->
+        <div class="faq-content" data-content="general">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">General Questions</h3>
+          <div class="space-y-4">
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>What is SiteWhizz?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">SiteWhizz is an AI-powered chatbot that you can add to your website to answer customer questions instantly using your own documents, FAQs, and content.</div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>How is SiteWhizz different from a normal chatbot?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">Traditional chatbots follow fixed rules. SiteWhizz uses AI and retrieval (RAG) to understand your content and respond naturally — without manual scripting.</div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>Do I need technical knowledge to use SiteWhizz?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">No. You can upload documents, customize the chatbot, and embed it on your website without writing code.</div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>What type of websites can use SiteWhizz?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">SiteWhizz works with SaaS websites, e-commerce stores, documentation sites, blogs, landing pages, and company websites. If your site has content, SiteWhizz can help.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Setup & Usage -->
+        <div class="faq-content hidden" data-content="setup">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">Setup & Usage</h3>
+          <div class="space-y-4">
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>How do I add SiteWhizz to my website?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">Just copy a small embed script and paste it into your website's HTML. It works on most platforms including WordPress, Webflow, Shopify, and custom sites.</div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>What content can I train the chatbot on?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">You can train SiteWhizz using PDFs, text files, website URLs, documentation pages, and FAQs. The chatbot answers only from the content you provide.</div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>How long does setup take?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">Most users finish setup in under 10 minutes: Upload content, customize chatbot, embed on website. That's it.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI & Accuracy -->
+        <div class="faq-content hidden" data-content="ai">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">AI & Accuracy</h3>
+          <div class="space-y-4">
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>Will the chatbot give wrong or random answers?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">SiteWhizz is designed to answer only from your uploaded content. If the answer is not found, it responds safely instead of guessing.</div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>Does SiteWhizz use my data to train public AI models?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">No. Your data is used only to answer questions for your chatbot and is never shared or used to train public models.</div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>Which AI model does SiteWhizz use?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">SiteWhizz automatically selects the best AI model for performance and cost. You don't need to manage models yourself.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pricing -->
+        <div class="faq-content hidden" data-content="pricing">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">Pricing & Limits</h3>
+          <div class="space-y-4">
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>Is there a free plan?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">Yes. You can start with a free plan that includes a limited number of AI-powered chats.</div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>What happens when I reach my limit?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">When you reach your usage limit, you can upgrade to a paid plan for higher limits and advanced features.</div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>Can I cancel anytime?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">Yes. There are no long-term contracts. You can cancel or change plans anytime.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customization -->
+        <div class="faq-content hidden" data-content="customization">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">Customization & Control</h3>
+          <div class="space-y-4">
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>Can I customize the chatbot's appearance?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">Yes. You can change colors, position on the page, welcome message, and branding style.</div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>Can I control where the chatbot appears?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">Yes. You can choose which pages the chatbot appears on and how it behaves.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Security -->
+        <div class="faq-content hidden" data-content="security">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">Security & Privacy</h3>
+          <div class="space-y-4">
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>Is my data secure?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">Yes. Your documents and chat data are stored securely and protected with industry-standard practices.</div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>Can visitors see my internal documents?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">No. Visitors only see chatbot answers — not the raw documents.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Support -->
+        <div class="faq-content hidden" data-content="support">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">Help & Support</h3>
+          <div class="space-y-4">
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>What kind of support do you offer?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">We provide email support, documentation, and in-app guidance. Higher plans include priority support.</div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>Can I request new features?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">Absolutely. We actively build based on user feedback.</div>
+            </div>
+            <div class="faq-item bg-white rounded-xl border border-gray-200 overflow-hidden">
+              <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+                <span>How do I get started?</span>
+                <svg class="faq-icon w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+              </button>
+              <div class="faq-answer hidden px-6 pb-4 text-gray-600">Just sign up, upload your content, and embed the chatbot. You can start for free — no credit card required.</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12">
+      <p class="text-gray-600 mb-4">Still have questions?</p>
+      <a href="#early-access" class="btn btn-primary" style="background: #1d4ed8;">
+        Get in Touch
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- ================= EARLY ACCESS CTA ================= -->
 <section id="early-access" class="cta-section">
   <div class="bg-decoration animate-float hidden md:block" style="top: 2.5rem; left: 2.5rem; width: 18rem; height: 18rem; background: rgba(255, 255, 255, 0.1);"></div>
@@ -1629,6 +1968,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   // ==================== FORM EVENT LISTENER ====================
   document.getElementById('waitlistForm').addEventListener('submit', handleWaitlistSubmit);
+
+  // ==================== FAQ TABS ====================
+  document.querySelectorAll('.faq-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const tabName = tab.dataset.tab;
+
+      // Update active tab
+      document.querySelectorAll('.faq-tab').forEach(t => t.classList.remove('faq-tab-active'));
+      tab.classList.add('faq-tab-active');
+
+      // Show corresponding content
+      document.querySelectorAll('.faq-content').forEach(content => {
+        content.classList.add('hidden');
+      });
+      document.querySelector(`[data-content="${tabName}"]`).classList.remove('hidden');
+    });
+  });
+
+  // ==================== FAQ ACCORDION ====================
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.parentElement;
+      const answer = faqItem.querySelector('.faq-answer');
+      const icon = button.querySelector('.faq-icon');
+
+      // Close other open FAQs in the same content panel
+      const contentPanel = faqItem.closest('.faq-content');
+      contentPanel.querySelectorAll('.faq-item').forEach(item => {
+        if (item !== faqItem) {
+          item.querySelector('.faq-answer').classList.add('hidden');
+          item.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+        }
+      });
+
+      // Toggle current FAQ
+      answer.classList.toggle('hidden');
+      icon.style.transform = answer.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+    });
+  });
 
   // ==================== LOGO COMPONENT ====================
   const logoSVG = `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
