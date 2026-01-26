@@ -492,6 +492,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       color: var(--gray-500);
     }
 
+    .pricing-card-price .price-value {
+      font-size: inherit;
+      font-weight: inherit;
+      color: inherit;
+    }
+
     .pricing-card-features {
       flex: 1;
       margin-bottom: 1.5rem;
@@ -708,6 +714,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <section class="py-8 md:py-16 bg-white">
   <div class="max-w-7xl mx-auto px-4 md:px-6">
 
+    <!-- Billing Toggle -->
+    <div class="flex justify-center items-center gap-4 mb-10">
+      <span id="monthlyLabel" class="text-gray-500 font-medium">Monthly</span>
+      <button id="billingToggle" class="relative w-16 h-8 rounded-full transition-colors duration-300" style="background: #1d4ed8;" onclick="toggleBilling()" aria-label="Toggle billing period">
+        <span id="toggleKnob" class="absolute top-1 right-1 w-6 h-6 bg-white rounded-full shadow transition-all duration-300"></span>
+      </button>
+      <span id="yearlyLabel" class="text-gray-900 font-semibold">Yearly <span class="text-green-600 text-sm font-medium ml-1">Save up to 20%</span></span>
+    </div>
+
     <!-- Pricing Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
 
@@ -716,7 +731,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="pricing-card-header">
           <div class="pricing-card-icon">🌱</div>
           <div class="pricing-card-name">Lite</div>
-          <div class="pricing-card-price">$9<span> / month</span></div>
+          <div class="pricing-card-price" data-yearly="9" data-monthly="11">$<span class="price-value">9</span><span> / month</span></div>
+          <div class="text-sm text-gray-500 mt-1 billing-note" data-yearly="billed yearly $108" data-monthly="billed monthly">billed yearly $108</div>
         </div>
         <ul class="pricing-card-features">
           <li>
@@ -725,7 +741,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </li>
           <li>
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            2,000 credits / month
+            1,000 credits / month
           </li>
           <li>
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -752,7 +768,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="pricing-card-header">
           <div class="pricing-card-icon">🚀</div>
           <div class="pricing-card-name">Starter</div>
-          <div class="pricing-card-price">$29<span> / month</span></div>
+          <div class="pricing-card-price" data-yearly="29" data-monthly="35">$<span class="price-value">29</span><span> / month</span></div>
+          <div class="text-sm text-gray-500 mt-1 billing-note" data-yearly="billed yearly $348" data-monthly="billed monthly">billed yearly $348</div>
         </div>
         <ul class="pricing-card-features">
           <li>
@@ -792,7 +809,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="pricing-card-header">
           <div class="pricing-card-icon">⭐</div>
           <div class="pricing-card-name">Pro+</div>
-          <div class="pricing-card-price">$79<span> / month</span></div>
+          <div class="pricing-card-price" data-yearly="79" data-monthly="95">$<span class="price-value">79</span><span> / month</span></div>
+          <div class="text-sm text-gray-500 mt-1 billing-note" data-yearly="billed yearly $948" data-monthly="billed monthly">billed yearly $948</div>
         </div>
         <ul class="pricing-card-features">
           <li>
@@ -801,7 +819,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </li>
           <li>
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            10,000 credits / month
+            15,000 credits / month
           </li>
           <li>
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -836,7 +854,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="pricing-card-header">
           <div class="pricing-card-icon">⚡</div>
           <div class="pricing-card-name">Scale</div>
-          <div class="pricing-card-price">$199<span> / month</span></div>
+          <div class="pricing-card-price" data-yearly="199" data-monthly="239">$<span class="price-value">199</span><span> / month</span></div>
+          <div class="text-sm text-gray-500 mt-1 billing-note" data-yearly="billed yearly $2,388" data-monthly="billed monthly">billed yearly $2,388</div>
         </div>
         <ul class="pricing-card-features">
           <li>
@@ -845,7 +864,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </li>
           <li>
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            25,000 credits / month
+            50,000 credits / month
           </li>
           <li>
             <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -877,13 +896,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </div>
 
+    <!-- Trust Line -->
+    <div class="text-center mt-8 text-gray-500 text-sm">
+      <p>Cancel anytime. Switch between monthly and yearly plans at any time.</p>
+    </div>
+
     <!-- Free Tier Strip -->
     <div class="free-strip">
       <span class="free-strip-badge">FREE</span>
       <div class="free-strip-features">
         <span>
           <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-          200 credits (one-time)
+          100 credits / month
         </span>
         <span>
           <svg class="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
@@ -1003,6 +1027,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script>
+  // ==================== BILLING TOGGLE ====================
+  let isYearly = true; // Default to yearly
+
+  function toggleBilling() {
+    isYearly = !isYearly;
+    updatePricing();
+  }
+
+  function updatePricing() {
+    const toggle = document.getElementById('billingToggle');
+    const knob = document.getElementById('toggleKnob');
+    const monthlyLabel = document.getElementById('monthlyLabel');
+    const yearlyLabel = document.getElementById('yearlyLabel');
+
+    if (isYearly) {
+      toggle.style.background = '#1d4ed8';
+      knob.style.right = '4px';
+      knob.style.left = 'auto';
+      monthlyLabel.classList.remove('text-gray-900', 'font-semibold');
+      monthlyLabel.classList.add('text-gray-500', 'font-medium');
+      yearlyLabel.classList.remove('text-gray-500', 'font-medium');
+      yearlyLabel.classList.add('text-gray-900', 'font-semibold');
+    } else {
+      toggle.style.background = '#94a3b8';
+      knob.style.left = '4px';
+      knob.style.right = 'auto';
+      yearlyLabel.classList.remove('text-gray-900', 'font-semibold');
+      yearlyLabel.classList.add('text-gray-500', 'font-medium');
+      monthlyLabel.classList.remove('text-gray-500', 'font-medium');
+      monthlyLabel.classList.add('text-gray-900', 'font-semibold');
+    }
+
+    // Update all price values
+    document.querySelectorAll('.pricing-card-price').forEach(priceEl => {
+      const price = isYearly ? priceEl.dataset.yearly : priceEl.dataset.monthly;
+      priceEl.querySelector('.price-value').textContent = price;
+    });
+
+    // Update all billing notes
+    document.querySelectorAll('.billing-note').forEach(noteEl => {
+      noteEl.textContent = isYearly ? noteEl.dataset.yearly : noteEl.dataset.monthly;
+    });
+  }
+
   // ==================== MOBILE MENU ====================
   function toggleMenu() {
     const menu = document.getElementById('mobileMenu');
