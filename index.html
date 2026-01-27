@@ -1860,7 +1860,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       // Save to Supabase
       const { data, error } = await supabaseClient
-        .from('early_access_waitlist')
+        .from('sw_early_access_waitlist')
         .insert([
           {
             email: email,
