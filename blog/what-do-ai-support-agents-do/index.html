@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TG345ZX7');</script>
+<!-- End Google Tag Manager -->
+<head>
+  <meta name="google-site-verification" content="Dx1Ne2Fr87vmX2nSDAEJdHoXfL7nTTA5_Lfpt3CWkHk" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn what AI support agents do, how they work in real-world environments, and why businesses are increasingly relying on them for customer service." />
+  <title>What Exactly Do AI Support Agents Do? | SiteWhizz Blog</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="shortcut icon" href="../../favicon.ico">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#1d4ed8',
+              600: '#1d4ed8',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* CSS Variables */
+    :root {
+      --primary-50: #eff6ff;
+      --primary-100: #dbeafe;
+      --primary-200: #bfdbfe;
+      --primary-300: #93c5fd;
+      --primary-400: #60a5fa;
+      --primary-500: #1d4ed8;
+      --primary-600: #1d4ed8;
+      --primary-700: #1d4ed8;
+      --primary-800: #1e40af;
+      --primary-900: #1e3a8a;
+
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --gray-400: #94a3b8;
+      --gray-500: #64748b;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1e293b;
+      --gray-900: #0f172a;
+
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-2xl: 1.5rem;
+
+      --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.04);
+      --shadow-md: 0 4px 6px -1px rgb(15 23 42 / 0.08), 0 2px 4px -1px rgb(15 23 42 / 0.03);
+      --shadow-lg: 0 10px 15px -3px rgb(15 23 42 / 0.10), 0 4px 6px -2px rgb(15 23 42 / 0.05);
+      --shadow-blue: 0 8px 24px -4px rgba(14, 165, 233, 0.15);
+
+      --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html, body {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
+    /* Logo Component */
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      transition: transform var(--transition-base);
+    }
+
+    .logo:hover .logo-icon {
+      transform: scale(1.1);
+    }
+
+    .logo-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .logo-icon .wink-eye {
+      transform-origin: center;
+      animation: winkEye 4s ease-in-out infinite;
+    }
+
+    @keyframes winkEye {
+      0%, 40%, 60%, 100% { transform: scaleY(1); }
+      48%, 52% { transform: scaleY(0.1); }
+    }
+
+    .logo-icon .wink-line {
+      opacity: 0;
+      animation: winkLine 4s ease-in-out infinite;
+    }
+
+    @keyframes winkLine {
+      0%, 40%, 60%, 100% { opacity: 0; }
+      48%, 52% { opacity: 1; }
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .navbar-link {
+      color: var(--gray-600);
+      font-weight: 500;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .navbar-link:hover,
+    .navbar-link.active {
+      color: var(--primary-600);
+    }
+
+    .navbar-cta {
+      background: #1d4ed8;
+      color: white;
+      padding: 0.625rem 1.5rem;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all var(--transition-base);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar-cta:hover {
+      background: var(--primary-700);
+      box-shadow: var(--shadow-blue);
+      transform: translateY(-1px);
+    }
+
+    .navbar-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .navbar-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--gray-900);
+      transition: all var(--transition-base);
+    }
+
+    @media (max-width: 768px) {
+      .navbar-toggle {
+        display: flex;
+      }
+
+      .navbar-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--gray-200);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .navbar-menu.active {
+        display: flex;
+      }
+    }
+
+    /* Article Styles */
+    .article-content h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-content p {
+      color: var(--gray-700);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      color: var(--gray-700);
+      line-height: 1.8;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-content ul li {
+      list-style-type: disc;
+    }
+
+    .article-content ol li {
+      list-style-type: decimal;
+    }
+
+    .article-content strong {
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+
+    /* Comparison Table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 1rem;
+      text-align: left;
+      border: 1px solid var(--gray-200);
+    }
+
+    .comparison-table th {
+      background: var(--gray-100);
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+
+    .comparison-table td {
+      color: var(--gray-700);
+    }
+
+    .comparison-table tr:hover td {
+      background: var(--gray-50);
+    }
+
+    /* FAQ Accordion */
+    .faq-item {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 1.25rem;
+      background: var(--gray-50);
+      border: none;
+      text-align: left;
+      font-weight: 600;
+      color: var(--gray-900);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background var(--transition-fast);
+    }
+
+    .faq-question:hover {
+      background: var(--gray-100);
+    }
+
+    .faq-question svg {
+      transition: transform var(--transition-base);
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    .faq-item.open .faq-question svg {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1.25rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* Footer */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .hover-primary-link:hover {
+      color: var(--primary-600);
+    }
+
+    .hover-primary-icon:hover {
+      color: var(--primary-600);
+    }
+  </style>
+</head>
+
+<body class="font-sans antialiased bg-white text-gray-900">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TG345ZX7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ================= NAVIGATION ================= -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="../../index.html" class="logo">
+      <div class="logo-icon" data-logo></div>
+      <span class="logo-text font-bold text-xl text-gray-900">SiteWhizz</span>
+    </a>
+
+    <button class="navbar-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="navbar-menu" id="mobileMenu">
+      <a href="../../features/index.html" class="navbar-link">Features</a>
+      <a href="../../pricing/index.html" class="navbar-link">Pricing</a>
+      <a href="../index.html" class="navbar-link active">Blog</a>
+      <a href="../../index.html#early-access" class="navbar-cta">Start Trial</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= ARTICLE HEADER ================= -->
+<header class="pt-28 pb-12 md:pt-36 md:pb-16 bg-gradient-to-b from-blue-50 to-white">
+  <div class="max-w-3xl mx-auto px-4 md:px-6">
+    <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-primary-600 hover:text-primary-700 mb-6">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Back to Blog
+    </a>
+    <span class="inline-block text-sm font-semibold text-primary-600 mb-4">Customer Support</span>
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+      What Exactly Do AI Support Agents Do?
+    </h1>
+    <p class="text-lg md:text-xl text-gray-600 mb-6">
+      AI support agents have become a core part of modern customer service strategies. They do far more than answer simple questions—they automate workflows, assist human agents, and deliver fast, consistent support experiences across channels.
+    </p>
+    <div class="flex items-center gap-4 text-sm text-gray-500">
+      <span>January 30, 2026</span>
+      <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+      <span>10 min read</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= ARTICLE CONTENT ================= -->
+<article class="py-12 md:py-16">
+  <div class="max-w-3xl mx-auto px-4 md:px-6 article-content">
+
+    <p>In this blog, we explain what AI support agents do, how they work in real-world environments, and why businesses are increasingly relying on them.</p>
+
+    <h2>What Is an AI Support Agent?</h2>
+    <p>An <strong>AI support agent</strong> is an intelligent system designed to manage and automate customer service interactions using artificial intelligence technologies such as natural language processing, machine learning, and automation logic.</p>
+
+    <p>Unlike basic chatbots, AI support agents can:</p>
+    <ul>
+      <li>Understand customer intent</li>
+      <li>Maintain conversation context</li>
+      <li>Perform backend actions</li>
+      <li>Learn from interactions</li>
+    </ul>
+
+    <h2>Core Responsibilities of AI Support Agents</h2>
+
+    <h3>1. Answering Customer Queries Instantly</h3>
+    <p>AI support agents respond to customer questions in real time, eliminating long wait times. They handle:</p>
+    <ul>
+      <li>FAQs</li>
+      <li>Product information</li>
+      <li>Pricing and billing questions</li>
+    </ul>
+    <p>This ensures customers receive immediate assistance, improving satisfaction.</p>
+
+    <h3>2. Handling Repetitive Support Tasks</h3>
+    <p>Repetitive tasks consume significant support resources. AI agents automate:</p>
+    <ul>
+      <li>Password resets</li>
+      <li>Account verification</li>
+      <li>Order tracking</li>
+    </ul>
+    <p>This allows human agents to focus on complex issues.</p>
+
+    <h3>3. Ticket Creation, Routing, and Prioritization</h3>
+    <p>AI support agents:</p>
+    <ul>
+      <li>Automatically create tickets</li>
+      <li>Categorize issues</li>
+      <li>Assign priority based on urgency</li>
+    </ul>
+    <p>This improves response times and SLA compliance.</p>
+
+    <h3>4. Providing Context-Aware Conversations</h3>
+    <p>Using limited memory and contextual AI, support agents:</p>
+    <ul>
+      <li>Remember past interactions</li>
+      <li>Track user preferences</li>
+      <li>Deliver personalized responses</li>
+    </ul>
+    <p>This creates a more human-like support experience.</p>
+
+    <h3>5. Escalating Complex Issues to Human Agents</h3>
+    <p>AI agents recognize when a problem exceeds their capability and:</p>
+    <ul>
+      <li>Transfer conversations</li>
+      <li>Share full context with human agents</li>
+      <li>Reduce customer frustration</li>
+    </ul>
+
+    <h3>6. Supporting Human Agents in Real Time</h3>
+    <p>AI agents assist support teams by:</p>
+    <ul>
+      <li>Suggesting responses</li>
+      <li>Surfacing relevant knowledge base articles</li>
+      <li>Providing next-best-action recommendations</li>
+    </ul>
+    <p>This improves agent productivity and accuracy.</p>
+
+    <h3>7. Analyzing Customer Sentiment</h3>
+    <p>Advanced AI support agents detect:</p>
+    <ul>
+      <li>Customer frustration</li>
+      <li>Urgency</li>
+      <li>Satisfaction levels</li>
+    </ul>
+    <p>They use this data to prioritize responses and escalate sensitive issues.</p>
+
+    <h3>8. Automating Post-Support Follow-Ups</h3>
+    <p>AI agents:</p>
+    <ul>
+      <li>Send confirmation emails</li>
+      <li>Request feedback</li>
+      <li>Trigger surveys</li>
+    </ul>
+    <p>This closes the support loop and improves customer engagement.</p>
+
+    <h2>Where AI Support Agents Are Used</h2>
+    <p>AI support agents are commonly used in:</p>
+    <ul>
+      <li>SaaS platforms</li>
+      <li>E-commerce businesses</li>
+      <li>Fintech companies</li>
+      <li>Telecom and utilities</li>
+      <li>Healthcare services</li>
+    </ul>
+    <p>Any industry with high customer interaction volume can benefit.</p>
+
+    <h2>Benefits of AI Support Agents</h2>
+    <ul>
+      <li>24/7 customer support</li>
+      <li>Reduced support costs</li>
+      <li>Faster resolution times</li>
+      <li>Scalable operations</li>
+      <li>Improved customer satisfaction</li>
+    </ul>
+    <p>These benefits make AI support agents essential for modern businesses.</p>
+
+    <h2>What AI Support Agents Cannot Do (Yet)</h2>
+    <p>Despite their capabilities, AI support agents have limitations:</p>
+    <ul>
+      <li>Handling deeply emotional situations</li>
+      <li>Solving novel, unstructured problems</li>
+      <li>Making judgment-based decisions</li>
+    </ul>
+    <p>Human oversight remains crucial.</p>
+
+    <h2>AI Support Agents vs Traditional Customer Support</h2>
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>Feature</th>
+          <th>AI Support Agents</th>
+          <th>Traditional Support</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Availability</td>
+          <td>24/7</td>
+          <td>Limited hours</td>
+        </tr>
+        <tr>
+          <td>Scalability</td>
+          <td>High</td>
+          <td>Limited</td>
+        </tr>
+        <tr>
+          <td>Cost Efficiency</td>
+          <td>High</td>
+          <td>Lower</td>
+        </tr>
+        <tr>
+          <td>Personalization</td>
+          <td>Medium–High</td>
+          <td>High</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Final Thoughts</h2>
+    <p>AI support agents are transforming customer service by automating routine tasks, providing instant responses, and supporting human agents. While they have limitations, their ability to scale and deliver consistent support makes them invaluable for businesses looking to improve customer experience.</p>
+    <p>Whether you're exploring AI for the first time or looking to enhance your existing support operations, AI support agents offer a practical and effective solution.</p>
+
+    <!-- FAQ Section -->
+    <h2>Frequently Asked Questions (FAQs)</h2>
+
+    <div class="mt-8 space-y-4">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>1. What makes AI support agents different from regular chatbots?</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          AI support agents go beyond scripted responses. They understand context, learn from interactions, perform backend actions like ticket creation or order lookups, and can escalate complex issues to human agents with full conversation history.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>2. Can AI support agents completely replace human support teams?</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          No. AI support agents are designed to handle routine and repetitive tasks, freeing human agents to focus on complex, emotional, or judgment-based issues. The most effective support systems combine AI and human expertise.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>3. How do AI support agents handle sensitive customer data?</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          Reputable AI support platforms implement encryption, access controls, and compliance measures (like GDPR and SOC 2) to protect customer data. Always choose a provider with strong security practices.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>4. What industries benefit most from AI support agents?</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          Industries with high customer interaction volumes benefit the most, including SaaS, e-commerce, fintech, telecom, healthcare, and utilities. Any business looking to scale support while maintaining quality can benefit.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>5. How quickly can an AI support agent be deployed?</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          Basic AI support agents can be deployed in days. More advanced implementations with custom integrations, training on company-specific data, and workflow automation may take a few weeks depending on complexity.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<!-- ================= CTA SECTION ================= -->
+<section class="py-16 md:py-20 bg-gradient-to-r from-blue-600 to-blue-700">
+  <div class="max-w-3xl mx-auto px-4 md:px-6 text-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Build Your Own AI Support Agent?</h2>
+    <p class="text-blue-100 mb-8 text-lg">Transform your website content into an intelligent chatbot that answers customer questions 24/7. 14-day free trial, no credit card required.</p>
+    <a href="../../index.html#early-access" class="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all shadow-lg">
+      Start Trial
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-gradient-to-b from-gray-50 to-gray-100 text-gray-700 py-10 md:py-16 border-t border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <div class="footer-grid">
+      <div>
+        <a href="../../index.html" class="logo mb-4">
+          <div class="logo-icon" data-logo></div>
+          <span class="text-xl font-bold text-gray-900">SiteWhizz</span>
+        </a>
+        <p class="text-sm leading-relaxed mt-4 text-gray-600">
+          Transform your content into an intelligent AI support agent that delights customers 24/7.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-gray-900 font-semibold mb-4">Product</h4>
+        <ul class="space-y-2">
+          <li><a href="../../features/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Features</a></li>
+          <li><a href="../../pricing/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Pricing</a></li>
+          <li><a href="../../index.html#use-cases" class="text-gray-600 transition-colors text-sm hover-primary-link">Use Cases</a></li>
+          <li><a href="#docs" class="text-gray-600 transition-colors text-sm hover-primary-link">Documentation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-gray-900 font-semibold mb-4">Company</h4>
+        <ul class="space-y-2">
+          <li><a href="#about" class="text-gray-600 transition-colors text-sm hover-primary-link">About</a></li>
+          <li><a href="../index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Blog</a></li>
+          <li><a href="#careers" class="text-gray-600 transition-colors text-sm hover-primary-link">Careers</a></li>
+          <li><a href="#contact" class="text-gray-600 transition-colors text-sm hover-primary-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-gray-900 font-semibold mb-4">Legal</h4>
+        <ul class="space-y-2">
+          <li><a href="#privacy" class="text-gray-600 transition-colors text-sm hover-primary-link">Privacy Policy</a></li>
+          <li><a href="#terms" class="text-gray-600 transition-colors text-sm hover-primary-link">Terms of Service</a></li>
+          <li><a href="#security" class="text-gray-600 transition-colors text-sm hover-primary-link">Security</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-gray-600">&copy; 2026 SiteWhizz. All rights reserved.</p>
+
+      <div class="flex gap-6">
+        <a href="#" aria-label="Twitter" class="text-gray-500 transition-colors hover-primary-icon">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+        </a>
+        <a href="#" aria-label="GitHub" class="text-gray-500 transition-colors hover-primary-icon">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="text-gray-500 transition-colors hover-primary-icon">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+  }
+
+  // FAQ accordion
+  function toggleFaq(button) {
+    const faqItem = button.parentElement;
+    faqItem.classList.toggle('open');
+  }
+
+</script>
+
+<!-- Logo Component (Single Source of Truth) -->
+<script src="../../assets/logo.js"></script>
+
+</body>
+</html>
