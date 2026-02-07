@@ -3,7 +3,9 @@
     "allow": [
       "Bash(tree:*)",
       "Bash(ls:*)",
-      "Bash(powershell.exe:*)"
+      "Bash(powershell.exe:*)",
+      "Bash(powershell -Command \"Get-ChildItem -Recurse -Filter ''*.html'' | ForEach-Object { $content = Get-Content $_FullName -Raw; if \\($content -match ''#get-started|index\\\\.html#get-started''\\) { $content = $content -replace ''\\\\.\\\\.\\\\/\\\\.\\\\.\\\\/index\\\\.html#get-started'', ''https://app.sitewhizz.io/signin'' -replace ''\\\\.\\\\.\\\\/index\\\\.html#get-started'', ''https://app.sitewhizz.io/signin'' -replace ''#get-started'', ''https://app.sitewhizz.io/signin''; Set-Content $_FullName $content -NoNewline; Write-Host \\(''Updated: '' + $_FullName\\) } }\")",
+      "Bash(powershell -ExecutionPolicy Bypass -File:*)"
     ]
   }
 }
