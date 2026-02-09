@@ -5,7 +5,14 @@
       "Bash(ls:*)",
       "Bash(powershell.exe:*)",
       "Bash(powershell -Command \"Get-ChildItem -Recurse -Filter ''*.html'' | ForEach-Object { $content = Get-Content $_FullName -Raw; if \\($content -match ''#get-started|index\\\\.html#get-started''\\) { $content = $content -replace ''\\\\.\\\\.\\\\/\\\\.\\\\.\\\\/index\\\\.html#get-started'', ''https://app.sitewhizz.io/signin'' -replace ''\\\\.\\\\.\\\\/index\\\\.html#get-started'', ''https://app.sitewhizz.io/signin'' -replace ''#get-started'', ''https://app.sitewhizz.io/signin''; Set-Content $_FullName $content -NoNewline; Write-Host \\(''Updated: '' + $_FullName\\) } }\")",
-      "Bash(powershell -ExecutionPolicy Bypass -File:*)"
+      "Bash(powershell -ExecutionPolicy Bypass -File:*)",
+      "Bash(powershell -Command \"Get-ChildItem -Recurse -Filter ''*.html'' | Where-Object { $_FullName -notmatch ''\\\\blog\\\\[^\\\\]+\\\\'' } | ForEach-Object { \\(Get-Content $_FullName -Raw\\) -replace ''https://app\\\\.sitewhizz\\\\.io/signin'', ''../index.html#get-started'' | Set-Content $_FullName -NoNewline }\")",
+      "Bash(powershell -Command:*)",
+      "Bash(for f in features/index.html agencies/index.html about/index.html contact/index.html use-cases/index.html security/index.html careers/index.html terms/index.html privacy/index.html free-tools/index.html docs/index.html blog/index.html)",
+      "Bash(do sed -i 's|https://app.sitewhizz.io/signin|../index.html#get-started|g' \"$f\")",
+      "Bash(done)",
+      "Bash(for f in blog/7-types-of-ai-agents/index.html blog/what-do-ai-support-agents-do/index.html blog/what-are-ai-agents/index.html blog/top-5-ai-agents-customer-support/index.html)",
+      "Bash(do sed -i 's|https://app.sitewhizz.io/signin|../../index.html#get-started|g' \"$f\")"
     ]
   }
 }
