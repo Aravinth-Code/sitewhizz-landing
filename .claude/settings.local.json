@@ -12,7 +12,8 @@
       "Bash(do sed -i 's|https://app.sitewhizz.io/signin|../index.html#get-started|g' \"$f\")",
       "Bash(done)",
       "Bash(for f in blog/7-types-of-ai-agents/index.html blog/what-do-ai-support-agents-do/index.html blog/what-are-ai-agents/index.html blog/top-5-ai-agents-customer-support/index.html)",
-      "Bash(do sed -i 's|https://app.sitewhizz.io/signin|../../index.html#get-started|g' \"$f\")"
+      "Bash(do sed -i 's|https://app.sitewhizz.io/signin|../../index.html#get-started|g' \"$f\")",
+      "Bash(dir:*)"
     ]
   }
 }
