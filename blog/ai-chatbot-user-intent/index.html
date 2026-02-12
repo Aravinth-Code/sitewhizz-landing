@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TG345ZX7');</script>
+<!-- End Google Tag Manager -->
+<head>
+  <meta name="google-site-verification" content="Dx1Ne2Fr87vmX2nSDAEJdHoXfL7nTTA5_Lfpt3CWkHk" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Discover how AI chatbots analyze language, detect user intent, and respond intelligently. Learn intent recognition, context handling, and chatbot AI basics." />
+  <title>How AI Chatbots Understand User Intent: Complete Beginner Guide | SiteWhizz Blog</title>
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://sitewhizz.com/blog/ai-chatbot-user-intent/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="How AI Chatbots Understand User Intent: Complete Beginner Guide" />
+  <meta property="og:description" content="Discover how AI chatbots analyze language, detect user intent, and respond intelligently. Learn intent recognition, context handling, and chatbot AI basics." />
+  <meta property="og:url" content="https://sitewhizz.com/blog/ai-chatbot-user-intent/" />
+  <meta property="og:site_name" content="SiteWhizz" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="How AI Chatbots Understand User Intent: Complete Beginner Guide" />
+  <meta name="twitter:description" content="Discover how AI chatbots analyze language, detect user intent, and respond intelligently. Learn intent recognition, context handling, and chatbot AI basics." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="../../favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="shortcut icon" href="../../favicon.ico">
+
+  <!-- Google Fonts - Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'sans-serif'],
+          },
+          colors: {
+            primary: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#1d4ed8',
+              600: '#1d4ed8',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Base Font */
+    *, *::before, *::after {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    }
+
+    /* CSS Variables */
+    :root {
+      --primary-50: #eff6ff;
+      --primary-100: #dbeafe;
+      --primary-200: #bfdbfe;
+      --primary-300: #93c5fd;
+      --primary-400: #60a5fa;
+      --primary-500: #1d4ed8;
+      --primary-600: #1d4ed8;
+      --primary-700: #1d4ed8;
+      --primary-800: #1e40af;
+      --primary-900: #1e3a8a;
+
+      --gray-50: #f8fafc;
+      --gray-100: #f1f5f9;
+      --gray-200: #e2e8f0;
+      --gray-300: #cbd5e1;
+      --gray-400: #94a3b8;
+      --gray-500: #64748b;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1e293b;
+      --gray-900: #0f172a;
+
+      --radius-lg: 0.75rem;
+      --radius-xl: 1rem;
+      --radius-2xl: 1.5rem;
+
+      --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.04);
+      --shadow-md: 0 4px 6px -1px rgb(15 23 42 / 0.08), 0 2px 4px -1px rgb(15 23 42 / 0.03);
+      --shadow-lg: 0 10px 15px -3px rgb(15 23 42 / 0.10), 0 4px 6px -2px rgb(15 23 42 / 0.05);
+      --shadow-blue: 0 8px 24px -4px rgba(14, 165, 233, 0.15);
+
+      --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html, body {
+      scroll-behavior: smooth;
+      overflow-x: hidden;
+      max-width: 100vw;
+    }
+
+    /* Logo Component */
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      position: relative;
+      width: 44px;
+      height: 44px;
+      transition: transform var(--transition-base);
+    }
+
+    .logo:hover .logo-icon {
+      transform: scale(1.1);
+    }
+
+    .logo-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    .logo-icon .wink-eye {
+      transform-origin: center;
+      animation: winkEye 4s ease-in-out infinite;
+    }
+
+    @keyframes winkEye {
+      0%, 40%, 60%, 100% { transform: scaleY(1); }
+      48%, 52% { transform: scaleY(0.1); }
+    }
+
+    .logo-icon .wink-line {
+      opacity: 0;
+      animation: winkLine 4s ease-in-out infinite;
+    }
+
+    @keyframes winkLine {
+      0%, 40%, 60%, 100% { opacity: 0; }
+      48%, 52% { opacity: 1; }
+    }
+
+    /* Navigation */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--gray-200);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar-container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .navbar-link {
+      color: var(--gray-600);
+      font-weight: 500;
+      text-decoration: none;
+      transition: color var(--transition-fast);
+    }
+
+    .navbar-link:hover,
+    .navbar-link.active {
+      color: var(--primary-600);
+    }
+
+    .navbar-cta {
+      background: #1d4ed8;
+      color: white;
+      padding: 0.625rem 1.5rem;
+      border-radius: var(--radius-lg);
+      font-weight: 600;
+      text-decoration: none;
+      transition: all var(--transition-base);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .navbar-cta:hover {
+      background: var(--primary-700);
+      box-shadow: var(--shadow-blue);
+      transform: translateY(-1px);
+    }
+
+    .navbar-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    .navbar-toggle span {
+      width: 24px;
+      height: 2px;
+      background: var(--gray-900);
+      transition: all var(--transition-base);
+    }
+
+    @media (max-width: 768px) {
+      .navbar-toggle {
+        display: flex;
+      }
+
+      .navbar-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1.5rem;
+        border-bottom: 1px solid var(--gray-200);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .navbar-menu.active {
+        display: flex;
+      }
+    }
+
+    /* Article Styles */
+    .article-content h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--gray-900);
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .article-content h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .article-content p {
+      color: var(--gray-700);
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+    }
+
+    .article-content ul, .article-content ol {
+      margin-bottom: 1.25rem;
+      padding-left: 1.5rem;
+    }
+
+    .article-content li {
+      color: var(--gray-700);
+      line-height: 1.8;
+      margin-bottom: 0.5rem;
+    }
+
+    .article-content ul li {
+      list-style-type: disc;
+    }
+
+    .article-content ol li {
+      list-style-type: decimal;
+    }
+
+    .article-content strong {
+      font-weight: 600;
+      color: var(--gray-900);
+    }
+
+    /* FAQ Accordion */
+    .faq-item {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 1.25rem;
+      background: var(--gray-50);
+      border: none;
+      text-align: left;
+      font-weight: 600;
+      color: var(--gray-900);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background var(--transition-fast);
+    }
+
+    .faq-question:hover {
+      background: var(--gray-100);
+    }
+
+    .faq-question svg {
+      transition: transform var(--transition-base);
+      flex-shrink: 0;
+      margin-left: 1rem;
+    }
+
+    .faq-item.open .faq-question svg {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 1.25rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-answer {
+      display: block;
+    }
+
+    /* Footer */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .hover-primary-link:hover {
+      color: var(--primary-600);
+    }
+
+    .hover-primary-icon:hover {
+      color: var(--primary-600);
+    }
+  </style>
+
+  <!-- FAQ Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is user intent in AI chatbots?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "User intent is the purpose behind a message, such as asking a question, requesting help, or exploring features."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How accurate is intent recognition?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Accuracy depends on training quality and context awareness. Well-trained chatbots can understand varied language patterns effectively."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do AI chatbots understand slang or informal language?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Modern AI models can interpret many conversational styles, especially when trained with diverse examples."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can chatbots detect multiple intents at once?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Advanced AI chatbots can recognize more than one intent in a message and respond accordingly."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body class="font-sans antialiased bg-white text-gray-900">
+
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TG345ZX7"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ================= NAVIGATION ================= -->
+<nav class="navbar">
+  <div class="navbar-container">
+    <a href="../../index.html" class="logo">
+      <div class="logo-icon" data-logo></div>
+      <span class="logo-text font-bold text-xl"><span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span></span>
+    </a>
+
+    <button class="navbar-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="navbar-menu" id="mobileMenu">
+      <a href="../../features/index.html" class="navbar-link">Features</a>
+      <a href="../../agencies/index.html" class="navbar-link">For Agencies</a>
+      <a href="../../pricing/index.html" class="navbar-link">Pricing</a>
+      <a href="../index.html" class="navbar-link active">Blog</a>
+      <a href="../../index.html#get-started" class="navbar-cta">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ================= ARTICLE HEADER ================= -->
+<header class="pt-28 pb-12 md:pt-36 md:pb-16 bg-gradient-to-b from-blue-50 to-white">
+  <div class="max-w-3xl mx-auto px-4 md:px-6">
+    <a href="../index.html" class="inline-flex items-center gap-2 text-sm font-medium text-primary-600 hover:text-primary-700 mb-6">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+      </svg>
+      Back to Blog
+    </a>
+    <span class="inline-block text-sm font-semibold text-primary-600 mb-4">AI Chatbots</span>
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
+      How AI Chatbots Understand User Intent: Complete Beginner Guide
+    </h1>
+    <p class="text-lg md:text-xl text-gray-600 mb-6">
+      Discover how AI chatbots analyze language, detect user intent, and respond intelligently. Learn intent recognition, context handling, and chatbot AI basics.
+    </p>
+    <div class="flex items-center gap-4 text-sm text-gray-500">
+      <span>February 12, 2026</span>
+      <span class="w-1 h-1 bg-gray-400 rounded-full"></span>
+      <span>10 min read</span>
+    </div>
+  </div>
+</header>
+
+<!-- ================= ARTICLE CONTENT ================= -->
+<article class="py-12 md:py-16">
+  <div class="max-w-3xl mx-auto px-4 md:px-6 article-content">
+
+    <h2>What Does "User Intent" Mean in AI Chatbots?</h2>
+    <p>User intent refers to the goal or purpose behind a user's message. When someone types a question into an AI chatbot, they are not just sending words — they are expressing a need, problem, or action they want to complete. Understanding this intent allows the chatbot to respond accurately instead of guessing based on keywords alone.</p>
+
+    <p>For example, the following questions all share the same intent:</p>
+    <ul>
+      <li>"How do I add a chatbot to my website?"</li>
+      <li>"Can I install this on my site?"</li>
+      <li>"Setup steps for website chatbot?"</li>
+    </ul>
+
+    <p>Even though the wording changes, the underlying intent is <strong>setup guidance</strong>. AI chatbots use advanced language models and Natural Language Processing (NLP) to identify these patterns and respond appropriately.</p>
+
+    <h2>Why Intent Understanding Matters in AI Chatbots</h2>
+    <p>Intent recognition is the foundation of intelligent conversations. Without it, chatbots behave like search boxes that only match exact phrases.</p>
+
+    <p>When AI chatbots understand intent, they can:</p>
+    <ul>
+      <li>Deliver relevant answers faster</li>
+      <li>Reduce confusion caused by vague questions</li>
+      <li>Maintain context across conversations</li>
+      <li>Personalize responses based on user needs</li>
+      <li>Provide more human-like interactions</li>
+    </ul>
+
+    <p>This capability improves both user experience and operational efficiency, especially for customer support and onboarding workflows.</p>
+
+    <h2>How AI Chatbots Identify User Intent (Step-by-Step)</h2>
+    <p>Although the technology behind AI chatbots is complex, the process can be understood through a simple flow.</p>
+
+    <h3>1. Language Processing and Message Analysis</h3>
+    <p>When a user sends a message, the chatbot analyzes sentence structure, keywords, and context. Instead of focusing only on specific words, it evaluates the overall meaning of the message.</p>
+    <p><strong>Example:</strong><br>
+    "Does your chatbot work with PDFs?"<br>
+    The system identifies key concepts such as <strong>chatbot</strong>, <strong>integration</strong>, and <strong>PDF files</strong>.</p>
+
+    <h3>2. Intent Classification</h3>
+    <p>The chatbot assigns the message to a category known as an "intent." Some common intent categories include:</p>
+    <ul>
+      <li>Asking for product information</li>
+      <li>Requesting technical help</li>
+      <li>Comparing features</li>
+      <li>Pricing inquiries</li>
+      <li>General learning or research</li>
+    </ul>
+    <p>AI models are trained on large datasets that help them recognize patterns in language and map user messages to the most likely intent.</p>
+
+    <h3>3. Context Awareness</h3>
+    <p>Intent is not always determined by a single message. AI chatbots analyze the conversation history to maintain context.</p>
+    <p><strong>Example:</strong></p>
+    <ul>
+      <li>User: "Can it train from docs?"</li>
+      <li>User: "What about Google Drive files?"</li>
+    </ul>
+    <p>The chatbot understands that the second question relates to the same topic — <strong>training sources</strong> — even though the wording is shorter.</p>
+
+    <h3>4. Entity Recognition</h3>
+    <p>Entities are important details within a message that help refine intent.</p>
+    <p><strong>Example:</strong><br>
+    "Does it support Shopify stores?"</p>
+    <p>Entities extracted might include:</p>
+    <ul>
+      <li><strong>Platform:</strong> Shopify</li>
+      <li><strong>Feature area:</strong> Integration</li>
+    </ul>
+    <p>This helps the chatbot deliver precise answers tailored to the user's situation.</p>
+
+    <h3>5. Response Generation Based on Intent</h3>
+    <p>Once intent and context are identified, the chatbot selects or generates the most relevant response. Modern AI chatbots use advanced language models to create natural, conversational replies rather than rigid scripted answers.</p>
+
+    <h2>Types of User Intent AI Chatbots Commonly Detect</h2>
+    <p>Understanding different intent categories helps businesses design better chatbot experiences.</p>
+
+    <h3>Informational Intent</h3>
+    <p>The user wants to learn something.</p>
+    <ul>
+      <li>"What is an AI chatbot?"</li>
+      <li>"How does training work?"</li>
+    </ul>
+
+    <h3>Navigational Intent</h3>
+    <p>The user is trying to find a specific feature or page.</p>
+    <ul>
+      <li>"Where is pricing?"</li>
+      <li>"Show integration options."</li>
+    </ul>
+
+    <h3>Transactional Intent</h3>
+    <p>The user is ready to take action.</p>
+    <ul>
+      <li>"Start free trial"</li>
+      <li>"Sign me up"</li>
+    </ul>
+
+    <h3>Support Intent</h3>
+    <p>The user needs help solving a problem.</p>
+    <ul>
+      <li>"Why is my chatbot not responding?"</li>
+      <li>"Fix upload issue"</li>
+    </ul>
+
+    <p>Recognizing these intent types helps chatbots guide users through the right journey.</p>
+
+    <h2>How AI Models Learn to Understand Intent</h2>
+    <p>AI chatbots improve intent recognition through training and continuous learning. Training data may include:</p>
+    <ul>
+      <li>Website content and documentation</li>
+      <li>Frequently asked questions</li>
+      <li>Customer support conversations</li>
+      <li>Product knowledge bases</li>
+    </ul>
+    <p>By analyzing these sources, the AI learns how people phrase similar questions and improves accuracy over time.</p>
+
+    <h2>Intent Understanding vs Keyword Matching</h2>
+    <p>Older chatbots relied heavily on keywords. If a user did not use the exact word, the chatbot failed to respond correctly.</p>
+    <p>AI chatbots use intent recognition instead, which means:</p>
+    <ul>
+      <li>They understand variations in language</li>
+      <li>They handle longer and more natural sentences</li>
+      <li>They provide relevant answers even with imperfect phrasing</li>
+    </ul>
+    <p>This shift from keyword matching to intent understanding is one of the biggest advancements in conversational AI.</p>
+
+    <h2>Challenges in Intent Detection</h2>
+    <p>Even advanced AI chatbots face challenges when interpreting user intent.</p>
+
+    <h3>Ambiguous Questions</h3>
+    <p>Messages like "Can it do that?" require more context to understand.</p>
+
+    <h3>Multiple Intents in One Message</h3>
+    <p><strong>Example:</strong><br>
+    "What's the price and how do I install it?"</p>
+    <p>The chatbot must identify more than one intent and respond accordingly.</p>
+
+    <h3>Industry-Specific Language</h3>
+    <p>Specialized industries often use unique terminology, which requires proper training content to ensure accurate understanding.</p>
+
+    <h2>How Businesses Can Improve Intent Recognition</h2>
+    <p>To make AI chatbots more accurate, businesses should:</p>
+    <ul>
+      <li>Provide clear and structured knowledge sources</li>
+      <li>Use well-organized FAQs and documentation</li>
+      <li>Regularly review conversation logs</li>
+      <li>Update training data based on real user questions</li>
+      <li>Monitor unanswered queries to improve coverage</li>
+    </ul>
+    <p>These steps help the chatbot understand users more effectively over time.</p>
+
+    <h2>Real-World Example of Intent Understanding</h2>
+    <p>Imagine a visitor asking:</p>
+    <p><strong>"I want to reduce support tickets using AI."</strong></p>
+    <p>The chatbot identifies intent as <strong>business solution inquiry</strong>, not just a generic AI question. It can then respond with relevant features, benefits, or guides that align with the user's goal.</p>
+    <p>This ability to interpret intent transforms chatbots from basic automation tools into intelligent assistants.</p>
+
+    <!-- FAQ Section -->
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="mt-8 space-y-4">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>What is user intent in AI chatbots?</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          User intent is the purpose behind a message, such as asking a question, requesting help, or exploring features.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>How accurate is intent recognition?</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          Accuracy depends on training quality and context awareness. Well-trained chatbots can understand varied language patterns effectively.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Do AI chatbots understand slang or informal language?</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          Modern AI models can interpret many conversational styles, especially when trained with diverse examples.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Can chatbots detect multiple intents at once?</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+          </svg>
+        </button>
+        <div class="faq-answer">
+          Advanced AI chatbots can recognize more than one intent in a message and respond accordingly.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</article>
+
+<!-- ================= CTA SECTION ================= -->
+<section class="py-16 md:py-20 bg-gradient-to-r from-blue-600 to-blue-700">
+  <div class="max-w-3xl mx-auto px-4 md:px-6 text-center">
+    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">Ready to Build an AI Chatbot That Understands Your Users?</h2>
+    <p class="text-blue-100 mb-8 text-lg">Transform your website content into an intelligent chatbot that recognizes user intent and answers questions 24/7. 14-day free trial, no credit card required.</p>
+    <a href="../../index.html#get-started" class="inline-flex items-center gap-2 bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold hover:bg-blue-50 transition-all shadow-lg">
+      Start Trial
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-gradient-to-b from-gray-50 to-gray-100 text-gray-700 py-10 md:py-16 border-t border-gray-200">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <div class="footer-grid">
+      <div>
+        <a href="../../index.html" class="logo mb-4">
+          <div class="logo-icon" data-logo></div>
+          <span class="text-xl font-bold"><span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span></span>
+        </a>
+        <p class="text-sm leading-relaxed mt-4 text-gray-600">
+          Transform your content into an intelligent AI support agent that delights customers 24/7.
+        </p>
+      </div>
+
+      <div>
+        <h4 class="text-gray-900 font-semibold mb-4">Product</h4>
+        <ul class="space-y-2">
+          <li><a href="../../features/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Features</a></li>
+          <li><a href="../../agencies/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">For Agencies</a></li>
+          <li><a href="../../pricing/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Pricing</a></li>
+          <li><a href="../../use-cases/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Use Cases</a></li>
+          <li><a href="../../docs/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Documentation</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-gray-900 font-semibold mb-4">Company</h4>
+        <ul class="space-y-2">
+          <li><a href="../../about/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">About</a></li>
+          <li><a href="../index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Blog</a></li>
+          <li><a href="../../careers/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Careers</a></li>
+          <li><a href="../../contact/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="text-gray-900 font-semibold mb-4">Legal</h4>
+        <ul class="space-y-2">
+          <li><a href="../../privacy/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Privacy Policy</a></li>
+          <li><a href="../../terms/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Terms of Service</a></li>
+          <li><a href="../../security/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Security</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-gray-600">&copy; 2026 <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span>. All rights reserved.</p>
+
+      <div class="flex gap-6">
+        <a href="#" aria-label="Twitter" class="text-gray-500 transition-colors hover-primary-icon">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+        </a>
+        <a href="#" aria-label="GitHub" class="text-gray-500 transition-colors hover-primary-icon">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
+        </a>
+        <a href="#" aria-label="LinkedIn" class="text-gray-500 transition-colors hover-primary-icon">
+          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+  }
+
+  // FAQ accordion
+  function toggleFaq(button) {
+    const faqItem = button.parentElement;
+    faqItem.classList.toggle('open');
+  }
+
+</script>
+
+<!-- Logo Component (Single Source of Truth) -->
+<script src="../../assets/logo.js"></script>
+
+</body>
+</html>
