@@ -11,7 +11,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="google-site-verification" content="Dx1Ne2Fr87vmX2nSDAEJdHoXfL7nTTA5_Lfpt3CWkHk" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Simple, transparent pricing for SiteWhizz AI chatbot. 14-day free trial, no credit card required. Plans from $19/month." />
+  <meta name="description" content="Simple, transparent pricing for SiteWhizz AI chatbot. Free plan available. Paid plans from $19/month with 14-day free trial, no credit card required." />
   <title>Pricing | Create an AI Chatbot Using Your Website Content | SiteWhizz</title>
 
   <!-- Favicon -->
@@ -444,6 +444,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       height: 100%;
       display: flex;
       flex-direction: column;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pricing-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gray-300);
+      border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
     }
 
     .pricing-card:hover {
@@ -452,26 +465,54 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transform: translateY(-4px);
     }
 
-    .pricing-card.popular {
-      border: 2px solid #1d4ed8;
-      position: relative;
-      box-shadow: var(--shadow-xl);
+    /* Tier accent colors */
+    .pricing-card.tier-free::before {
+      background: var(--gray-400);
     }
 
-    .pricing-card.popular::before {
-      content: 'Most Popular';
+    .pricing-card.tier-starter::before {
+      background: #1d4ed8;
+    }
+
+    .pricing-card.tier-growth::before {
+      background: linear-gradient(90deg, #1d4ed8, #7c3aed);
+      height: 5px;
+    }
+
+    .pricing-card.tier-pro::before {
+      background: linear-gradient(90deg, #7c3aed, #db2777);
+    }
+
+    .pricing-card.popular {
+      border: 2px solid #1d4ed8;
+      box-shadow: 0 8px 30px -4px rgba(29, 78, 216, 0.18), var(--shadow-xl);
+    }
+
+    @media (min-width: 1024px) {
+      .pricing-card.popular {
+        transform: scale(1.04);
+        z-index: 2;
+      }
+
+      .pricing-card.popular:hover {
+        transform: scale(1.04) translateY(-4px);
+      }
+    }
+
+    .pricing-card.popular .pricing-card-badge {
       position: absolute;
-      top: -12px;
+      top: -1px;
       left: 50%;
       transform: translateX(-50%);
       background: #1d4ed8;
       color: white;
-      padding: 0.25rem 1rem;
-      border-radius: var(--radius-full);
-      font-size: 0.75rem;
-      font-weight: 600;
+      padding: 0.3rem 1.25rem;
+      font-size: 0.7rem;
+      font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.05em;
+      border-radius: 0 0 8px 8px;
+      z-index: 3;
     }
 
     .pricing-card-header {
@@ -482,21 +523,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     .pricing-card-icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .tier-free .pricing-card-icon {
+      background: var(--gray-100);
+    }
+
+    .tier-starter .pricing-card-icon {
+      background: var(--primary-50);
+    }
+
+    .tier-growth .pricing-card-icon {
+      background: linear-gradient(135deg, var(--primary-50), #ede9fe);
+    }
+
+    .tier-pro .pricing-card-icon {
+      background: linear-gradient(135deg, #ede9fe, #fce7f3);
     }
 
     .pricing-card-name {
       font-size: 1.25rem;
       font-weight: 700;
       color: var(--gray-900);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.25rem;
     }
 
     .pricing-card-price {
       font-size: 2.5rem;
       font-weight: 800;
       color: var(--gray-900);
+      line-height: 1.2;
     }
 
     .pricing-card-price span {
@@ -519,18 +583,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .pricing-card-features li {
       display: flex;
       align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
+      gap: 0.625rem;
+      margin-bottom: 0.625rem;
       color: var(--gray-700);
-      font-size: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
     }
 
     .pricing-card-features li svg {
-      width: 1.25rem;
-      height: 1.25rem;
-      color: #1d4ed8;
+      width: 1.125rem;
+      height: 1.125rem;
       flex-shrink: 0;
       margin-top: 0.125rem;
+    }
+
+    .tier-free .pricing-card-features li svg { color: var(--gray-500); }
+    .tier-starter .pricing-card-features li svg { color: #1d4ed8; }
+    .tier-growth .pricing-card-features li svg { color: #6d28d9; }
+    .tier-pro .pricing-card-features li svg { color: #db2777; }
+
+    .pricing-card-features .tier-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #1d4ed8;
+      padding: 0.375rem 0.75rem;
+      background: var(--primary-50);
+      border-radius: var(--radius-lg);
+      margin-bottom: 0.5rem;
+    }
+
+    .tier-growth .pricing-card-features .tier-label {
+      color: #6d28d9;
+      background: #ede9fe;
+    }
+
+    .tier-pro .pricing-card-features .tier-label {
+      color: #db2777;
+      background: #fce7f3;
     }
 
     .pricing-card-btn {
@@ -538,6 +630,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       padding: 0.875rem 1.5rem;
       border-radius: var(--radius-xl);
       font-weight: 600;
+      font-size: 0.95rem;
       text-align: center;
       transition: all var(--transition-base);
       text-decoration: none;
@@ -547,22 +640,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .pricing-card-btn-primary {
       background: #1d4ed8;
       color: white;
+      box-shadow: 0 4px 14px -2px rgba(29, 78, 216, 0.4);
     }
 
     .pricing-card-btn-primary:hover {
       background: var(--primary-800);
       transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
+      box-shadow: 0 6px 20px -2px rgba(29, 78, 216, 0.5);
     }
 
     .pricing-card-btn-secondary {
-      background: var(--gray-100);
+      background: white;
       color: var(--gray-700);
-      border: 1px solid var(--gray-200);
+      border: 1.5px solid var(--gray-300);
     }
 
     .pricing-card-btn-secondary:hover {
-      background: var(--gray-200);
+      background: var(--gray-50);
+      border-color: var(--gray-400);
+      transform: translateY(-1px);
+    }
+
+    .pricing-card-btn-pro {
+      background: linear-gradient(135deg, #7c3aed, #db2777);
+      color: white;
+      box-shadow: 0 4px 14px -2px rgba(124, 58, 237, 0.4);
+    }
+
+    .pricing-card-btn-pro:hover {
+      box-shadow: 0 6px 20px -2px rgba(124, 58, 237, 0.5);
+      transform: translateY(-2px);
+      filter: brightness(1.1);
     }
 
     /* Free Tier Strip */
@@ -747,28 +855,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
       <!-- Business Pricing Grid -->
-      <div id="businessPricing" class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+      <div id="businessPricing" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5">
 
-        <!-- Starter Plan -->
-        <div class="pricing-card">
+        <!-- Free Plan -->
+        <div class="pricing-card tier-free">
           <div class="pricing-card-header">
-            <div class="pricing-card-icon">🚀</div>
-            <div class="pricing-card-name">Starter</div>
-            <div class="text-base text-gray-500 mb-2">
-              For founders starting strong with AI
+            <div class="pricing-card-icon">🎯</div>
+            <div class="pricing-card-name">Free</div>
+            <div class="text-sm text-gray-500 mb-3">
+              For trying out SiteWhizz
             </div>
 
-            <div class="pricing-card-price" data-yearly="19" data-monthly="29">
-              $<span class="price-value">19</span><span> / month</span>
+            <div class="pricing-card-price" data-yearly="0" data-monthly="0">
+              $<span class="price-value">0</span><span> / month</span>
             </div>
 
-            <div class="text-base text-gray-500 mt-1 billing-note" data-yearly="billed yearly $228"
-              data-monthly="billed monthly">
-              billed yearly $228
+            <div class="text-sm text-gray-500 mt-1 billing-note" data-yearly="free forever"
+              data-monthly="free forever">
+              free forever
             </div>
 
-            <div class="text-base text-green-600 font-medium mt-2">
-              14 days free trial, no credit card
+            <div class="text-sm text-green-600 font-medium mt-2">
+              No credit card required
             </div>
           </div>
 
@@ -778,6 +886,71 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
               <strong>1 chatbot</strong>
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <strong>100 messages/mo</strong>
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              <strong>5 content source pages</strong>
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Basic chat customization
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              Manual content refresh
+            </li>
+            <li>
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+              7-day conversation history
+            </li>
+          </ul>
+
+          <a href="https://app.sitewhizz.io/" class="pricing-card-btn pricing-card-btn-secondary">
+            Get Started Free
+          </a>
+        </div>
+
+        <!-- Starter Plan -->
+        <div class="pricing-card tier-starter">
+          <div class="pricing-card-header">
+            <div class="pricing-card-icon">🚀</div>
+            <div class="pricing-card-name">Starter</div>
+            <div class="text-sm text-gray-500 mb-3">
+              For founders starting strong with AI
+            </div>
+
+            <div class="pricing-card-price" data-yearly="19" data-monthly="29">
+              $<span class="price-value">19</span><span> / month</span>
+            </div>
+
+            <div class="text-sm text-gray-500 mt-1 billing-note" data-yearly="billed yearly $228"
+              data-monthly="billed monthly">
+              billed yearly $228
+            </div>
+
+            <div class="text-sm text-green-600 font-medium mt-2">
+              14 days free trial, no credit card
+            </div>
+          </div>
+
+          <ul class="pricing-card-features">
+            <li class="tier-label">
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+              Everything in Free, plus:
             </li>
             <li>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -801,19 +974,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              Basic chat customization
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              Async human handoff (unlimited)
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              Manual content refresh
+              Human handoff (unlimited)
             </li>
             <li>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -835,11 +996,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <!-- Growth Plan (Most Popular) -->
-        <div class="pricing-card popular">
+        <div class="pricing-card popular tier-growth">
+          <div class="pricing-card-badge">Most Popular</div>
           <div class="pricing-card-header">
             <div class="pricing-card-icon">⭐</div>
             <div class="pricing-card-name">Growth</div>
-            <div class="text-base text-gray-500 mb-2">
+            <div class="text-sm text-gray-500 mb-3">
               For growing products & small teams
             </div>
 
@@ -847,17 +1009,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               $<span class="price-value">49</span><span> / month</span>
             </div>
 
-            <div class="text-base text-gray-500 mt-1 billing-note" data-yearly="billed yearly $588"
+            <div class="text-sm text-gray-500 mt-1 billing-note" data-yearly="billed yearly $588"
               data-monthly="billed monthly">
               billed yearly $588
             </div>
 
-            <div class="text-base text-green-600 font-medium mt-2">
+            <div class="text-sm text-green-600 font-medium mt-2">
               14 days free trial, no credit card
             </div>
           </div>
 
           <ul class="pricing-card-features">
+            <li class="tier-label">
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+              Everything in Starter, plus:
+            </li>
             <li>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -880,12 +1046,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              Lead collection
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
               Full chat customization
             </li>
             <li>
@@ -898,13 +1058,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              Async human handoff (unlimited)
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              Conversation analytics
+              Analytics
             </li>
             <li>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -932,11 +1086,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <!-- Pro Plan -->
-        <div class="pricing-card">
+        <div class="pricing-card tier-pro">
           <div class="pricing-card-header">
             <div class="pricing-card-icon">⚡</div>
             <div class="pricing-card-name">Pro</div>
-            <div class="text-base text-gray-500 mb-2">
+            <div class="text-sm text-gray-500 mb-3">
               For serious & revenue-generating businesses
             </div>
 
@@ -944,17 +1098,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               $<span class="price-value">129</span><span> / month</span>
             </div>
 
-            <div class="text-base text-gray-500 mt-1 billing-note" data-yearly="billed yearly $1,548"
+            <div class="text-sm text-gray-500 mt-1 billing-note" data-yearly="billed yearly $1,548"
               data-monthly="billed monthly">
               billed yearly $1,548
             </div>
 
-            <div class="text-base text-green-600 font-medium mt-2">
+            <div class="text-sm text-green-600 font-medium mt-2">
               14 days free trial, no credit card
             </div>
           </div>
 
           <ul class="pricing-card-features">
+            <li class="tier-label">
+              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+              Everything in Growth, plus:
+            </li>
             <li>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -977,19 +1135,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              Lead collection
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              Full chat customization + custom CSS
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              Remove branding
+              Full + Custom CSS customization
             </li>
             <li>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1001,13 +1147,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              Async human handoff (unlimited)
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              Advanced conversation analytics
+              Advanced analytics
             </li>
             <li>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -1031,17 +1171,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              Unlimited conversation history
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
               Dedicated support
             </li>
           </ul>
 
-          <a href="https://app.sitewhizz.io/" class="pricing-card-btn pricing-card-btn-secondary">
+          <a href="https://app.sitewhizz.io/" class="pricing-card-btn pricing-card-btn-pro">
             Start Trial
           </a>
         </div>
@@ -1335,7 +1469,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div class="hidden px-6 pb-4 text-gray-600">
-          <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> offers three business plans: Starter at $29/month, Growth at $69/month, and Pro at $169/month with white-label branding, advanced analytics, and API access. Annual billing saves up to 30% (from $19/mo). All plans include a 14-day free trial with no credit card required.
+          <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> offers a free plan to get started, plus three paid plans: Starter at $19/month, Growth at $49/month, and Pro at $129/month (billed yearly). Monthly billing is also available at $29, $69, and $169/month respectively. The Pro plan includes white-label branding, advanced analytics, and API access. All paid plans include a 14-day free trial with no credit card required.
         </div>
       </div>
 
@@ -1345,7 +1479,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div class="hidden px-6 pb-4 text-gray-600">
-          Yes! All <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> plans include a 14-day free trial. No credit card is required to start. You get full access to all features during the trial period to test if <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> is right for your business.
+          Yes! <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> has a free plan you can use forever, and all paid plans include a 14-day free trial. No credit card is required to start. You get full access to all features during the trial period to test if <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> is right for your business.
         </div>
       </div>
 
