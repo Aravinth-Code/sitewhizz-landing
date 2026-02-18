@@ -1,6 +1,6 @@
 # SiteWhizz Landing Page - Theme Reference
 
-A modern SaaS landing page for an AI chatbot platform. Use this document as the single source of truth for styling your frontend to match this theme exactly.
+A modern SaaS landing page for an AI support agent platform. Use this document as the single source of truth for styling your frontend to match this theme exactly.
 
 ## Tech Stack
 
