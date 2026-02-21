@@ -13,15 +13,35 @@ A modern SaaS landing page for an AI support agent platform. Use this document a
 
 ```
 sitewhizz-landing/
-├── index.html              # Main landing page
-├── pricing/
-│   └── index.html          # Pricing plans page
-├── features/
-│   └── index.html          # Features showcase page
+├── index.html              # Main landing page (hero, features, CTA)
+├── about/
+│   └── index.html          # About page
+├── agencies/
+│   └── index.html          # Agencies program
 ├── blog/
 │   ├── index.html          # Blog hub
 │   └── what-are-ai-agents/
 │       └── index.html      # Blog article
+├── careers/
+│   └── index.html          # Careers page
+├── contact/
+│   └── index.html          # Contact form
+├── docs/
+│   └── index.html          # Documentation
+├── features/
+│   └── index.html          # Features showcase
+├── free-tools/
+│   └── index.html          # Free tools
+├── pricing/
+│   └── index.html          # Pricing plans
+├── privacy/
+│   └── index.html          # Privacy policy
+├── security/
+│   └── index.html          # Security info
+├── terms/
+│   └── index.html          # Terms of service
+├── use-cases/
+│   └── index.html          # Use cases
 ├── assets/
 │   ├── logo.js             # Logo component (SINGLE SOURCE OF TRUTH)
 │   └── logo.svg            # Static logo (for reference/external use)
