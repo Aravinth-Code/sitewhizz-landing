@@ -620,28 +620,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       animation: shimmer 3s infinite;
     }
 
-    /* Social Proof / Trusted By */
-    .trusted-strip {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 2rem;
-      flex-wrap: wrap;
-      opacity: 0.5;
-      transition: opacity 0.3s;
-    }
-
-    .trusted-strip:hover {
-      opacity: 0.7;
-    }
-
-    .trusted-logo {
-      font-size: 1.125rem;
-      font-weight: 700;
-      color: var(--gray-400);
-      letter-spacing: 0.05em;
-    }
-
     /* Step Connector Line */
     .step-connector {
       display: none;
@@ -1679,9 +1657,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="orb orb-3 hidden lg:block" style="top: 40%; left: 60%;"></div>
 
   <div class="hero-container">
-    <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+    <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
       <!-- Left: Text Content -->
-      <div class="flex-1 text-center lg:text-left">
+      <div class="flex-1 text-center">
         <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-semibold mb-6 md:mb-8 animate-fade-in-up" style="color: #1d4ed8; border: 1px solid #dbeafe; box-shadow: 0 2px 12px rgba(29, 78, 216, 0.08);">
           <span class="w-2 h-2 rounded-full flex-shrink-0 animate-pulse" style="background: #1d4ed8;"></span>
           <span>AI-Powered Chatbot for Your Website</span>
@@ -1695,7 +1673,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           An intelligent AI assistant that learns your business and supports your customers — instantly.
         </p>
 
-        <p class="hero-description animate-fade-in-up delay-200" style="max-width: 600px;">
+        <p class="hero-description animate-fade-in-up delay-200" style="max-width: 640px; margin-left: auto; margin-right: auto;">
           <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> is an AI chatbot for customer support that trains directly on your website, docs, and FAQs. Visitors talk to an intelligent AI chat assistant that delivers accurate, instant answers — so your team stops repeating themselves and starts focusing on growth.
         </p>
 
@@ -1763,30 +1741,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 
-  <!-- Wave Divider -->
-  <div class="wave-divider wave-divider-bottom">
-    <svg viewBox="0 0 1440 54" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
-      <path d="M0 22L60 16.7C120 11 240 0.7 360 0.7C480 0.7 600 11 720 22C840 33 960 44 1080 44C1200 44 1320 33 1380 27.7L1440 22V54H1380C1320 54 1200 54 1080 54C960 54 840 54 720 54C600 54 480 54 360 54C240 54 120 54 60 54H0V22Z" fill="#1d4ed8"/>
-    </svg>
-  </div>
-</section>
 
-<!-- ================= TRUSTED BY STRIP ================= -->
-<div class="hidden md:block py-8 bg-white border-b border-gray-100" style="margin-top: -1px;">
-  <div class="max-w-5xl mx-auto px-6">
-    <p class="text-center text-xs font-semibold text-gray-400 uppercase tracking-widest mb-5">Trusted by businesses worldwide</p>
-    <div class="trusted-strip">
-      <span class="trusted-logo">Startup Co</span>
-      <span class="trusted-logo">Acme SaaS</span>
-      <span class="trusted-logo">GrowthLab</span>
-      <span class="trusted-logo">CloudBase</span>
-      <span class="trusted-logo">NexaTech</span>
-    </div>
-  </div>
-</div>
+</section>
 
 <!-- ================= PROBLEM INTRO SECTION ================= -->
 <section class="text-white py-12 md:py-20 relative" style="background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 50%, #1e40af 100%);">
+  <!-- Wave Divider Top (white wave on blue) -->
+  <div class="wave-divider wave-divider-top">
+    <svg viewBox="0 0 1440 54" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 32L60 37.3C120 43 240 53.3 360 53.3C480 53.3 600 43 720 32C840 21 960 10 1080 10C1200 10 1320 21 1380 26.3L1440 32V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0V32Z" fill="white"/>
+    </svg>
+  </div>
   <div class="max-w-5xl mx-auto px-4 md:px-6 text-center relative z-10">
     <div class="reveal">
       <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 leading-tight">
