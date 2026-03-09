@@ -267,6 +267,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       50% { opacity: 0.5; }
     }
 
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes orbFloat1 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+    }
+
+    @keyframes orbFloat2 {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(-40px, 30px) scale(0.95); }
+      66% { transform: translate(25px, -40px) scale(1.05); }
+    }
+
+    @keyframes typing {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    @keyframes slideInRight {
+      from { opacity: 0; transform: translateX(40px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @keyframes scaleIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+
     .animate-float {
       animation: float 6s ease-in-out infinite;
     }
@@ -280,6 +318,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .delay-300 { animation-delay: 0.3s; }
     .delay-400 { animation-delay: 0.4s; }
 
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+    .reveal-delay-5 { transition-delay: 0.5s; }
+
     /* Background Decorations */
     .bg-decoration {
       position: absolute;
@@ -291,6 +347,358 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     .bg-decoration-primary {
       background: var(--primary-50);
+    }
+
+    /* Animated Gradient Orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .orb-1 {
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, rgba(59, 130, 246, 0.1) 70%, transparent 100%);
+      animation: orbFloat1 15s ease-in-out infinite;
+    }
+
+    .orb-2 {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(99, 102, 241, 0.1) 70%, transparent 100%);
+      animation: orbFloat2 18s ease-in-out infinite;
+    }
+
+    .orb-3 {
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.2) 0%, rgba(14, 165, 233, 0.08) 70%, transparent 100%);
+      animation: orbFloat1 20s ease-in-out infinite reverse;
+    }
+
+    /* Gradient Mesh Hero BG */
+    .hero-gradient-mesh {
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 50% at 20% 40%, rgba(99, 102, 241, 0.08) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 60% at 80% 20%, rgba(59, 130, 246, 0.06) 0%, transparent 70%),
+        radial-gradient(ellipse 50% 80% at 50% 80%, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* Grid Pattern Overlay */
+    .grid-pattern {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none;
+      mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
+      -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 50%, black, transparent);
+    }
+
+    /* Section Wave Dividers */
+    .wave-divider {
+      position: absolute;
+      left: 0;
+      right: 0;
+      overflow: hidden;
+      line-height: 0;
+      pointer-events: none;
+    }
+
+    .wave-divider-bottom {
+      bottom: -1px;
+    }
+
+    .wave-divider-top {
+      top: -1px;
+    }
+
+    .wave-divider svg {
+      display: block;
+      width: 100%;
+      height: 48px;
+    }
+
+    @media (min-width: 768px) {
+      .wave-divider svg {
+        height: 72px;
+      }
+    }
+
+    /* Chat Widget Mockup */
+    .chat-mockup {
+      width: 320px;
+      background: white;
+      border-radius: 20px;
+      box-shadow:
+        0 25px 60px -12px rgba(0, 0, 0, 0.15),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transform: perspective(1000px) rotateY(-5deg) rotateX(2deg);
+      transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .chat-mockup:hover {
+      transform: perspective(1000px) rotateY(0deg) rotateX(0deg) scale(1.02);
+    }
+
+    .chat-mockup-header {
+      background: linear-gradient(135deg, #1d4ed8, #4f46e5);
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .chat-mockup-avatar {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .chat-mockup-name {
+      color: white;
+      font-weight: 600;
+      font-size: 0.9375rem;
+    }
+
+    .chat-mockup-status {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .chat-mockup-status-dot {
+      width: 6px;
+      height: 6px;
+      background: #4ade80;
+      border-radius: 50%;
+    }
+
+    .chat-mockup-body {
+      padding: 20px;
+      min-height: 200px;
+      background: #f8fafc;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .chat-bubble {
+      max-width: 85%;
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      animation: scaleIn 0.4s ease-out forwards;
+      opacity: 0;
+    }
+
+    .chat-bubble-bot {
+      background: white;
+      color: #334155;
+      border: 1px solid #e2e8f0;
+      border-bottom-left-radius: 4px;
+      align-self: flex-start;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+
+    .chat-bubble-user {
+      background: linear-gradient(135deg, #1d4ed8, #4f46e5);
+      color: white;
+      border-bottom-right-radius: 4px;
+      align-self: flex-end;
+    }
+
+    .chat-bubble:nth-child(1) { animation-delay: 0.5s; }
+    .chat-bubble:nth-child(2) { animation-delay: 1.2s; }
+    .chat-bubble:nth-child(3) { animation-delay: 2s; }
+
+    .chat-mockup-input {
+      padding: 12px 16px;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+    }
+
+    .chat-mockup-input-field {
+      flex: 1;
+      background: #f1f5f9;
+      border-radius: 20px;
+      padding: 8px 14px;
+      font-size: 0.8125rem;
+      color: #94a3b8;
+    }
+
+    .chat-mockup-send {
+      width: 32px;
+      height: 32px;
+      background: #1d4ed8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Typing Indicator */
+    .typing-indicator {
+      display: flex;
+      gap: 4px;
+      padding: 10px 14px;
+      align-self: flex-start;
+    }
+
+    .typing-dot {
+      width: 6px;
+      height: 6px;
+      background: #94a3b8;
+      border-radius: 50%;
+      animation: typing 1.4s infinite;
+    }
+
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    /* Glassmorphism Cards */
+    .glass-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      border-radius: var(--radius-2xl);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Gradient Border Cards */
+    .gradient-border-card {
+      position: relative;
+      background: white;
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+    }
+
+    .gradient-border-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1.5px;
+      background: linear-gradient(135deg, #dbeafe, #c7d2fe, #ddd6fe, #dbeafe);
+      background-size: 300% 300%;
+      animation: gradientShift 6s ease infinite;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+    }
+
+    .gradient-border-card:hover::before {
+      background: linear-gradient(135deg, #93c5fd, #818cf8, #a78bfa, #93c5fd);
+      background-size: 300% 300%;
+      animation: gradientShift 3s ease infinite;
+    }
+
+    /* Shimmer Effect */
+    .shimmer {
+      background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite;
+    }
+
+    /* Social Proof / Trusted By */
+    .trusted-strip {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+      opacity: 0.5;
+      transition: opacity 0.3s;
+    }
+
+    .trusted-strip:hover {
+      opacity: 0.7;
+    }
+
+    .trusted-logo {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--gray-400);
+      letter-spacing: 0.05em;
+    }
+
+    /* Step Connector Line */
+    .step-connector {
+      display: none;
+    }
+
+    @media (min-width: 1024px) {
+      .step-connector {
+        display: block;
+        position: absolute;
+        top: 2rem;
+        left: calc(100% + 1rem);
+        width: calc(3rem - 2rem);
+        height: 2px;
+        background: linear-gradient(90deg, #93c5fd, #c7d2fe);
+      }
+    }
+
+    /* Improved Feature Card Hover */
+    .feature-card-enhanced {
+      position: relative;
+      background: white;
+      padding: var(--spacing-md);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--gray-200);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      overflow: hidden;
+    }
+
+    @media (min-width: 640px) {
+      .feature-card-enhanced {
+        padding: var(--spacing-lg);
+        border-radius: var(--radius-2xl);
+      }
+    }
+
+    .feature-card-enhanced::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(59, 130, 246, 0.03) 0%, rgba(139, 92, 246, 0.03) 100%);
+      opacity: 0;
+      transition: opacity 0.4s;
+    }
+
+    .feature-card-enhanced:hover {
+      border-color: var(--primary-300);
+      box-shadow: 0 20px 40px -12px rgba(29, 78, 216, 0.12), 0 0 0 1px rgba(29, 78, 216, 0.08);
+      transform: translateY(-6px);
+    }
+
+    .feature-card-enhanced:hover::after {
+      opacity: 1;
+    }
+
+    .feature-card-enhanced > * {
+      position: relative;
+      z-index: 1;
     }
 
     /* Section Layouts */
@@ -1257,94 +1665,174 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 <!-- ================= BETA BANNER ================= -->
-<div style="position: fixed; top: 0; left: 0; right: 0; z-index: 60; background: linear-gradient(90deg, #7c3aed, #1d4ed8); color: white; text-align: center; padding: 0.625rem 1rem; font-size: 0.9rem; font-weight: 600;">
-  🚀 We're in Beta — All paid plans are <strong>free for 60 days</strong>. No credit card required.
+<div style="position: fixed; top: 0; left: 0; right: 0; z-index: 60; background: linear-gradient(90deg, #7c3aed, #4f46e5, #1d4ed8); color: white; text-align: center; padding: 0.625rem 1rem; font-size: 0.9rem; font-weight: 600; backdrop-filter: blur(8px);">
+  <span style="animation: pulse-slow 3s ease-in-out infinite; display: inline-block;">&#x1F680;</span> We're in Beta — All paid plans are <strong>free for 60 days</strong>. No credit card required.
 </div>
 
 <!-- ================= HERO SECTION ================= -->
 <section class="hero" style="padding-top: 10.5rem;">
-  <div class="bg-decoration bg-decoration-primary hidden md:block" style="top: 5rem; left: 2.5rem; width: 18rem; height: 18rem;"></div>
-  <div class="bg-decoration bg-decoration-primary hidden md:block" style="bottom: 5rem; right: 2.5rem; width: 24rem; height: 24rem;"></div>
+  <!-- Animated Background -->
+  <div class="hero-gradient-mesh"></div>
+  <div class="grid-pattern"></div>
+  <div class="orb orb-1 hidden md:block" style="top: -100px; left: -100px;"></div>
+  <div class="orb orb-2 hidden md:block" style="bottom: -50px; right: -80px;"></div>
+  <div class="orb orb-3 hidden lg:block" style="top: 40%; left: 60%;"></div>
 
   <div class="hero-container">
-    <div class="inline-flex items-center gap-2 bg-blue-50 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-semibold mb-6 md:mb-8 animate-fade-in-up" style="color: #1d4ed8; border: 1px solid #dbeafe;">
-      <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: #1d4ed8;"></span>
-      <span>AI-Powered Chatbot for Your Website</span>
+    <div class="flex flex-col lg:flex-row items-center gap-8 lg:gap-16">
+      <!-- Left: Text Content -->
+      <div class="flex-1 text-center lg:text-left">
+        <div class="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-semibold mb-6 md:mb-8 animate-fade-in-up" style="color: #1d4ed8; border: 1px solid #dbeafe; box-shadow: 0 2px 12px rgba(29, 78, 216, 0.08);">
+          <span class="w-2 h-2 rounded-full flex-shrink-0 animate-pulse" style="background: #1d4ed8;"></span>
+          <span>AI-Powered Chatbot for Your Website</span>
+        </div>
+
+        <h1 class="hero-title animate-fade-in-up delay-100">
+          Your Website Already Has the Answers. <span style="color: #1d4ed8;">Now Let Visitors Ask.</span>
+        </h1>
+
+        <p class="text-lg md:text-xl text-gray-600 font-medium mb-4 animate-fade-in-up delay-150" style="max-width: 600px; margin-left: auto; margin-right: auto;">
+          An intelligent AI assistant that learns your business and supports your customers — instantly.
+        </p>
+
+        <p class="hero-description animate-fade-in-up delay-200" style="max-width: 600px;">
+          <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> is an AI chatbot for customer support that trains directly on your website, docs, and FAQs. Visitors talk to an intelligent AI chat assistant that delivers accurate, instant answers — so your team stops repeating themselves and starts focusing on growth.
+        </p>
+
+        <div class="hero-actions animate-fade-in-up delay-300" style="justify-content: center; padding: 0;">
+          <a href="https://app.sitewhizz.io/" class="btn btn-primary group" style="background: linear-gradient(135deg, #1d4ed8, #4f46e5); box-shadow: 0 8px 24px -4px rgba(29, 78, 216, 0.35); position: relative; overflow: hidden;">
+            <span style="position: relative; z-index: 1;">Create Your AI Chatbot Free</span>
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+            </svg>
+          </a>
+          <a href="#how-it-works" class="btn btn-secondary">
+            See How It Works
+          </a>
+        </div>
+        <p class="text-gray-500 mt-3 animate-fade-in-up delay-300" style="font-size: 1rem;">No credit card. No code. Live in 5 minutes.</p>
+      </div>
+
+      <!-- Right: Chat Widget Mockup -->
+      <div class="hidden lg:block flex-shrink-0 animate-fade-in-up delay-300" style="animation-delay: 0.6s;">
+        <div class="chat-mockup">
+          <div class="chat-mockup-header">
+            <div class="chat-mockup-avatar">
+              <svg width="20" height="20" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+            </div>
+            <div>
+              <div class="chat-mockup-name">SiteWhizz AI</div>
+              <div class="chat-mockup-status"><span class="chat-mockup-status-dot"></span> Online</div>
+            </div>
+          </div>
+          <div class="chat-mockup-body">
+            <div class="chat-bubble chat-bubble-bot">
+              Hi! I'm your AI assistant. Ask me anything about our products and services.
+            </div>
+            <div class="chat-bubble chat-bubble-user">
+              What are your pricing plans?
+            </div>
+            <div class="chat-bubble chat-bubble-bot">
+              We offer 3 plans: Free (50 messages/mo), Starter at $9/mo (2,000 messages), and Pro at $29/mo (10,000 messages). All include lead capture!
+            </div>
+          </div>
+          <div class="chat-mockup-input">
+            <div class="chat-mockup-input-field">Type a message...</div>
+            <div class="chat-mockup-send">
+              <svg width="14" height="14" fill="white" viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <h1 class="hero-title animate-fade-in-up delay-100">
-      Your Website Already Has the Answers. <span style="color: #1d4ed8;">Now Let Visitors Ask.</span>
-    </h1>
-
-    <p class="text-lg md:text-xl text-gray-600 font-medium mb-4 animate-fade-in-up delay-150" style="max-width: 600px; margin-left: auto; margin-right: auto;">
-      An intelligent AI assistant that learns your business and supports your customers — instantly.
-    </p>
-
-    <p class="hero-description animate-fade-in-up delay-200">
-      <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> is an AI chatbot for customer support that trains directly on your website, docs, and FAQs. Visitors talk to an intelligent AI chat assistant that delivers accurate, instant answers — so your team stops repeating themselves and starts focusing on growth.
-    </p>
-
-    <div class="hero-actions animate-fade-in-up delay-300">
-      <a href="https://app.sitewhizz.io/" class="btn btn-primary group" style="background: #1d4ed8;">
-        Create Your AI Chatbot Free
-        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-        </svg>
-      </a>
-      <a href="#how-it-works" class="btn btn-secondary">
-        See How It Works
-      </a>
-    </div>
-    <p class="text-gray-500 mt-3 animate-fade-in-up delay-300" style="font-size: 1rem;">No credit card. No code. Live in 5 minutes.</p>
-
-    <div class="stats-grid animate-fade-in-up delay-400">
-      <div class="stat-item">
+    <!-- Stats with Glass Effect -->
+    <div class="stats-grid animate-fade-in-up delay-400" style="margin-top: 3rem;">
+      <div class="stat-item glass-card" style="padding: 1.25rem; border-radius: 1rem;">
         <div class="stat-value" style="color: #1d4ed8;">85%</div>
         <div class="stat-label">Questions Answered Automatically</div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item glass-card" style="padding: 1.25rem; border-radius: 1rem;">
         <div class="stat-value" style="color: #1d4ed8;">&lt;2s</div>
         <div class="stat-label">Average Response Time</div>
       </div>
-      <div class="stat-item">
+      <div class="stat-item glass-card" style="padding: 1.25rem; border-radius: 1rem;">
         <div class="stat-value" style="color: #1d4ed8;">24/7</div>
         <div class="stat-label">Always Available</div>
       </div>
     </div>
   </div>
+
+  <!-- Wave Divider -->
+  <div class="wave-divider wave-divider-bottom">
+    <svg viewBox="0 0 1440 54" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 22L60 16.7C120 11 240 0.7 360 0.7C480 0.7 600 11 720 22C840 33 960 44 1080 44C1200 44 1320 33 1380 27.7L1440 22V54H1380C1320 54 1200 54 1080 54C960 54 840 54 720 54C600 54 480 54 360 54C240 54 120 54 60 54H0V22Z" fill="#1d4ed8"/>
+    </svg>
+  </div>
 </section>
 
+<!-- ================= TRUSTED BY STRIP ================= -->
+<div class="hidden md:block py-8 bg-white border-b border-gray-100" style="margin-top: -1px;">
+  <div class="max-w-5xl mx-auto px-6">
+    <p class="text-center text-xs font-semibold text-gray-400 uppercase tracking-widest mb-5">Trusted by businesses worldwide</p>
+    <div class="trusted-strip">
+      <span class="trusted-logo">Startup Co</span>
+      <span class="trusted-logo">Acme SaaS</span>
+      <span class="trusted-logo">GrowthLab</span>
+      <span class="trusted-logo">CloudBase</span>
+      <span class="trusted-logo">NexaTech</span>
+    </div>
+  </div>
+</div>
+
 <!-- ================= PROBLEM INTRO SECTION ================= -->
-<section class="text-white py-12 md:py-20" style="background: #1d4ed8;">
-  <div class="max-w-5xl mx-auto px-4 md:px-6 text-center">
-    <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 leading-tight">
-      Visitors Can't Find Answers
-      <span class="text-white block sm:inline"> on Your Website</span>
-    </h2>
-    <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 md:mb-12 leading-relaxed">
-      You've built a great website with helpful content, detailed documentation, and thorough FAQs. But visitors still can't find what they need. They browse for 30 seconds and leave — or send your team an email asking a question that's already answered in your help docs.
-    </p>
+<section class="text-white py-12 md:py-20 relative" style="background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 50%, #1e40af 100%);">
+  <div class="max-w-5xl mx-auto px-4 md:px-6 text-center relative z-10">
+    <div class="reveal">
+      <h2 class="text-2xl sm:text-3xl md:text-5xl font-bold mb-6 leading-tight">
+        Visitors Can't Find Answers
+        <span class="text-white block sm:inline"> on Your Website</span>
+      </h2>
+      <p class="text-lg md:text-xl text-white/90 max-w-3xl mx-auto mb-8 md:mb-12 leading-relaxed">
+        You've built a great website with helpful content, detailed documentation, and thorough FAQs. But visitors still can't find what they need. They browse for 30 seconds and leave — or send your team an email asking a question that's already answered in your help docs.
+      </p>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-      <div class="bg-white rounded-2xl p-6 md:p-8 border border-primary-100 shadow-xl">
+      <div class="reveal reveal-delay-1 bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl hover:scale-105 transition-transform duration-300">
+        <div class="w-14 h-14 mx-auto mb-4 rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, #fee2e2, #fecaca);">
+          <svg class="w-7 h-7 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7H7v6m0 0l9-9m-9 9l9 9"></path></svg>
+        </div>
         <div class="text-2xl md:text-3xl font-bold mb-3" style="color: #1d4ed8;">Lost Leads</div>
         <p class="text-gray-600 text-sm md:text-base">Visitors leave without answers, costing you conversions and revenue every single day</p>
       </div>
-      <div class="bg-white rounded-2xl p-6 md:p-8 border border-primary-100 shadow-xl">
+      <div class="reveal reveal-delay-2 bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl hover:scale-105 transition-transform duration-300">
+        <div class="w-14 h-14 mx-auto mb-4 rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, #fef3c7, #fde68a);">
+          <svg class="w-7 h-7 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
         <div class="text-2xl md:text-3xl font-bold mb-3" style="color: #1d4ed8;">Wasted Hours</div>
         <p class="text-gray-600 text-sm md:text-base">Your team manually replies to the same 10 questions daily instead of focusing on growth</p>
       </div>
-      <div class="bg-white rounded-2xl p-6 md:p-8 border border-primary-100 shadow-xl">
+      <div class="reveal reveal-delay-3 bg-white/95 backdrop-blur-sm rounded-2xl p-6 md:p-8 border border-white/20 shadow-2xl hover:scale-105 transition-transform duration-300">
+        <div class="w-14 h-14 mx-auto mb-4 rounded-2xl flex items-center justify-center" style="background: linear-gradient(135deg, #ede9fe, #ddd6fe);">
+          <svg class="w-7 h-7 text-violet-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        </div>
         <div class="text-2xl md:text-3xl font-bold mb-3" style="color: #1d4ed8;">Frustrated Visitors</div>
         <p class="text-gray-600 text-sm md:text-base">Customers who can't get quick answers never come back — and they don't recommend you either</p>
       </div>
     </div>
+  </div>
+  <!-- Wave Divider -->
+  <div class="wave-divider wave-divider-bottom">
+    <svg viewBox="0 0 1440 54" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 22L60 16.7C120 11 240 0.7 360 0.7C480 0.7 600 11 720 22C840 33 960 44 1080 44C1200 44 1320 33 1380 27.7L1440 22V54H1380C1320 54 1200 54 1080 54C960 54 840 54 720 54C600 54 480 54 360 54C240 54 120 54 60 54H0V22Z" fill="white"/>
+    </svg>
   </div>
 </section>
 
 <!-- ================= WHY TRADITIONAL SOLUTIONS FALL SHORT ================= -->
 <section class="section section-py bg-white">
   <div class="section-container">
-    <div class="text-center mb-10 md:mb-16">
+    <div class="text-center mb-10 md:mb-16 reveal">
       <span class="badge bg-primary-50 mb-4 border" style="color: #1d4ed8; border-color: #dbeafe;">WHY TRADITIONAL SOLUTIONS FAIL</span>
       <h2 class="heading-xl mb-4">
         The Real Problem Isn't <span class="text-gray-700">Lack of Content</span>
@@ -1355,8 +1843,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 
     <div class="grid-3">
-      <div class="feature-card">
-        <div class="feature-card-icon">
+      <div class="feature-card-enhanced reveal reveal-delay-1">
+        <div class="feature-card-icon" style="background: linear-gradient(135deg, #eff6ff, #dbeafe);">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
           </svg>
@@ -1367,8 +1855,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </p>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-card-icon">
+      <div class="feature-card-enhanced reveal reveal-delay-2">
+        <div class="feature-card-icon" style="background: linear-gradient(135deg, #eff6ff, #dbeafe);">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
           </svg>
@@ -1379,8 +1867,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </p>
       </div>
 
-      <div class="feature-card">
-        <div class="feature-card-icon">
+      <div class="feature-card-enhanced reveal reveal-delay-3">
+        <div class="feature-card-icon" style="background: linear-gradient(135deg, #eff6ff, #dbeafe);">
           <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
           </svg>
@@ -1395,9 +1883,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ================= WHAT IS SITEWHIZZ ================= -->
-<section class="section section-py bg-gray-50">
+<section class="section section-py bg-gray-50 relative overflow-hidden">
+  <div class="orb hidden md:block" style="width: 300px; height: 300px; background: radial-gradient(circle, rgba(99, 102, 241, 0.08), transparent 70%); top: -100px; right: -100px; position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none;"></div>
   <div class="section-container">
-    <div class="max-w-4xl mx-auto text-center">
+    <div class="max-w-4xl mx-auto text-center reveal">
       <span class="badge bg-primary-50 mb-4 border" style="color: #1d4ed8; border-color: #dbeafe;">THE SOLUTION</span>
       <h2 class="heading-xl mb-6">
         An AI Chatbot <span class="gradient-text">Trained on Your Content</span>
@@ -1421,7 +1910,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ================= BEFORE / AFTER SECTION ================= -->
 <section class="py-12 md:py-24 bg-gradient-to-b from-blue-50 to-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-4 md:px-6">
-    <div class="text-center mb-10 md:mb-16">
+    <div class="text-center mb-10 md:mb-16 reveal">
       <span class="inline-block bg-primary-100 px-4 py-2 rounded-full text-sm font-semibold mb-4" style="color: #1d4ed8;">THE TRANSFORMATION</span>
       <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold text-gray-900">
         Before vs After <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span>
@@ -1430,7 +1919,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 max-w-6xl mx-auto">
       <!-- BEFORE -->
-      <div class="relative">
+      <div class="relative reveal reveal-delay-1">
         <div class="hidden md:block absolute -top-4 -left-4 w-full h-full bg-gray-200 rounded-3xl"></div>
         <div class="relative bg-white border-2 md:border-4 border-gray-300 rounded-2xl md:rounded-3xl p-6 md:p-10 shadow-xl">
           <div class="flex items-center gap-3 mb-6 md:mb-8">
@@ -1482,7 +1971,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <!-- AFTER -->
-      <div class="relative">
+      <div class="relative reveal reveal-delay-2">
         <div class="hidden md:block absolute -top-4 -right-4 w-full h-full bg-primary-100 rounded-3xl"></div>
         <div class="relative bg-white border-2 md:border-4 rounded-2xl md:rounded-3xl p-6 md:p-10 shadow-xl" style="border-color: #93c5fd;">
           <div class="flex items-center gap-3 mb-6 md:mb-8">
@@ -1544,7 +2033,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 
   <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
-    <div class="text-center mb-10 md:mb-20">
+    <div class="text-center mb-10 md:mb-20 reveal">
       <span class="inline-block bg-primary-50 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-primary-100" style="color: #1d4ed8;">SIMPLE 3-STEP PROCESS</span>
       <h2 class="text-3xl sm:text-4xl md:text-6xl font-bold mb-4 text-gray-900">
         How to Create Your <span style="color: #1d4ed8;">AI Chatbot</span> in 3 Steps
@@ -1556,7 +2045,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-12">
       <!-- STEP 1 -->
-      <div class="relative group">
+      <div class="relative group reveal reveal-delay-1">
         <div class="absolute -inset-1 bg-gradient-to-r from-primary-200 to-primary-300 rounded-2xl md:rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
         <div class="relative bg-white rounded-2xl md:rounded-3xl p-6 md:p-10 h-full border-2 transition-all duration-300 shadow-lg hover:shadow-xl" style="border-color: #bfdbfe;">
           <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
@@ -1581,7 +2070,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <!-- STEP 2 -->
-      <div class="relative group">
+      <div class="relative group reveal reveal-delay-2">
         <div class="absolute -inset-1 bg-gradient-to-r from-primary-200 to-primary-300 rounded-2xl md:rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
         <div class="relative bg-white rounded-2xl md:rounded-3xl p-6 md:p-10 h-full border-2 transition-all duration-300 shadow-lg hover:shadow-xl" style="border-color: #bfdbfe;">
           <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
@@ -1605,7 +2094,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <!-- STEP 3 -->
-      <div class="relative group">
+      <div class="relative group reveal reveal-delay-3">
         <div class="absolute -inset-1 bg-gradient-to-r from-primary-200 to-primary-300 rounded-2xl md:rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-300"></div>
         <div class="relative bg-white rounded-2xl md:rounded-3xl p-6 md:p-10 h-full border-2 transition-all duration-300 shadow-lg hover:shadow-xl" style="border-color: #bfdbfe;">
           <div class="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
@@ -1632,9 +2121,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ================= FEATURES SECTION ================= -->
-<section class="section section-py bg-white">
-  <div class="section-container">
-    <div class="text-center mb-10 md:mb-16">
+<section class="section section-py bg-white relative overflow-hidden">
+  <div class="orb hidden md:block" style="width: 400px; height: 400px; background: radial-gradient(circle, rgba(59, 130, 246, 0.06), transparent 70%); bottom: -150px; left: -150px; position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none;"></div>
+  <div class="section-container relative z-10">
+    <div class="text-center mb-10 md:mb-16 reveal">
       <span class="badge bg-primary-50 mb-4 border" style="color: #1d4ed8; border-color: #dbeafe;">FEATURES</span>
       <h2 class="heading-xl mb-4">
         Powerful Features of the <span class="gradient-text">SiteWhizz AI Chatbot</span>
@@ -1720,7 +2210,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ================= WHAT YOU CAN BUILD ================= -->
 <section class="section section-py bg-white">
   <div class="section-container">
-    <div class="text-center mb-10 md:mb-16">
+    <div class="text-center mb-10 md:mb-16 reveal">
       <span class="badge bg-primary-50 mb-4 border" style="color: #1d4ed8; border-color: #dbeafe;">WHAT YOU CAN BUILD</span>
       <h2 class="heading-xl mb-4">
         One Platform, Many <span class="gradient-text">Use Cases</span>
@@ -1788,7 +2278,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ================= WHO SHOULD USE ================= -->
 <section class="section section-py bg-gray-50">
   <div class="section-container">
-    <div class="text-center mb-10 md:mb-16">
+    <div class="text-center mb-10 md:mb-16 reveal">
       <span class="badge bg-primary-50 mb-4 border" style="color: #1d4ed8; border-color: #dbeafe;">USE CASES</span>
       <h2 class="heading-xl mb-4">
         Who Should Use an <span class="gradient-text">AI Chatbot</span> Like SiteWhizz?
@@ -1852,7 +2342,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ================= DATA PRIVACY SECTION ================= -->
 <section class="section section-py bg-white">
   <div class="section-container">
-    <div class="max-w-4xl mx-auto">
+    <div class="max-w-4xl mx-auto reveal">
       <div class="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
         <div>
           <span class="badge bg-primary-50 mb-4 border" style="color: #1d4ed8; border-color: #dbeafe;">SECURITY & PRIVACY</span>
@@ -1903,7 +2393,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ================= FAQ SECTION ================= -->
 <section id="faq" class="py-16 md:py-24 bg-gray-50">
   <div class="max-w-6xl mx-auto px-4 md:px-6">
-    <div class="text-center mb-12 md:mb-16">
+    <div class="text-center mb-12 md:mb-16 reveal">
       <span class="inline-block bg-primary-50 px-4 py-2 rounded-full text-sm font-semibold mb-4 border border-primary-100" style="color: #1d4ed8;">FAQ</span>
       <h2 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
         Frequently Asked Questions About <span style="color: #1d4ed8;">AI Chatbots</span>
@@ -2182,9 +2672,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ================= GET STARTED CTA ================= -->
-<section id="get-started" class="cta-section">
-  <div class="bg-decoration animate-float hidden md:block" style="top: 2.5rem; left: 2.5rem; width: 18rem; height: 18rem; background: rgba(255, 255, 255, 0.1);"></div>
-  <div class="bg-decoration animate-float hidden md:block" style="bottom: 2.5rem; right: 2.5rem; width: 24rem; height: 24rem; background: rgba(59, 130, 246, 0.2); animation-delay: 3s;"></div>
+<section id="get-started" class="cta-section" style="background: linear-gradient(135deg, #1d4ed8 0%, #4338ca 40%, #6d28d9 100%); position: relative;">
+  <!-- Top Wave -->
+  <div class="wave-divider wave-divider-top">
+    <svg viewBox="0 0 1440 54" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0 32L60 37.3C120 43 240 53.3 360 53.3C480 53.3 600 43 720 32C840 21 960 10 1080 10C1200 10 1320 21 1380 26.3L1440 32V0H1380C1320 0 1200 0 1080 0C960 0 840 0 720 0C600 0 480 0 360 0C240 0 120 0 60 0H0V32Z" fill="#f8fafc"/>
+    </svg>
+  </div>
+  <div class="bg-decoration animate-float hidden md:block" style="top: 2.5rem; left: 2.5rem; width: 18rem; height: 18rem; background: rgba(255, 255, 255, 0.08);"></div>
+  <div class="bg-decoration animate-float hidden md:block" style="bottom: 2.5rem; right: 2.5rem; width: 24rem; height: 24rem; background: rgba(139, 92, 246, 0.15); animation-delay: 3s;"></div>
 
   <div class="cta-container px-4 md:px-6">
     <div class="badge inline-flex items-center gap-2 bg-white px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-semibold mb-6 md:mb-8 shadow-xl" style="color: #1d4ed8;">
@@ -2240,7 +2736,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- ================= FOOTER ================= -->
-<footer class="bg-gradient-to-b from-gray-50 to-gray-100 text-gray-700 py-10 md:py-16 border-t border-gray-200">
+<footer class="bg-gradient-to-b from-gray-900 to-gray-950 text-gray-300 py-10 md:py-16">
   <div class="max-w-7xl mx-auto px-4 md:px-6">
     <!-- Main Footer Grid -->
     <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
@@ -2248,19 +2744,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="col-span-2 md:col-span-3 lg:col-span-2">
         <a href="index.html" class="logo mb-4">
           <div class="logo-icon" data-logo></div>
-          <span class="text-xl font-bold"><span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span></span>
+          <span class="text-xl font-bold"><span class="text-white">Site</span><span style="color: #60a5fa;">Whizz</span></span>
         </a>
-        <p class="text-sm leading-relaxed mt-4 text-gray-600 max-w-sm">
+        <p class="text-sm leading-relaxed mt-4 text-gray-400 max-w-sm">
           AI chatbot trained on your website content to automate customer support. Visitors get instant, accurate answers 24/7. No coding required.
         </p>
         <div class="flex gap-4 mt-6">
-          <a href="#" aria-label="Twitter" class="text-gray-400 transition-colors hover:text-primary-600">
+          <a href="#" aria-label="Twitter" class="text-gray-500 transition-colors hover:text-blue-400">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
           </a>
-          <a href="#" aria-label="LinkedIn" class="text-gray-400 transition-colors hover:text-primary-600">
+          <a href="#" aria-label="LinkedIn" class="text-gray-500 transition-colors hover:text-blue-400">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg>
           </a>
-          <a href="#" aria-label="GitHub" class="text-gray-400 transition-colors hover:text-primary-600">
+          <a href="#" aria-label="GitHub" class="text-gray-500 transition-colors hover:text-blue-400">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path></svg>
           </a>
         </div>
@@ -2268,59 +2764,59 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- Product -->
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Product</h4>
+        <h4 class="text-white font-semibold mb-4">Product</h4>
         <ul class="space-y-2">
-          <li><a href="features/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">Features</a></li>
-          <li><a href="agencies/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">For Agencies</a></li>
-          <li><a href="pricing/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">Pricing</a></li>
-          <li><a href="use-cases/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">Use Cases</a></li>
-          <li><a href="security/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">Security</a></li>
-          <li><a href="https://app.sitewhizz.io/" class="text-gray-600 transition-colors text-sm hover:text-primary-600">Get Started</a></li>
+          <li><a href="features/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Features</a></li>
+          <li><a href="agencies/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">For Agencies</a></li>
+          <li><a href="pricing/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Pricing</a></li>
+          <li><a href="use-cases/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Use Cases</a></li>
+          <li><a href="security/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Security</a></li>
+          <li><a href="https://app.sitewhizz.io/" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Get Started</a></li>
         </ul>
       </div>
 
       <!-- Resources -->
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Resources</h4>
+        <h4 class="text-white font-semibold mb-4">Resources</h4>
         <ul class="space-y-2">
-          <li><a href="docs/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">Documentation</a></li>
-          <li><a href="blog/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">Blog</a></li>
-          <li><a href="free-tools/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">Free Tools</a></li>
-          <li><a href="#faq" class="text-gray-600 transition-colors text-sm hover:text-primary-600">FAQ</a></li>
-          <li><a href="contact/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">Support</a></li>
+          <li><a href="docs/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Documentation</a></li>
+          <li><a href="blog/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Blog</a></li>
+          <li><a href="free-tools/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Free Tools</a></li>
+          <li><a href="#faq" class="text-gray-400 transition-colors text-sm hover:text-blue-400">FAQ</a></li>
+          <li><a href="contact/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Support</a></li>
         </ul>
       </div>
 
       <!-- Company -->
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Company</h4>
+        <h4 class="text-white font-semibold mb-4">Company</h4>
         <ul class="space-y-2">
-          <li><a href="about/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">About Us</a></li>
-          <li><a href="careers/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">Careers</a></li>
-          <li><a href="contact/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">Contact</a></li>
+          <li><a href="about/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">About Us</a></li>
+          <li><a href="careers/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Careers</a></li>
+          <li><a href="contact/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Contact</a></li>
         </ul>
       </div>
 
       <!-- Legal -->
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Legal</h4>
+        <h4 class="text-white font-semibold mb-4">Legal</h4>
         <ul class="space-y-2">
-          <li><a href="privacy/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">Privacy Policy</a></li>
-          <li><a href="terms/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">Terms of Service</a></li>
-          <li><a href="security/index.html" class="text-gray-600 transition-colors text-sm hover:text-primary-600">Security</a></li>
+          <li><a href="privacy/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Privacy Policy</a></li>
+          <li><a href="terms/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Terms of Service</a></li>
+          <li><a href="security/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Security</a></li>
         </ul>
       </div>
     </div>
 
     <!-- Bottom Bar -->
-    <div class="pt-8 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-sm text-gray-600">© 2026 <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span>. All rights reserved.</p>
+    <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-gray-500">&copy; 2026 <span class="text-white">Site</span><span style="color: #60a5fa;">Whizz</span>. All rights reserved.</p>
       <div class="flex flex-wrap justify-center gap-4 text-sm text-gray-500">
-        <a href="privacy/index.html" class="hover:text-primary-600 transition-colors">Privacy</a>
+        <a href="privacy/index.html" class="hover:text-blue-400 transition-colors">Privacy</a>
         <span>·</span>
-        <a href="terms/index.html" class="hover:text-primary-600 transition-colors">Terms</a>
+        <a href="terms/index.html" class="hover:text-blue-400 transition-colors">Terms</a>
         <span>·</span>
-        <a href="security/index.html" class="hover:text-primary-600 transition-colors">Security</a>
+        <a href="security/index.html" class="hover:text-blue-400 transition-colors">Security</a>
       </div>
     </div>
   </div>
@@ -2390,6 +2886,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       icon.style.transform = answer.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
     });
   });
+
+  // ==================== SCROLL REVEAL ====================
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+  });
+
+  document.querySelectorAll('.reveal').forEach(el => {
+    revealObserver.observe(el);
+  });
+
+  // ==================== NAVBAR SCROLL EFFECT ====================
+  let lastScroll = 0;
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    const currentScroll = window.pageYOffset;
+    if (currentScroll > 100) {
+      navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.08)';
+    } else {
+      navbar.style.boxShadow = 'var(--shadow-sm)';
+    }
+    lastScroll = currentScroll;
+  }, { passive: true });
 
 </script>
 
