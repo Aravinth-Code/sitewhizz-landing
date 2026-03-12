@@ -47,7 +47,7 @@ if (document.readyState === 'loading') {
   var s = document.createElement('script');
   s.src = 'https://app.sitewhizz.io/widget/widget.js';
   s.onload = function() {
-    sw('init', { agentId: '1fea8360-ebe8-4735-8be5-9b53aa0a4038' });
+    sw('init', { agentId: '01ff249e-1509-4f30-a0b6-45c71fcb0cdf' });
   };
   document.body.appendChild(s);
 })();
