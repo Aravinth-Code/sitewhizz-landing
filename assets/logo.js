@@ -40,3 +40,14 @@ if (document.readyState === 'loading') {
 } else {
   initSitewhizzLogo();
 }
+
+// SiteWhizz Chat Widget
+(function() {
+  window.SITEWHIZZ_API_URL = 'https://app.sitewhizz.io';
+  var s = document.createElement('script');
+  s.src = 'https://app.sitewhizz.io/widget/widget.js';
+  s.onload = function() {
+    sw('init', { agentId: '1fea8360-ebe8-4735-8be5-9b53aa0a4038' });
+  };
+  document.body.appendChild(s);
+})();
