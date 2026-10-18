@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://sitewhizz.io/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -12,102 +12,122 @@
   </url>
   <url>
     <loc>https://sitewhizz.io/features/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://sitewhizz.io/pricing/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://sitewhizz.io/about/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <loc>https://sitewhizz.io/use-cases/</loc>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sitewhizz.io/contact/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <loc>https://sitewhizz.io/agencies/</loc>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sitewhizz.io/security/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://sitewhizz.io/privacy/</loc>
+    <loc>https://sitewhizz.io/free-tools/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sitewhizz.io/about/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sitewhizz.io/contact/</loc>
     <lastmod>2026-02-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sitewhizz.io/careers/</loc>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://sitewhizz.io/privacy/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sitewhizz.io/terms/</loc>
     <lastmod>2026-02-18</lastmod>
-    <priority>0.5</priority>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://sitewhizz.io/blog/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <priority>0.9</priority>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://sitewhizz.io/blog/what-are-ai-agents/</loc>
-    <lastmod>2026-02-18</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sitewhizz.io/blog/top-5-ai-agents-customer-support/</loc>
-    <lastmod>2026-02-18</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sitewhizz.io/blog/what-do-ai-support-agents-do/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sitewhizz.io/blog/7-types-of-ai-agents/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sitewhizz.io/blog/ai-chatbot-user-intent/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <loc>https://sitewhizz.io/blog/what-do-ai-support-agents-do/</loc>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sitewhizz.io/blog/ai-chatbot-for-saas-websites/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <loc>https://sitewhizz.io/blog/top-5-ai-agents-customer-support/</loc>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sitewhizz.io/blog/nlp-in-ai-chatbots/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sitewhizz.io/blog/ai-chatbot-roi-calculator/</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://sitewhizz.io/blog/ai-chatbot-user-intent/</loc>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://sitewhizz.io/blog/support-cost-calculator/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sitewhizz.io/blog/support-staffing-calculator/</loc>
-    <lastmod>2026-03-04</lastmod>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sitewhizz.io/blog/time-to-resolution-estimator/</loc>
-    <lastmod>2026-03-04</lastmod>
+    <loc>https://sitewhizz.io/blog/ai-chatbot-for-saas-websites/</loc>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://sitewhizz.io/blog/customer-support-economics-guide/</loc>
-    <lastmod>2026-03-04</lastmod>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sitewhizz.io/blog/ai-chatbot-roi-calculator/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sitewhizz.io/blog/support-cost-calculator/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sitewhizz.io/blog/support-staffing-calculator/</loc>
+    <lastmod>2026-10-18</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sitewhizz.io/blog/time-to-resolution-estimator/</loc>
+    <lastmod>2026-10-18</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>

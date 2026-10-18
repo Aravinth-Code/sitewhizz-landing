@@ -101,7 +101,10 @@ Transitions: --transition-fast (150ms), --transition-base (300ms)
 - **Page Structure**: Each page is a standalone `index.html` in its own directory for clean URLs
 - **No Build Process**: Tailwind loaded via CDN; no npm/webpack/vite
 - **SEO**: Every page should have proper meta tags, `robots.txt` and `sitemap.xml` are maintained at root
+- **Links**: Use page-relative links to `index.html` (`../pricing/index.html`, `../../blog/index.html`), never root-relative `/pricing/`, which breaks when files are opened directly or the site is served from a subfolder. Every page needs `<link rel="canonical" href="https://sitewhizz.io/{path}/">` and the shared `og:image` (`/assets/og-image.png`)
+- **New pages**: Add them to `sitemap.xml`; link at least one existing page to them. Blog posts get a `BlogPosting` + `BreadcrumbList` JSON-LD block and a "Related reading" section linking to their cluster hub
+- **Claims**: Only publish numbers, certifications and features that are true today (no placeholder stats, ratings or compliance badges)
 - **Responsive**: Mobile-first design using Tailwind breakpoint utilities
 - **Consistent Design**: Follow the CSS variable theme; do not use hardcoded color values
-- **Navigation**: Shared navbar pattern across all pages (copy from `index.html`)
+- **Navigation**: Shared navbar across all pages: For Tax E-File, Features, Pricing, Blog, Get Started Free (copy from `index.html`). The tax page keeps its own in-page anchors
 - **Footer**: Shared footer pattern across all pages
