@@ -11,7 +11,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="google-site-verification" content="Dx1Ne2Fr87vmX2nSDAEJdHoXfL7nTTA5_Lfpt3CWkHk" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Simple, transparent pricing for SiteWhizz AI chatbot. Free AI chatbot plan available, or Starter at $29/month. No credit card required to start." />
+  <meta name="description" content="One simple plan for the SiteWhizz AI chatbot: $39/month, or $29/month billed yearly (save 25%). Start with a 14-day free trial, no credit card required." />
   <link rel="canonical" href="https://sitewhizz.io/pricing/" />
 
   <!-- Social sharing -->
@@ -20,18 +20,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:image:height" content="630" />
   <meta name="twitter:image" content="https://sitewhizz.io/assets/og-image.png" />
   <meta name="keywords" content="AI chatbot, free AI chatbot, AI chatbot for customer support, chatbot pricing, AI chatbot pricing plans" />
-  <title>AI Chatbot Pricing | Free AI Chatbot to Start | SiteWhizz</title>
+  <title>AI Chatbot Pricing | 14-Day Free Trial | SiteWhizz</title>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="AI Chatbot Pricing | Free AI Chatbot to Start | SiteWhizz" />
-  <meta property="og:description" content="Simple, transparent pricing for SiteWhizz AI chatbot. Free plan available, Starter at $29/month." />
+  <meta property="og:title" content="AI Chatbot Pricing | 14-Day Free Trial | SiteWhizz" />
+  <meta property="og:description" content="$39/month, or $29/month billed yearly (save 25%). 14-day free trial, no credit card required." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sitewhizz.io/pricing/" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AI Chatbot Pricing | Free AI Chatbot to Start | SiteWhizz" />
-  <meta name="twitter:description" content="Simple, transparent pricing for SiteWhizz AI chatbot. Free plan available, Starter at $29/month." />
+  <meta name="twitter:title" content="AI Chatbot Pricing | 14-Day Free Trial | SiteWhizz" />
+  <meta name="twitter:description" content="$39/month, or $29/month billed yearly (save 25%). 14-day free trial, no credit card required." />
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -485,10 +485,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     /* Tier accent colors */
-    .pricing-card.tier-free::before {
-      background: var(--gray-400);
-    }
-
     .pricing-card.tier-starter::before {
       background: #1d4ed8;
     }
@@ -552,10 +548,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-bottom: 0.75rem;
     }
 
-    .tier-free .pricing-card-icon {
-      background: var(--gray-100);
-    }
-
     .tier-starter .pricing-card-icon {
       background: var(--primary-50);
     }
@@ -616,7 +608,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-top: 0.125rem;
     }
 
-    .tier-free .pricing-card-features li svg { color: var(--gray-500); }
     .tier-starter .pricing-card-features li svg { color: #1d4ed8; }
     .tier-growth .pricing-card-features li svg { color: #6d28d9; }
     .tier-pro .pricing-card-features li svg { color: #db2777; }
@@ -692,43 +683,146 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       filter: brightness(1.1);
     }
 
-    /* Free Tier Strip */
-    .free-strip {
-      background: linear-gradient(135deg, var(--primary-50) 0%, white 100%);
-      border: 1px solid var(--primary-200);
-      border-radius: var(--radius-2xl);
-      padding: 1.5rem 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem 2rem;
-      margin-top: 3rem;
+    /* Billing toggle */
+    .billing-toggle {
+      display: inline-flex;
+      gap: 0.25rem;
+      padding: 0.3rem;
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-full);
     }
 
-    .free-strip-badge {
+    .billing-option {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.25rem;
+      border: 0;
+      border-radius: var(--radius-full);
+      background: transparent;
+      color: var(--gray-600);
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all var(--transition-base);
+    }
+
+    .billing-option.active {
+      background: white;
+      color: var(--gray-900);
+      box-shadow: var(--shadow-md);
+    }
+
+    .billing-option:focus-visible {
+      outline: 2px solid #1d4ed8;
+      outline-offset: 2px;
+    }
+
+    .billing-save {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: #047857;
+      background: #d1fae5;
+      padding: 0.15rem 0.5rem;
+      border-radius: var(--radius-full);
+    }
+
+    /* Single plan card */
+    .plan-layout {
+      max-width: 34rem;
+      margin: 0 auto;
+    }
+
+    .plan-price {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .plan-price-old {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--gray-400);
+      text-decoration: line-through;
+    }
+
+    .plan-price-amount {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: var(--gray-900);
+      line-height: 1;
+    }
+
+    .plan-price-period {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--gray-500);
+    }
+
+    .trial-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: var(--radius-full);
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #047857;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    @media (max-width: 639px) {
+      .trial-pill {
+        font-size: 0.8rem;
+        white-space: nowrap;
+      }
+    }
+
+    .trial-pill svg {
+      width: 1rem;
+      height: 1rem;
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 640px) {
+      .plan-features {
+        columns: 2;
+        column-gap: 1.5rem;
+      }
+
+      .plan-features li {
+        break-inside: avoid;
+      }
+    }
+
+    /* How the trial works */
+    .trial-steps {
+      max-width: 64rem;
+      margin: 4rem auto 0;
+    }
+
+    .trial-step {
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-2xl);
+      padding: 1.5rem;
+    }
+
+    .trial-step-num {
+      width: 2rem;
+      height: 2rem;
+      border-radius: var(--radius-full);
       background: #1d4ed8;
       color: white;
-      padding: 0.375rem 0.875rem;
-      border-radius: var(--radius-full);
-      font-size: 1rem;
-      font-weight: 700;
-    }
-
-    .free-strip-features {
-      display: flex;
-      flex-wrap: wrap;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 0.5rem 1.5rem;
-      color: var(--gray-600);
-      font-size: 1rem;
-    }
-
-    .free-strip-features span {
-      display: flex;
-      align-items: center;
-      gap: 0.375rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
     }
 
     /* Credit Info Section */
@@ -825,7 +919,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="../features/index.html" class="navbar-link">Features</a>
       <a href="index.html" class="navbar-link active">Pricing</a>
       <a href="../blog/index.html" class="navbar-link">Blog</a>
-      <a href="https://app.sitewhizz.io/" class="navbar-cta">Get Started Free</a>
+      <a href="https://app.sitewhizz.io/" class="navbar-cta">Start Free Trial</a>
     </div>
   </div>
 </nav>
@@ -838,166 +932,126 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="hero-container">
     <div class="inline-flex items-center gap-2 bg-blue-50 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-semibold mb-6 md:mb-8 animate-fade-in-up" style="color: #1d4ed8; border: 1px solid #dbeafe;">
       <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: #1d4ed8;"></span>
-      <span>Simple, Transparent Pricing</span>
+      <span>14-day free trial &middot; No credit card required</span>
     </div>
 
     <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight animate-fade-in-up delay-100">
-      Simple Pricing, <span class="gradient-text">Scale as You Grow</span>
+      One Plan. <span class="gradient-text">Everything Included.</span>
     </h1>
 
     <p class="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto mb-8 md:mb-10 leading-relaxed animate-fade-in-up delay-200 px-4 md:px-0">
-      Start free, then upgrade to Starter at $29/month when you need more messages, lead collection and human handoff.
+      Try every feature free for 14 days. Then keep your chatbot live for $39/month, or $29/month when you pay yearly.
     </p>
   </div>
 </section>
 
 <!-- ================= PRICING SECTION ================= -->
-<section class="py-8 md:py-16 bg-white">
+<section class="pt-0 pb-8 md:pb-16 bg-white">
   <div class="max-w-7xl mx-auto px-4 md:px-6">
 
-      <!-- Business Pricing Grid -->
-      <div id="businessPricing" class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+    <!-- Billing period toggle (yearly selected by default) -->
+    <div class="flex justify-center mb-10">
+      <div class="billing-toggle" role="group" aria-label="Billing period">
+        <button type="button" class="billing-option" data-billing="monthly" aria-pressed="false">Monthly</button>
+        <button type="button" class="billing-option active" data-billing="yearly" aria-pressed="true">
+          Yearly <span class="billing-save">Save 25%</span>
+        </button>
+      </div>
+    </div>
 
-        <!-- Free Plan -->
-        <div class="pricing-card tier-free">
-          <div class="pricing-card-header">
-            <div class="pricing-card-icon">🎯</div>
-            <div class="pricing-card-name">Free</div>
-            <div class="text-sm text-gray-500 mb-3">
-              For trying out your first AI chatbot
-            </div>
-
-            <div class="pricing-card-price">
-              $<span class="price-value">0</span><span> / month</span>
-            </div>
-
-            <div class="text-sm text-gray-500 mt-1 billing-note">
-              free forever
-            </div>
-
-            <div class="text-sm text-green-600 font-medium mt-2">
-              No credit card required
-            </div>
+    <div class="plan-layout">
+      <div class="pricing-card tier-starter popular">
+        <div class="pricing-card-header">
+          <div class="pricing-card-icon">&#x1F680;</div>
+          <div class="pricing-card-name">Starter</div>
+          <div class="text-sm text-gray-500 mb-4">
+            Everything you need to automate support on your website
           </div>
 
-          <ul class="pricing-card-features">
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <strong>1 chatbot</strong>
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <strong>500 messages/mo</strong>
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <strong>20 content source pages</strong>
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              Basic chat customization
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              Manual content refresh
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              7-day conversation history
-            </li>
-          </ul>
+          <div class="plan-price">
+            <span class="plan-price-old" data-yearly-only>$39</span>
+            <span class="plan-price-amount">$<span data-price>29</span></span>
+            <span class="plan-price-period">/ month</span>
+          </div>
+          <div class="text-sm text-gray-500 mt-2" data-billing-note>Billed $348 yearly &middot; you save $120</div>
 
-          <a href="https://app.sitewhizz.io/" class="pricing-card-btn pricing-card-btn-secondary">
-            Get Started Free
-          </a>
+          <div class="trial-pill">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Free for 14 days &middot; No credit card needed
+          </div>
         </div>
 
-        <!-- Starter Plan -->
-        <div class="pricing-card tier-starter">
-          <div class="pricing-card-header">
-            <div class="pricing-card-icon">🚀</div>
-            <div class="pricing-card-name">Starter</div>
-            <div class="text-sm text-gray-500 mb-3">
-              For founders starting strong with AI chatbots
-            </div>
+        <ul class="pricing-card-features plan-features">
+          <li>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <strong>1 AI chatbot</strong>
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <strong>2,000 messages/mo</strong>
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            <strong>50 content source pages</strong>
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Your colors and welcome message
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Lead collection
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Human handoff (unlimited)
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            30-day conversation history
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Content refresh from your dashboard
+          </li>
+          <li>
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+            Email support
+          </li>
+        </ul>
 
-            <div class="pricing-card-price">
-              $<span class="price-value">29</span><span> / month</span>
-            </div>
+        <a href="https://app.sitewhizz.io/" class="pricing-card-btn pricing-card-btn-primary">
+          Start 14-day free trial
+        </a>
+        <p class="text-xs text-gray-500 text-center mt-3">No charge during your trial. Cancel anytime.</p>
+      </div>
+    </div>
 
-            <div class="text-sm text-gray-500 mt-1 billing-note">
-              billed monthly
-            </div>
-
-            <div class="text-sm text-green-600 font-medium mt-2">
-              Cancel anytime
-            </div>
-          </div>
-
-          <ul class="pricing-card-features">
-            <li class="tier-label">
-              <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
-              Everything in Free, plus:
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <strong>2,000 messages/mo</strong>
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              <strong>50 content source pages</strong>
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              Lead collection
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              Human handoff (unlimited)
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              30-day conversation history
-            </li>
-            <li>
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              Email support
-            </li>
-          </ul>
-
-          <a href="https://app.sitewhizz.io/" class="pricing-card-btn pricing-card-btn-secondary">
-            Choose Starter
-          </a>
+    <!-- How the free trial works -->
+    <div class="trial-steps">
+      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-8">How the free trial works</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="trial-step">
+          <div class="trial-step-num">1</div>
+          <h3 class="font-semibold text-gray-900 mb-1">Sign up in seconds</h3>
+          <p class="text-sm text-gray-600">Continue with your email or Google. No credit card needed.</p>
+        </div>
+        <div class="trial-step">
+          <div class="trial-step-num">2</div>
+          <h3 class="font-semibold text-gray-900 mb-1">Build and test for 14 days</h3>
+          <p class="text-sm text-gray-600">Train your chatbot on your website and docs, test its answers, and add it to your site.</p>
+        </div>
+        <div class="trial-step">
+          <div class="trial-step-num">3</div>
+          <h3 class="font-semibold text-gray-900 mb-1">Keep it live</h3>
+          <p class="text-sm text-gray-600">Choose monthly ($39) or yearly ($29/month) when your trial ends. If you don't, your chatbot pauses and you're never charged.</p>
         </div>
       </div>
+    </div>
 
     <!-- Trust Line -->
-    <div class="text-center mt-8 text-gray-500 text-sm">
-      <p>Free plan available. No credit card required to start. Cancel anytime.</p>
+    <div class="text-center mt-10 text-gray-500 text-sm">
+      <p>14-day free trial &middot; No credit card required &middot; Cancel anytime</p>
     </div>
 
   </div>
@@ -1022,27 +1076,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div class="hidden px-6 pb-4 text-gray-600">
-          <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> has two plans: Free, with 1 chatbot and 500 messages a month, and Starter at $29/month, with 2,000 messages a month, lead collection and unlimited human handoff.
+          <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> has one plan, Starter: $39/month billed monthly, or $29/month billed yearly ($348 a year, a 25% saving). It includes 2,000 messages a month, 50 content source pages, lead collection and unlimited human handoff. Every account starts with a 14-day free trial.
         </div>
       </div>
 
       <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
         <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').style.transform = this.nextElementSibling.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)'">
-          <span>Is there a free AI chatbot plan?</span>
+          <span>How does the 14-day free trial work?</span>
           <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div class="hidden px-6 pb-4 text-gray-600">
-          Yes! <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> has a free AI chatbot plan you can use forever. No credit card is required to start.
+          Sign up with your email or Google and you get every feature free for 14 days. No credit card is required. When the trial ends, choose monthly or yearly billing to keep your chatbot live. If you don't, your chatbot simply pauses and you're never charged.
         </div>
       </div>
 
       <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
         <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').style.transform = this.nextElementSibling.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)'">
-          <span>Can I upgrade or downgrade my plan?</span>
+          <span>Can I switch between monthly and yearly billing?</span>
           <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
         </button>
         <div class="hidden px-6 pb-4 text-gray-600">
-          Yes, you can change your AI chatbot plan at any time. When upgrading, you'll get immediate access to additional chatbot features and higher limits. When downgrading, the change takes effect at your next billing cycle. Prorated credits are applied automatically.
+          Yes. You can switch from monthly to yearly at any time to start saving 25%, and the change applies from your next billing date. You can also cancel anytime from your dashboard.
         </div>
       </div>
 
@@ -1069,11 +1123,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       Ready to Deploy Your AI Chatbot?
     </h2>
     <p class="text-lg md:text-xl opacity-90 mb-6 md:mb-8 max-w-2xl mx-auto">
-      Start free with 500 messages a month, then move to Starter when you need more. No credit card required.
+      Try every feature free for 14 days. No credit card required.
     </p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <a href="https://app.sitewhizz.io/" class="btn btn-primary" style="background: white; color: #1d4ed8;">
-        Build Your AI Chatbot
+        Start Free Trial
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
         </svg>
@@ -1168,6 +1222,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   });
 
+</script>
+
+<script>
+  // ==================== BILLING TOGGLE ====================
+  (function () {
+    var plans = {
+      monthly: { price: '39', note: 'Billed monthly &middot; cancel anytime' },
+      yearly: { price: '29', note: 'Billed $348 yearly &middot; you save $120' }
+    };
+    var buttons = document.querySelectorAll('.billing-option');
+
+    function setBilling(period) {
+      buttons.forEach(function (button) {
+        var selected = button.getAttribute('data-billing') === period;
+        button.classList.toggle('active', selected);
+        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
+      });
+      document.querySelectorAll('[data-price]').forEach(function (el) { el.textContent = plans[period].price; });
+      document.querySelectorAll('[data-billing-note]').forEach(function (el) { el.innerHTML = plans[period].note; });
+      document.querySelectorAll('[data-yearly-only]').forEach(function (el) { el.hidden = period !== 'yearly'; });
+    }
+
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () { setBilling(button.getAttribute('data-billing')); });
+    });
+  })();
 </script>
 
 <!-- Logo Component (Single Source of Truth) -->

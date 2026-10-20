@@ -103,8 +103,9 @@ Transitions: --transition-fast (150ms), --transition-base (300ms)
 - **SEO**: Every page should have proper meta tags, `robots.txt` and `sitemap.xml` are maintained at root
 - **Links**: Use page-relative links to `index.html` (`../pricing/index.html`, `../../blog/index.html`), never root-relative `/pricing/`, which breaks when files are opened directly or the site is served from a subfolder. Every page needs `<link rel="canonical" href="https://sitewhizz.io/{path}/">` and the shared `og:image` (`/assets/og-image.png`)
 - **New pages**: Add them to `sitemap.xml`; link at least one existing page to them. Blog posts get a `BlogPosting` + `BreadcrumbList` JSON-LD block and a "Related reading" section linking to their cluster hub
+- **Pricing**: One plan, Starter: $39/month billed monthly, or $29/month billed yearly ($348/year, "Save 25%"), with a 14-day free trial and no credit card. There is no free plan. Keep `pricing/index.html`, `tax-efile-chatbot/index.html`, the homepage (hero, chat mockup, FAQ + FAQ/SoftwareApplication JSON-LD) and the blog CTAs in sync when it changes
 - **Claims**: Only publish numbers, certifications and features that are true today (no placeholder stats, ratings or compliance badges)
 - **Responsive**: Mobile-first design using Tailwind breakpoint utilities
 - **Consistent Design**: Follow the CSS variable theme; do not use hardcoded color values
-- **Navigation**: Shared navbar across all pages: For Tax E-File, Features, Pricing, Blog, Get Started Free (copy from `index.html`). The tax page keeps its own in-page anchors
+- **Navigation**: Shared navbar across all pages: For Tax E-File, Features, Pricing, Blog, Start Free Trial (copy from `index.html`). The tax page keeps its own in-page anchors
 - **Footer**: Shared footer pattern across all pages
