@@ -5,26 +5,11 @@
  * Usage: Add <div class="logo-icon" data-logo></div> where you want the logo.
  */
 
-const sitewhizzLogo = `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M4 10 C4 6, 8 2, 14 2 L34 2 C40 2, 44 6, 44 10 L44 28 C44 32, 40 36, 34 36 L18 36 L10 44 L10 36 L14 36 C8 36, 4 32, 4 28 Z" fill="url(#logoGrad)"/>
-    <circle cx="40" cy="6" r="3" fill="#bfdbfe"/>
-    <circle cx="42" cy="10" r="1.5" fill="#dbeafe"/>
-    <ellipse cx="16" cy="18" rx="4" ry="4.5" fill="white"/>
-    <circle cx="17" cy="18" r="2" fill="#1e40af"/>
-    <circle cx="18" cy="17" r="1" fill="white"/>
-    <ellipse class="wink-eye" cx="32" cy="18" rx="4" ry="4.5" fill="white"/>
-    <circle class="wink-eye" cx="33" cy="18" r="2" fill="#1e40af"/>
-    <circle class="wink-eye" cx="34" cy="17" r="1" fill="white"/>
-    <path class="wink-line" d="M28 18 Q32 20, 36 18" stroke="#1e40af" stroke-width="2.5" stroke-linecap="round" fill="none"/>
-    <path d="M13 25 Q24 34, 35 25" stroke="white" stroke-width="3" stroke-linecap="round" fill="none"/>
-    <ellipse cx="10" cy="23" rx="3" ry="2" fill="#bfdbfe" opacity="0.6"/>
-    <ellipse cx="38" cy="23" rx="3" ry="2" fill="#bfdbfe" opacity="0.6"/>
-    <defs>
-      <linearGradient id="logoGrad" x1="4" y1="2" x2="44" y2="44" gradientUnits="userSpaceOnUse">
-        <stop stop-color="#1d4ed8"/>
-        <stop offset="1" stop-color="#1e40af"/>
-      </linearGradient>
-    </defs>
+const sitewhizzLogo = `<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="SiteWhizz">
+    <rect x="2" y="2" width="44" height="44" rx="11" fill="#1d4ed8"/>
+    <rect x="10" y="11" width="28" height="21" rx="6" fill="#ffffff"/>
+    <path d="M15 29.5 L15 38 L24 31 Z" fill="#ffffff"/>
+    <path d="M17.5 21.5 L22 26 L30.5 17" stroke="#1d4ed8" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/>
   </svg>`;
 
 // Inject logo into all elements with data-logo attribute
@@ -39,6 +24,23 @@ if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initSitewhizzLogo);
 } else {
   initSitewhizzLogo();
+}
+
+// Mobile menu: keep the toggle's aria-expanded in sync with the menu (WCAG 4.1.2)
+function syncSitewhizzMenuToggle() {
+  document.querySelectorAll('.navbar-toggle').forEach(btn => {
+    const menu = document.getElementById(btn.getAttribute('aria-controls') || 'mobileMenu');
+    if (!menu) return;
+    const sync = () => btn.setAttribute('aria-expanded', menu.classList.contains('active') ? 'true' : 'false');
+    btn.addEventListener('click', () => setTimeout(sync, 0));
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setTimeout(sync, 0)));
+    sync();
+  });
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', syncSitewhizzMenuToggle);
+} else {
+  syncSitewhizzMenuToggle();
 }
 
 // SiteWhizz Chat Widget

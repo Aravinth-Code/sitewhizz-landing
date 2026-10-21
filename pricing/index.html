@@ -11,7 +11,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="google-site-verification" content="Dx1Ne2Fr87vmX2nSDAEJdHoXfL7nTTA5_Lfpt3CWkHk" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="One simple plan for the SiteWhizz AI chatbot: $39/month, or $29/month billed yearly (save 25%). Start with a 14-day free trial, no credit card required." />
+  <meta name="description" content="One simple plan for the SiteWhizz AI agent: $39/month, or $29/month billed yearly (save 25%). Start with a 14-day free trial, no credit card required." />
   <link rel="canonical" href="https://sitewhizz.io/pricing/" />
 
   <!-- Social sharing -->
@@ -19,18 +19,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:image" content="https://sitewhizz.io/assets/og-image.png" />
-  <meta name="keywords" content="AI chatbot, free AI chatbot, AI chatbot for customer support, chatbot pricing, AI chatbot pricing plans" />
-  <title>AI Chatbot Pricing | 14-Day Free Trial | SiteWhizz</title>
+  <meta name="keywords" content="AI agent, free AI agent, AI agent for customer support, agent pricing, AI agent pricing plans" />
+  <title>AI Agent Pricing | 14-Day Free Trial | SiteWhizz</title>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="AI Chatbot Pricing | 14-Day Free Trial | SiteWhizz" />
+  <meta property="og:title" content="AI Agent Pricing | 14-Day Free Trial | SiteWhizz" />
   <meta property="og:description" content="$39/month, or $29/month billed yearly (save 25%). 14-day free trial, no credit card required." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sitewhizz.io/pricing/" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="AI Chatbot Pricing | 14-Day Free Trial | SiteWhizz" />
+  <meta name="twitter:title" content="AI Agent Pricing | 14-Day Free Trial | SiteWhizz" />
   <meta name="twitter:description" content="$39/month, or $29/month billed yearly (save 25%). 14-day free trial, no credit card required." />
 
   <!-- Favicon -->
@@ -80,7 +80,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
-    /* CSS Variables */
     :root {
       --primary-50: #eff6ff;
       --primary-100: #dbeafe;
@@ -92,7 +91,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       --primary-700: #1d4ed8;
       --primary-800: #1e40af;
       --primary-900: #1e3a8a;
-
       --gray-50: #f8fafc;
       --gray-100: #f1f5f9;
       --gray-200: #e2e8f0;
@@ -103,88 +101,74 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       --gray-700: #334155;
       --gray-800: #1e293b;
       --gray-900: #0f172a;
-
-      --spacing-xs: 0.5rem;
-      --spacing-sm: 1rem;
-      --spacing-md: 1.5rem;
-      --spacing-lg: 2rem;
-      --spacing-xl: 3rem;
-      --spacing-2xl: 4rem;
-      --spacing-3xl: 6rem;
-
-      --text-sm: 0.875rem;
-      --text-base: 1rem;
-      --text-lg: 1.125rem;
-      --text-xl: 1.25rem;
-      --text-2xl: 1.5rem;
-      --text-3xl: 1.875rem;
-
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
       --radius-lg: 0.75rem;
       --radius-xl: 1rem;
       --radius-2xl: 1.5rem;
-      --radius-3xl: 2rem;
       --radius-full: 9999px;
-
       --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.04);
-      --shadow-md: 0 4px 6px -1px rgb(15 23 42 / 0.08), 0 2px 4px -1px rgb(15 23 42 / 0.03);
       --shadow-lg: 0 10px 15px -3px rgb(15 23 42 / 0.10), 0 4px 6px -2px rgb(15 23 42 / 0.05);
       --shadow-xl: 0 20px 25px -5px rgb(15 23 42 / 0.12), 0 10px 10px -5px rgb(15 23 42 / 0.04);
-      --shadow-2xl: 0 25px 50px -12px rgb(15 23 42 / 0.18);
-      --shadow-blue: 0 8px 24px -4px rgba(14, 165, 233, 0.15);
-
+      --shadow-2xl: 0 25px 50px -12px rgb(15 23 42 / 0.25);
+      --shadow-blue: 0 8px 24px -4px rgba(29, 78, 216, 0.25);
+      --gradient-primary: #1d4ed8;
+      --gradient-cta: #0f1e3d;
       --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
       --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Global Styles */
     html, body {
       scroll-behavior: smooth;
       overflow-x: hidden;
       max-width: 100vw;
     }
 
-    @media (max-width: 768px) {
-      html {
-        scroll-padding-top: 80px;
-      }
-    }
+    body { background: white; }
 
-    /* Animations */
+    section[id] { scroll-margin-top: 80px; }
+
+    /* ================= ANIMATIONS ================= */
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-20px); }
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes pulse-slow {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
+      50% { opacity: 0.6; }
     }
 
-    .animate-float {
-      animation: float 6s ease-in-out infinite;
+    @keyframes typing {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-4px); opacity: 1; }
     }
 
-    .animate-fade-in-up {
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .animate-fade-in-up { opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
     .delay-100 { animation-delay: 0.1s; }
     .delay-200 { animation-delay: 0.2s; }
     .delay-300 { animation-delay: 0.3s; }
     .delay-400 { animation-delay: 0.4s; }
 
-    /* Background Decorations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-float, .animate-fade-in-up { animation: none; opacity: 1; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
     .bg-decoration {
       position: absolute;
       border-radius: var(--radius-full);
@@ -193,90 +177,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       pointer-events: none;
     }
 
-    .bg-decoration-primary {
-      background: var(--primary-50);
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-weight: 700;
-      border-radius: var(--radius-xl);
-      transition: all var(--transition-base);
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: #1d4ed8;
-      color: white;
-      padding: 0.875rem 1.5rem;
-      font-size: 1rem;
-      box-shadow: var(--shadow-lg);
-    }
-
-    @media (min-width: 640px) {
-      .btn-primary {
-        padding: 1.25rem 2.5rem;
-        font-size: var(--text-lg);
-      }
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-800);
-      box-shadow: var(--shadow-xl);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      border: 2px solid var(--gray-300);
-      color: var(--gray-700);
-      padding: 0.875rem 1.5rem;
-      font-size: 1rem;
-    }
-
-    @media (min-width: 640px) {
-      .btn-secondary {
-        padding: 1.25rem 2.5rem;
-        font-size: var(--text-lg);
-      }
-    }
-
-    .btn-secondary:hover {
-      background: var(--gray-50);
-    }
-
-    .btn-outline-white {
-      border: 2px solid rgba(255, 255, 255, 0.5);
-      color: white;
-      padding: 0.875rem 1.5rem;
-      font-size: 1rem;
-    }
-
-    @media (min-width: 640px) {
-      .btn-outline-white {
-        padding: 1.25rem 2.5rem;
-        font-size: var(--text-lg);
-      }
-    }
-
-    .btn-outline-white:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: white;
-    }
-
-    /* Gradient Text */
     .gradient-text {
-      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+      background: var(--gradient-primary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    /* Logo Component */
+    /* ================= LOGO ================= */
     .logo {
       display: inline-flex;
       align-items: center;
@@ -291,28 +199,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transition: transform var(--transition-base);
     }
 
-    .logo:hover .logo-icon {
-      transform: scale(1.1);
-    }
+    .logo:hover .logo-icon { transform: scale(1.1); }
+    .logo-icon svg { width: 100%; height: 100%; }
 
-    .logo-icon svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Agent winking animation */
     .logo-icon .wink-eye {
       transform-origin: center;
       animation: winkEye 4s ease-in-out infinite;
     }
 
     @keyframes winkEye {
-      0%, 40%, 60%, 100% {
-        transform: scaleY(1);
-      }
-      48%, 52% {
-        transform: scaleY(0.1);
-      }
+      0%, 40%, 60%, 100% { transform: scaleY(1); }
+      48%, 52% { transform: scaleY(0.1); }
     }
 
     .logo-icon .wink-line {
@@ -321,15 +218,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     @keyframes winkLine {
-      0%, 40%, 60%, 100% {
-        opacity: 0;
-      }
-      48%, 52% {
-        opacity: 1;
-      }
+      0%, 40%, 60%, 100% { opacity: 0; }
+      48%, 52% { opacity: 1; }
     }
 
-    /* Navigation */
+    /* ================= NAVBAR ================= */
     .navbar {
       position: fixed;
       top: 0;
@@ -341,15 +234,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--gray-200);
       box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition-base);
     }
 
     .navbar-container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: 1rem 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+
+    @media (min-width: 768px) {
+      .navbar-container { padding: 1rem 1.5rem; }
     }
 
     .navbar-menu {
@@ -365,16 +263,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transition: color var(--transition-fast);
     }
 
-    .navbar-link:hover {
-      color: var(--primary-600);
-    }
-
-    .navbar-link.active {
-      color: var(--primary-600);
-    }
+    .navbar-link:hover { color: var(--primary-600); }
 
     .navbar-cta {
-      background: #1d4ed8;
+      background: var(--primary-600);
       color: white;
       padding: 0.625rem 1.5rem;
       border-radius: var(--radius-lg);
@@ -385,7 +277,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     .navbar-cta:hover {
-      background: var(--primary-700);
+      background: var(--primary-800);
       box-shadow: var(--shadow-blue);
       transform: translateY(-1px);
     }
@@ -408,10 +300,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     @media (max-width: 768px) {
-      .navbar-toggle {
-        display: flex;
-      }
-
+      .navbar-toggle { display: flex; }
       .navbar-menu {
         display: none;
         position: absolute;
@@ -424,834 +313,743 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         border-bottom: 1px solid var(--gray-200);
         box-shadow: var(--shadow-lg);
       }
-
-      .navbar-menu.active {
-        display: flex;
-      }
+      .navbar-menu.active { display: flex; }
     }
 
-    /* Hero Section */
+    /* ================= BUTTONS ================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      border-radius: var(--radius-xl);
+      transition: all var(--transition-base);
+      text-decoration: none;
+      cursor: pointer;
+      padding: 0.875rem 1.5rem;
+      font-size: 0.9375rem;
+    }
+
+    .btn-primary {
+      background: var(--primary-600);
+      color: white;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-800);
+      box-shadow: var(--shadow-blue);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--gray-900);
+      border: 1px solid var(--gray-300);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary-400);
+      color: var(--primary-700);
+      transform: translateY(-2px);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary-50);
+      border: 1px solid var(--primary-100);
+      color: var(--primary-700);
+      padding: 0.375rem 0.875rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
+      font-weight: 600;
+    }
+
+    .eyebrow {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary-600);
+    }
+
+    /* ================= HERO ================= */
     .hero {
       position: relative;
-      padding-top: 8rem;
+      padding-top: 7.5rem;
       padding-bottom: 4rem;
-      background: linear-gradient(180deg, var(--gray-50) 0%, white 100%);
+      background: var(--sw-surface-alt);
       overflow: hidden;
     }
 
     @media (min-width: 768px) {
-      .hero {
-        padding-top: 10rem;
-        padding-bottom: 5rem;
-      }
+      .hero { padding-top: 9rem; padding-bottom: 5rem; }
     }
 
-    .hero-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      text-align: center;
-    }
-
-    /* Pricing Cards */
-    .pricing-card {
+    /* ================= CHAT WINDOW (hero + demo) ================= */
+    .chat-window {
       background: white;
-      border-radius: var(--radius-2xl);
-      padding: 2rem;
       border: 1px solid var(--gray-200);
-      transition: all var(--transition-base);
-      height: 100%;
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-2xl);
+      overflow: hidden;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.875rem 1rem;
+      background: var(--gradient-primary);
+      color: white;
+    }
+
+    .chat-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .chat-name { font-weight: 700; font-size: 0.9375rem; line-height: 1.2; }
+
+    .chat-status {
+      font-size: 0.75rem;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    .chat-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: var(--radius-full);
+      background: #4ade80;
+    }
+
+    .chat-body {
+      padding: 1rem;
       display: flex;
       flex-direction: column;
-      position: relative;
-      overflow: hidden;
+      gap: 0.75rem;
+      background: var(--gray-50);
     }
 
-    .pricing-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--gray-300);
-      border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+    .chat-bubble {
+      max-width: 88%;
+      padding: 0.625rem 0.875rem;
+      border-radius: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.5;
     }
 
-    .pricing-card:hover {
+    .chat-bubble-bot {
+      align-self: flex-start;
+      background: white;
+      color: var(--gray-800);
+      border: 1px solid var(--gray-200);
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    .chat-bubble-user {
+      align-self: flex-end;
+      background: var(--primary-600);
+      color: white;
+      border-bottom-right-radius: 0.25rem;
+    }
+
+    .chat-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 0.5rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--primary-700);
+      background: var(--primary-50);
+      border-radius: var(--radius-full);
+      padding: 0.125rem 0.5rem;
+    }
+
+    .chat-system {
+      align-self: center;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--warning);
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: var(--radius-full);
+      padding: 0.25rem 0.75rem;
+    }
+
+    .chat-typing {
+      align-self: flex-start;
+      display: inline-flex;
+      gap: 4px;
+      padding: 0.75rem 0.875rem;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 1rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    .chat-typing span {
+      width: 6px;
+      height: 6px;
+      border-radius: var(--radius-full);
+      background: var(--gray-400);
+      animation: typing 1.2s infinite;
+    }
+    .chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+    .chat-typing span:nth-child(3) { animation-delay: 0.3s; }
+
+    .chat-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-top: 1px solid var(--gray-200);
+      background: white;
+    }
+
+    .chat-chip {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--primary-700);
+      background: var(--primary-50);
+      border: 1px solid var(--primary-200);
+      border-radius: var(--radius-full);
+      padding: 0.375rem 0.75rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      text-align: left;
+    }
+
+    .chat-chip:hover:not(:disabled) {
+      background: var(--primary-100);
+      border-color: var(--primary-400);
+    }
+
+    .chat-chip:disabled { opacity: 0.45; cursor: default; }
+
+    .chat-input {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-top: 1px solid var(--gray-200);
+      background: white;
+    }
+
+    .chat-input-field {
+      flex: 1;
+      font-size: 0.8125rem;
+      color: var(--gray-400);
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-full);
+      padding: 0.5rem 0.875rem;
+    }
+
+    .chat-send {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-full);
+      background: var(--primary-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    #demoBody {
+      height: 300px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    /* ================= CARDS ================= */
+    .card {
+      min-width: 0;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-2xl);
+      padding: 1.5rem;
+      transition: all var(--transition-base);
+    }
+
+    .card:hover {
       border-color: var(--primary-300);
       box-shadow: var(--shadow-xl);
       transform: translateY(-4px);
     }
 
-    /* Tier accent colors */
-    .pricing-card.tier-starter::before {
-      background: #1d4ed8;
-    }
-
-    .pricing-card.tier-growth::before {
-      background: linear-gradient(90deg, #1d4ed8, #7c3aed);
-      height: 5px;
-    }
-
-    .pricing-card.tier-pro::before {
-      background: linear-gradient(90deg, #7c3aed, #db2777);
-    }
-
-    .pricing-card.popular {
-      border: 2px solid #1d4ed8;
-      box-shadow: 0 8px 30px -4px rgba(29, 78, 216, 0.18), var(--shadow-xl);
-    }
-
-    @media (min-width: 1024px) {
-      .pricing-card.popular {
-        transform: scale(1.04);
-        z-index: 2;
-      }
-
-      .pricing-card.popular:hover {
-        transform: scale(1.04) translateY(-4px);
-      }
-    }
-
-    .pricing-card.popular .pricing-card-badge {
-      position: absolute;
-      top: -1px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #1d4ed8;
-      color: white;
-      padding: 0.3rem 1.25rem;
-      font-size: 0.7rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      border-radius: 0 0 8px 8px;
-      z-index: 3;
-    }
-
-    .pricing-card-header {
-      text-align: center;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--gray-200);
-      margin-bottom: 1.5rem;
-    }
-
-    .pricing-card-icon {
+    .card-icon {
       width: 48px;
       height: 48px;
-      border-radius: 12px;
-      display: inline-flex;
+      border-radius: var(--radius-xl);
+      background: var(--primary-50);
+      color: var(--primary-600);
+      display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 0.75rem;
+      margin-bottom: 1rem;
     }
 
-    .tier-starter .pricing-card-icon {
-      background: var(--primary-50);
-    }
-
-    .tier-growth .pricing-card-icon {
-      background: linear-gradient(135deg, var(--primary-50), #ede9fe);
-    }
-
-    .tier-pro .pricing-card-icon {
-      background: linear-gradient(135deg, #ede9fe, #fce7f3);
-    }
-
-    .pricing-card-name {
-      font-size: 1.25rem;
-      font-weight: 700;
+    .question-quote {
+      font-size: 0.9375rem;
+      font-weight: 600;
       color: var(--gray-900);
-      margin-bottom: 0.25rem;
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 0.625rem 0.875rem;
+      margin: 0.75rem 0;
     }
 
-    .pricing-card-price {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--gray-900);
-      line-height: 1.2;
-    }
-
-    .pricing-card-price span {
-      font-size: 1rem;
-      font-weight: 500;
+    .trained-on {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.75rem;
+      font-weight: 600;
       color: var(--gray-500);
     }
 
-    .pricing-card-price .price-value {
-      font-size: inherit;
-      font-weight: inherit;
-      color: inherit;
+    .form-chip {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 0.5rem 0.875rem;
+      white-space: nowrap;
     }
 
-    .pricing-card-features {
-      flex: 1;
-      margin-bottom: 1.5rem;
-    }
-
-    .pricing-card-features li {
+    .list-check, .list-cross {
       display: flex;
       align-items: flex-start;
-      gap: 0.625rem;
-      margin-bottom: 0.625rem;
-      color: var(--gray-700);
-      font-size: 0.9rem;
-      line-height: 1.4;
+      gap: 0.75rem;
     }
 
-    .pricing-card-features li svg {
-      width: 1.125rem;
-      height: 1.125rem;
-      flex-shrink: 0;
-      margin-top: 0.125rem;
-    }
-
-    .tier-starter .pricing-card-features li svg { color: #1d4ed8; }
-    .tier-growth .pricing-card-features li svg { color: #6d28d9; }
-    .tier-pro .pricing-card-features li svg { color: #db2777; }
-
-    .pricing-card-features .tier-label {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #1d4ed8;
-      padding: 0.375rem 0.75rem;
-      background: var(--primary-50);
-      border-radius: var(--radius-lg);
-      margin-bottom: 0.5rem;
-    }
-
-    .tier-growth .pricing-card-features .tier-label {
-      color: #6d28d9;
-      background: #ede9fe;
-    }
-
-    .tier-pro .pricing-card-features .tier-label {
-      color: #db2777;
-      background: #fce7f3;
-    }
-
-    .pricing-card-btn {
-      width: 100%;
-      padding: 0.875rem 1.5rem;
-      border-radius: var(--radius-xl);
-      font-weight: 600;
-      font-size: 0.95rem;
-      text-align: center;
-      transition: all var(--transition-base);
-      text-decoration: none;
-      display: block;
-    }
-
-    .pricing-card-btn-primary {
-      background: #1d4ed8;
+    .step-number {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      background: var(--gradient-primary);
       color: white;
-      box-shadow: 0 4px 14px -2px rgba(29, 78, 216, 0.4);
-    }
-
-    .pricing-card-btn-primary:hover {
-      background: var(--primary-800);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px -2px rgba(29, 78, 216, 0.5);
-    }
-
-    .pricing-card-btn-secondary {
-      background: white;
-      color: var(--gray-700);
-      border: 1.5px solid var(--gray-300);
-    }
-
-    .pricing-card-btn-secondary:hover {
-      background: var(--gray-50);
-      border-color: var(--gray-400);
-      transform: translateY(-1px);
-    }
-
-    .pricing-card-btn-pro {
-      background: linear-gradient(135deg, #7c3aed, #db2777);
-      color: white;
-      box-shadow: 0 4px 14px -2px rgba(124, 58, 237, 0.4);
-    }
-
-    .pricing-card-btn-pro:hover {
-      box-shadow: 0 6px 20px -2px rgba(124, 58, 237, 0.5);
-      transform: translateY(-2px);
-      filter: brightness(1.1);
-    }
-
-    /* Billing toggle */
-    .billing-toggle {
-      display: inline-flex;
-      gap: 0.25rem;
-      padding: 0.3rem;
-      background: var(--gray-100);
-      border: 1px solid var(--gray-200);
-      border-radius: var(--radius-full);
-    }
-
-    .billing-option {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.6rem 1.25rem;
-      border: 0;
-      border-radius: var(--radius-full);
-      background: transparent;
-      color: var(--gray-600);
-      font-weight: 600;
-      font-size: 0.95rem;
-      cursor: pointer;
-      transition: all var(--transition-base);
-    }
-
-    .billing-option.active {
-      background: white;
-      color: var(--gray-900);
-      box-shadow: var(--shadow-md);
-    }
-
-    .billing-option:focus-visible {
-      outline: 2px solid #1d4ed8;
-      outline-offset: 2px;
-    }
-
-    .billing-save {
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: #047857;
-      background: #d1fae5;
-      padding: 0.15rem 0.5rem;
-      border-radius: var(--radius-full);
-    }
-
-    /* Single plan card */
-    .plan-layout {
-      max-width: 34rem;
-      margin: 0 auto;
-    }
-
-    .plan-price {
-      display: flex;
-      align-items: baseline;
-      justify-content: center;
-      gap: 0.5rem;
-    }
-
-    .plan-price-old {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: var(--gray-400);
-      text-decoration: line-through;
-    }
-
-    .plan-price-amount {
-      font-size: 3.5rem;
       font-weight: 800;
-      color: var(--gray-900);
-      line-height: 1;
-    }
-
-    .plan-price-period {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--gray-500);
-    }
-
-    .trial-pill {
-      display: inline-flex;
+      display: flex;
       align-items: center;
-      gap: 0.5rem;
-      margin-top: 1rem;
-      padding: 0.45rem 0.9rem;
-      border-radius: var(--radius-full);
-      background: #ecfdf5;
-      border: 1px solid #a7f3d0;
-      color: #047857;
-      font-size: 0.85rem;
-      font-weight: 600;
-    }
-
-    @media (max-width: 639px) {
-      .trial-pill {
-        font-size: 0.8rem;
-        white-space: nowrap;
-      }
-    }
-
-    .trial-pill svg {
-      width: 1rem;
-      height: 1rem;
+      justify-content: center;
       flex-shrink: 0;
+      box-shadow: var(--shadow-blue);
     }
 
-    @media (min-width: 640px) {
-      .plan-features {
-        columns: 2;
-        column-gap: 1.5rem;
-      }
-
-      .plan-features li {
-        break-inside: avoid;
-      }
-    }
-
-    /* How the trial works */
-    .trial-steps {
-      max-width: 64rem;
-      margin: 4rem auto 0;
-    }
-
-    .trial-step {
-      background: var(--gray-50);
+    /* ================= PRICING ================= */
+    .price-card {
+      background: white;
       border: 1px solid var(--gray-200);
       border-radius: var(--radius-2xl);
       padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
     }
 
-    .trial-step-num {
-      width: 2rem;
-      height: 2rem;
-      border-radius: var(--radius-full);
-      background: #1d4ed8;
-      color: white;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      margin-bottom: 0.75rem;
-    }
-
-    /* Credit Info Section */
-    .credit-info {
-      background: var(--gray-50);
-      border-radius: var(--radius-2xl);
-      padding: 2rem;
-      margin-top: 3rem;
-      text-align: center;
-    }
-
-    .credit-info h3 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--gray-900);
-      margin-bottom: 0.75rem;
-    }
-
-    .credit-info p {
-      color: var(--gray-600);
-      max-width: 600px;
-      margin: 0 auto;
-      line-height: 1.7;
-    }
-
-    /* CTA Section */
-    .cta-section {
+    .price-card-featured {
+      border: 2px solid var(--primary-600);
+      box-shadow: var(--shadow-blue);
       position: relative;
-      background: linear-gradient(135deg, #1d4ed8, #1e40af);
-      color: white;
-      padding: var(--spacing-2xl) 0;
+    }
+
+    /* ================= FAQ ================= */
+    .faq-item {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-xl);
       overflow: hidden;
     }
 
-    @media (min-width: 640px) {
-      .cta-section {
-        padding: var(--spacing-3xl) 0;
-      }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.125rem 1.25rem;
+      text-align: left;
+      font-weight: 600;
+      color: var(--gray-900);
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
-    /* Footer */
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--spacing-lg);
-      margin-bottom: var(--spacing-lg);
-    }
+    .faq-question:hover { color: var(--primary-700); }
+    .faq-icon { transition: transform var(--transition-base); flex-shrink: 0; color: var(--gray-400); }
+    .faq-item.open .faq-icon { transform: rotate(180deg); color: var(--primary-600); }
+    .faq-answer { padding: 0 1.25rem 1.25rem; color: var(--gray-600); line-height: 1.65; }
 
-    @media (min-width: 640px) {
-      .footer-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      }
+    /* ================= CTA ================= */
+    .cta-section {
+      background: var(--gradient-cta);
+      position: relative;
+      overflow: hidden;
     }
-
-    .footer-grid > div:first-child {
-      grid-column: 1 / -1;
-    }
-
-    @media (min-width: 640px) {
-      .footer-grid > div:first-child {
-        grid-column: auto;
-      }
-    }
-
-    /* Hover States */
-    .hover-primary-link:hover { color: #1d4ed8 !important; }
-    .hover-primary-icon:hover { color: #1d4ed8 !important; }
   </style>
+  <link rel="stylesheet" href="../assets/theme.css">
+
+  <!-- SoftwareApplication Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SiteWhizz",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Web",
+  "description": "AI agent trained on your website content. Answers visitors 24/7, cites its sources and hands everything else to your team.",
+  "offers": [
+    {
+      "@type": "Offer",
+      "name": "Starter (billed monthly)",
+      "price": "39",
+      "priceCurrency": "USD"
+    },
+    {
+      "@type": "Offer",
+      "name": "Starter (billed yearly)",
+      "price": "348",
+      "priceCurrency": "USD"
+    }
+  ]
+}
+  </script>
 </head>
-
-<body class="bg-white text-gray-900 antialiased">
-
+<body class="antialiased text-gray-900">
+<a href="#main" class="skip-link">Skip to content</a>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TG345ZX7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TG345ZX7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- ================= NAVIGATION ================= -->
-<nav class="navbar">
+<nav class="navbar" aria-label="Main">
   <div class="navbar-container">
     <a href="../index.html" class="logo">
       <div class="logo-icon" data-logo></div>
-      <span class="logo-text font-bold text-xl"><span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span></span>
+      <span class="logo-text font-bold text-xl">SiteWhizz</span>
     </a>
 
-    <button class="navbar-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+    <button class="navbar-toggle" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()" aria-label="Toggle menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
     <div class="navbar-menu" id="mobileMenu">
-      <a href="../tax-efile-chatbot/index.html" class="navbar-link">For Tax E-File</a>
+      <a href="../tax-efile-ai-agent/index.html" class="navbar-link">For Tax E-File</a>
+      <a href="../tax-preparer-cpa-ai-agent/index.html" class="navbar-link">For Tax Pros</a>
       <a href="../features/index.html" class="navbar-link">Features</a>
-      <a href="index.html" class="navbar-link active">Pricing</a>
-      <a href="../blog/index.html" class="navbar-link">Blog</a>
+      <a href="../pricing/index.html" class="navbar-link" aria-current="page">Pricing</a>
       <a href="https://app.sitewhizz.io/" class="navbar-cta">Start Free Trial</a>
     </div>
   </div>
 </nav>
+<main id="main" tabindex="-1">
 
-<!-- ================= HERO SECTION ================= -->
+<!-- ================= HERO ================= -->
 <section class="hero">
-  <div class="bg-decoration bg-decoration-primary hidden md:block" style="top: 5rem; left: 2.5rem; width: 18rem; height: 18rem;"></div>
-  <div class="bg-decoration bg-decoration-primary hidden md:block" style="bottom: 5rem; right: 2.5rem; width: 24rem; height: 24rem;"></div>
-
-  <div class="hero-container">
-    <div class="inline-flex items-center gap-2 bg-blue-50 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-semibold mb-6 md:mb-8 animate-fade-in-up" style="color: #1d4ed8; border: 1px solid #dbeafe;">
-      <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: #1d4ed8;"></span>
-      <span>14-day free trial &middot; No credit card required</span>
+  <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+    <div class="max-w-3xl">
+      <p class="eyebrow mb-6">14-day free trial</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">One plan. Everything included.</h1>
+      <p class="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">Try every feature free for 14 days. Then keep your agent live for $39 a month, or $29 a month when you pay yearly.</p>
+      <div class="flex flex-col sm:flex-row gap-3">
+          <a href="https://app.sitewhizz.io/" class="btn btn-primary text-base px-7 py-4">
+            Start Free Trial
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+      </div>
+        <p class="text-sm text-gray-500 mt-4">No credit card required.</p>
+    </div>
+  </div>
+</section>
+<!-- ================= PRICING TEASER ================= -->
+<section id="pricing" class="py-16 md:py-24 bg-gray-50">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+      <p class="eyebrow mb-3">Pricing</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">One plan, every feature</h2>
+      <p class="text-lg text-gray-600">Set it up on your own website and test it free for 14 days. Then keep your agent live, or let it pause and never be charged.</p>
     </div>
 
-    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight animate-fade-in-up delay-100">
-      One Plan. <span class="gradient-text">Everything Included.</span>
-    </h1>
+    <div class="flex justify-center mb-8">
+      <div class="billing-switch" role="group" aria-label="Billing period">
+        <button type="button" data-billing="monthly" aria-pressed="false">Monthly</button>
+        <button type="button" data-billing="yearly" aria-pressed="true">Yearly <span class="billing-save">Save 25%</span></button>
+      </div>
+    </div>
 
-    <p class="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto mb-8 md:mb-10 leading-relaxed animate-fade-in-up delay-200 px-4 md:px-0">
-      Try every feature free for 14 days. Then keep your chatbot live for $39/month, or $29/month when you pay yearly.
-    </p>
+    <div class="max-w-lg mx-auto">
+    <div class="price-card price-card-featured reveal">
+      <h3 class="font-bold text-lg">Starter</h3>
+      <div class="mt-3 mb-1"><span class="text-5xl font-extrabold" id="planPrice">$29</span><span class="text-gray-500"> / month</span></div>
+      <p class="text-sm text-gray-500" id="planBilling" aria-live="polite">Billed $348 yearly. You save $120 a year. Cancel anytime.</p>
+      <p class="text-sm font-medium mt-2" style="color: var(--success);">14-day free trial &middot; No credit card required</p>
+
+      <ul class="space-y-3 text-gray-700 mt-6 mb-8 flex-1">
+        <li class="list-check"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--success);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>2,000 messages</strong> per month</span></li>
+        <li class="list-check"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--success);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span><strong>50 content source pages</strong> for your website, docs and PDFs</span></li>
+        <li class="list-check"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--success);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>1 AI agent with your colors and welcome message</span></li>
+        <li class="list-check"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--success);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Unlimited human handoff to your team</span></li>
+        <li class="list-check"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--success);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Lead collection</span></li>
+        <li class="list-check"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--success);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>30-day conversation history</span></li>
+        <li class="list-check"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--success);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Content refresh from your dashboard</span></li>
+        <li class="list-check"><svg class="w-5 h-5 mt-0.5 flex-shrink-0" style="color: var(--success);" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg><span>Email support</span></li>
+      </ul>
+
+      <a href="https://app.sitewhizz.io/" class="btn btn-primary w-full text-base py-4">
+        Start 14-day free trial
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+      </a>
+      <p class="text-xs text-gray-500 text-center mt-3">No charge during your trial. Cancel anytime. 7-day money-back guarantee on your first payment.</p>
+    </div>
+    </div>
+
+    <p class="text-center text-sm text-gray-500 mt-6">Need agents for more than one website? <a href="../contact/index.html" class="font-semibold hover:underline" style="color: var(--primary-600);">Talk to us</a>.</p>
   </div>
 </section>
 
-<!-- ================= PRICING SECTION ================= -->
-<section class="pt-0 pb-8 md:pb-16 bg-white">
-  <div class="max-w-7xl mx-auto px-4 md:px-6">
 
-    <!-- Billing period toggle (yearly selected by default) -->
-    <div class="flex justify-center mb-10">
-      <div class="billing-toggle" role="group" aria-label="Billing period">
-        <button type="button" class="billing-option" data-billing="monthly" aria-pressed="false">Monthly</button>
-        <button type="button" class="billing-option active" data-billing="yearly" aria-pressed="true">
-          Yearly <span class="billing-save">Save 25%</span>
-        </button>
+<!-- ================= TRIAL ================= -->
+<section id="trial" class="py-16 md:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+      <p class="eyebrow mb-3">How the free trial works</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Try it, then decide</h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+      <div class="card reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="step-number">1</span>
+          <h3 class="text-lg font-bold">Sign up in seconds</h3>
+        </div>
+        <p class="text-gray-600">Continue with your email or Google. No credit card needed.</p>
+      </div>
+      <div class="card reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="step-number">2</span>
+          <h3 class="text-lg font-bold">Build and test for 14 days</h3>
+        </div>
+        <p class="text-gray-600">Train your agent on your website and docs, test its answers, and add it to your site.</p>
+      </div>
+      <div class="card reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="step-number">3</span>
+          <h3 class="text-lg font-bold">Keep it live</h3>
+        </div>
+        <p class="text-gray-600">Choose monthly ($39) or yearly ($29 a month) when your trial ends. If you don't, your agent pauses and you're never charged.</p>
       </div>
     </div>
-
-    <div class="plan-layout">
-      <div class="pricing-card tier-starter popular">
-        <div class="pricing-card-header">
-          <div class="pricing-card-icon">&#x1F680;</div>
-          <div class="pricing-card-name">Starter</div>
-          <div class="text-sm text-gray-500 mb-4">
-            Everything you need to automate support on your website
-          </div>
-
-          <div class="plan-price">
-            <span class="plan-price-old" data-yearly-only>$39</span>
-            <span class="plan-price-amount">$<span data-price>29</span></span>
-            <span class="plan-price-period">/ month</span>
-          </div>
-          <div class="text-sm text-gray-500 mt-2" data-billing-note>Billed $348 yearly &middot; you save $120</div>
-
-          <div class="trial-pill">
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Free for 14 days &middot; No credit card needed
-          </div>
-        </div>
-
-        <ul class="pricing-card-features plan-features">
-          <li>
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <strong>1 AI chatbot</strong>
-          </li>
-          <li>
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <strong>2,000 messages/mo</strong>
-          </li>
-          <li>
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            <strong>50 content source pages</strong>
-          </li>
-          <li>
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Your colors and welcome message
-          </li>
-          <li>
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Lead collection
-          </li>
-          <li>
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Human handoff (unlimited)
-          </li>
-          <li>
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            30-day conversation history
-          </li>
-          <li>
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Content refresh from your dashboard
-          </li>
-          <li>
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
-            Email support
-          </li>
-        </ul>
-
-        <a href="https://app.sitewhizz.io/" class="pricing-card-btn pricing-card-btn-primary">
-          Start 14-day free trial
-        </a>
-        <p class="text-xs text-gray-500 text-center mt-3">No charge during your trial. Cancel anytime.</p>
-      </div>
-    </div>
-
-    <!-- How the free trial works -->
-    <div class="trial-steps">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 text-center mb-8">How the free trial works</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="trial-step">
-          <div class="trial-step-num">1</div>
-          <h3 class="font-semibold text-gray-900 mb-1">Sign up in seconds</h3>
-          <p class="text-sm text-gray-600">Continue with your email or Google. No credit card needed.</p>
-        </div>
-        <div class="trial-step">
-          <div class="trial-step-num">2</div>
-          <h3 class="font-semibold text-gray-900 mb-1">Build and test for 14 days</h3>
-          <p class="text-sm text-gray-600">Train your chatbot on your website and docs, test its answers, and add it to your site.</p>
-        </div>
-        <div class="trial-step">
-          <div class="trial-step-num">3</div>
-          <h3 class="font-semibold text-gray-900 mb-1">Keep it live</h3>
-          <p class="text-sm text-gray-600">Choose monthly ($39) or yearly ($29/month) when your trial ends. If you don't, your chatbot pauses and you're never charged.</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Trust Line -->
-    <div class="text-center mt-10 text-gray-500 text-sm">
-      <p>14-day free trial &middot; No credit card required &middot; Cancel anytime</p>
-    </div>
-
   </div>
 </section>
 
-<!-- ================= PRICING FAQ SECTION ================= -->
-<section id="pricing-faq" class="py-16 md:py-24 bg-gray-50">
-  <div class="max-w-4xl mx-auto px-4 md:px-6">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        Pricing <span style="color: #1d4ed8;">FAQ</span>
-      </h2>
-      <p class="text-lg text-gray-600">
-        Common questions about <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> AI chatbot pricing and plans
-      </p>
+<!-- ================= FAQ ================= -->
+<section id="faq" class="py-16 md:py-24 bg-white">
+  <div class="max-w-3xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-12 reveal">
+      <p class="eyebrow mb-3">FAQ</p>
+      <h2 class="text-3xl md:text-4xl font-bold">Pricing questions</h2>
     </div>
 
-    <div class="space-y-4">
-      <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
-        <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').style.transform = this.nextElementSibling.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)'">
-          <span>How much does <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> cost?</span>
-          <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+    <div class="space-y-3">
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
+          <span>How much does SiteWhizz cost?</span>
+          <svg class="faq-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
-        <div class="hidden px-6 pb-4 text-gray-600">
-          <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> has one plan, Starter: $39/month billed monthly, or $29/month billed yearly ($348 a year, a 25% saving). It includes 2,000 messages a month, 50 content source pages, lead collection and unlimited human handoff. Every account starts with a 14-day free trial.
-        </div>
+        <div class="faq-answer hidden">SiteWhizz has one plan, Starter: $39 a month billed monthly, or $29 a month billed yearly ($348 a year, a 25% saving). It includes 2,000 messages a month, 50 content source pages, lead collection and unlimited human handoff. Every account starts with a 14-day free trial.</div>
       </div>
-
-      <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
-        <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').style.transform = this.nextElementSibling.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)'">
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
           <span>How does the 14-day free trial work?</span>
-          <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg class="faq-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
-        <div class="hidden px-6 pb-4 text-gray-600">
-          Sign up with your email or Google and you get every feature free for 14 days. No credit card is required. When the trial ends, choose monthly or yearly billing to keep your chatbot live. If you don't, your chatbot simply pauses and you're never charged.
-        </div>
+        <div class="faq-answer hidden">Sign up with your email or Google and you get every feature free for 14 days. No credit card is required. When the trial ends, choose monthly or yearly billing to keep your agent live. If you don't, your agent pauses and you're never charged.</div>
       </div>
-
-      <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
-        <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').style.transform = this.nextElementSibling.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)'">
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
           <span>Can I switch between monthly and yearly billing?</span>
-          <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg class="faq-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
-        <div class="hidden px-6 pb-4 text-gray-600">
-          Yes. You can switch from monthly to yearly at any time to start saving 25%, and the change applies from your next billing date. You can also cancel anytime from your dashboard.
-        </div>
+        <div class="faq-answer hidden">Yes. You can switch from monthly to yearly at any time to start saving 25%, and the change applies from your next billing date. You can also cancel anytime from your dashboard.</div>
       </div>
-
-      <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
-        <button class="faq-question w-full px-6 py-4 text-left flex items-center justify-between font-semibold text-gray-900 hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden'); this.querySelector('svg').style.transform = this.nextElementSibling.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)'">
+      <div class="faq-item">
+        <button class="faq-question" type="button" aria-expanded="false">
           <span>Do you offer refunds?</span>
-          <svg class="w-5 h-5 text-gray-500 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+          <svg class="faq-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
         </button>
-        <div class="hidden px-6 pb-4 text-gray-600">
-          We offer a 7-day money-back guarantee on all paid plans. If you're not satisfied within the first 7 days of your paid subscription, contact us for a full refund. No questions asked.
-        </div>
+        <div class="faq-answer hidden">We offer a 7-day money-back guarantee on all paid plans. If you're not satisfied within the first 7 days of your paid subscription, contact us for a full refund. No questions asked.</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= CTA SECTION ================= -->
-<section class="cta-section">
-  <div class="bg-decoration hidden md:block" style="background: rgba(255,255,255,0.1); top: -5rem; right: -5rem; width: 20rem; height: 20rem;"></div>
-  <div class="bg-decoration hidden md:block" style="background: rgba(255,255,255,0.1); bottom: -5rem; left: -5rem; width: 16rem; height: 16rem;"></div>
-
+<!-- ================= FINAL CTA ================= -->
+<section class="cta-section py-16 md:py-24 text-white">
   <div class="max-w-4xl mx-auto px-4 md:px-6 text-center relative z-10">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">
-      Ready to Deploy Your AI Chatbot?
-    </h2>
-    <p class="text-lg md:text-xl opacity-90 mb-6 md:mb-8 max-w-2xl mx-auto">
-      Try every feature free for 14 days. No credit card required.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <a href="https://app.sitewhizz.io/" class="btn btn-primary" style="background: white; color: #1d4ed8;">
+    <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Ready to set up your AI agent?</h2>
+    <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Try every feature free for 14 days.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://app.sitewhizz.io/" class="btn btn-primary text-lg px-8 py-4">
         Start Free Trial
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-        </svg>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
       </a>
-      <a href="../features/index.html" class="btn btn-outline-white">
-        Explore Features
-      </a>
+      <a href="../features/index.html" class="btn border-2 border-white/50 text-white hover:bg-white/10 hover:border-white text-lg px-8 py-4">Explore features</a>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ================= FOOTER ================= -->
-<footer class="bg-gradient-to-b from-gray-50 to-gray-100 text-gray-700 py-10 md:py-16 border-t border-gray-200">
+<footer class="bg-gradient-to-b from-gray-900 to-gray-950 text-gray-300 py-10 md:py-16">
   <div class="max-w-7xl mx-auto px-4 md:px-6">
-    <div class="footer-grid">
-      <div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
+      <!-- Brand -->
+      <div class="col-span-2 md:col-span-3 lg:col-span-2">
         <a href="../index.html" class="logo mb-4">
           <div class="logo-icon" data-logo></div>
-          <span class="text-xl font-bold"><span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span></span>
+          <span class="text-xl font-bold">SiteWhizz</span>
         </a>
-        <p class="text-sm leading-relaxed mt-4 text-gray-600">
-          AI chatbot trained on your website content to automate customer support. Visitors get instant, accurate answers 24/7. No coding required.
+        <p class="text-sm leading-relaxed mt-4 text-gray-400 max-w-sm">
+          AI agent trained on your website content. It answers visitors around the clock and hands the rest to your team. No coding required.
         </p>
       </div>
-
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Product</h4>
+        <h2 class="footer-heading text-white font-semibold mb-4">Product</h2>
         <ul class="space-y-2">
-          <li><a href="../features/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Features</a></li>
-          <li><a href="index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Pricing</a></li>
-          <li><a href="../security/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Security</a></li>
-          <li><a href="../tax-efile-chatbot/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Tax e-file chatbot</a></li>
+          <li><a href="../features/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Features</a></li>
+          <li><a href="../pricing/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Pricing</a></li>
+          <li><a href="../security/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Security</a></li>
+          <li><a href="../tax-efile-ai-agent/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">For e-file providers</a></li>
+          <li><a href="../tax-preparer-cpa-ai-agent/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">For tax pros &amp; CPAs</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Resources</h4>
+        <h2 class="footer-heading text-white font-semibold mb-4">Resources</h2>
         <ul class="space-y-2">
-          <li><a href="../blog/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Blog</a></li>
-          <li><a href="../free-tools/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Free calculators</a></li>
-          <li><a href="../use-cases/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Use cases</a></li>
-          <li><a href="../index.html#faq" class="text-gray-600 transition-colors text-sm hover-primary-link">FAQ</a></li>
+          <li><a href="../use-cases/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Use cases</a></li>
+          <li><a href="../index.html#faq" class="text-gray-400 transition-colors text-sm hover:text-blue-400">FAQ</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Company</h4>
+        <h2 class="footer-heading text-white font-semibold mb-4">Company</h2>
         <ul class="space-y-2">
-          <li><a href="../about/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">About</a></li>
-          <li><a href="../agencies/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">For agencies</a></li>
-          <li><a href="../careers/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Careers</a></li>
-          <li><a href="../contact/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Contact</a></li>
+          <li><a href="../about/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">About</a></li>
+          <li><a href="../agencies/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">For agencies</a></li>
+          <li><a href="../contact/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Legal</h4>
+        <h2 class="footer-heading text-white font-semibold mb-4">Legal</h2>
         <ul class="space-y-2">
-          <li><a href="../privacy/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Privacy Policy</a></li>
-          <li><a href="../terms/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Terms of Service</a></li>
+          <li><a href="../privacy/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Privacy Policy</a></li>
+          <li><a href="../terms/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Terms of Service</a></li>
         </ul>
       </div>
     </div>
-
-    <div class="mt-12 pt-8 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-sm text-gray-600">© 2026 <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span>. All rights reserved.</p>
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-gray-500">&copy; 2026 SiteWhizz. All rights reserved.</p>
+      <p class="text-xs text-gray-500 text-center md:text-right max-w-md"></p>
     </div>
   </div>
 </footer>
 
 <script>
-
   // ==================== MOBILE MENU ====================
   function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('active');
+    document.getElementById('mobileMenu').classList.toggle('active');
   }
 
   // ==================== SMOOTH SCROLL ====================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-        // Close mobile menu if open
-        const menu = document.getElementById('mobileMenu');
-        if (menu.classList.contains('active')) {
-          menu.classList.remove('active');
-        }
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('mobileMenu').classList.remove('active');
+    });
+  });
+
+  // ==================== FAQ ACCORDION ====================
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(other => {
+        other.classList.remove('open');
+        other.querySelector('.faq-answer').classList.add('hidden');
+        other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        item.querySelector('.faq-answer').classList.remove('hidden');
+        button.setAttribute('aria-expanded', 'true');
       }
     });
   });
 
-</script>
-
-<script>
-  // ==================== BILLING TOGGLE ====================
-  (function () {
-    var plans = {
-      monthly: { price: '39', note: 'Billed monthly &middot; cancel anytime' },
-      yearly: { price: '29', note: 'Billed $348 yearly &middot; you save $120' }
-    };
-    var buttons = document.querySelectorAll('.billing-option');
-
-    function setBilling(period) {
-      buttons.forEach(function (button) {
-        var selected = button.getAttribute('data-billing') === period;
-        button.classList.toggle('active', selected);
-        button.setAttribute('aria-pressed', selected ? 'true' : 'false');
-      });
-      document.querySelectorAll('[data-price]').forEach(function (el) { el.textContent = plans[period].price; });
-      document.querySelectorAll('[data-billing-note]').forEach(function (el) { el.innerHTML = plans[period].note; });
-      document.querySelectorAll('[data-yearly-only]').forEach(function (el) { el.hidden = period !== 'yearly'; });
-    }
-
-    buttons.forEach(function (button) {
-      button.addEventListener('click', function () { setBilling(button.getAttribute('data-billing')); });
+  // ==================== SCROLL REVEAL ====================
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
     });
-  })();
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ==================== NAVBAR SCROLL EFFECT ====================
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    navbar.style.boxShadow = window.pageYOffset > 100 ? '0 4px 20px rgba(0, 0, 0, 0.08)' : 'var(--shadow-sm)';
+  }, { passive: true });
+
+  // ==================== BILLING TOGGLE ====================
+  const BILLING = {
+    yearly:  { price: '$29', note: 'Billed $348 yearly. You save $120 a year. Cancel anytime.' },
+    monthly: { price: '$39', note: 'Billed $39 monthly. Switch to yearly anytime to save 25%. Cancel anytime.' }
+  };
+  document.querySelectorAll('.billing-switch button').forEach(button => {
+    button.addEventListener('click', () => {
+      const plan = BILLING[button.dataset.billing];
+      document.querySelectorAll('.billing-switch button').forEach(b => b.setAttribute('aria-pressed', String(b === button)));
+      document.getElementById('planPrice').textContent = plan.price;
+      document.getElementById('planBilling').textContent = plan.note;
+    });
+  });
 </script>
 
 <!-- Logo Component (Single Source of Truth) -->
 <script src="../assets/logo.js"></script>
-
 </body>
 </html>

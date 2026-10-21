@@ -11,13 +11,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="google-site-verification" content="Dx1Ne2Fr87vmX2nSDAEJdHoXfL7nTTA5_Lfpt3CWkHk" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Discover how businesses use SiteWhizz AI chatbot for customer support, e-commerce, SaaS, service businesses, and more. Deploy an AI chatbot trained on your content in minutes." />
-  <meta name="keywords" content="AI chatbot, AI chatbot for customer support, customer support chatbot, chatbot for website, AI chat assistant, best AI chatbot, automated customer support chatbot" />
-  <title>AI Chatbot Use Cases for Customer Support | SiteWhizz</title>
+  <meta name="description" content="How businesses use the SiteWhizz AI agent: tax e-file providers, tax pros and CPA firms, SaaS, agencies, ecommerce and service businesses." />
+  <meta name="keywords" content="AI agent, AI agent for customer support, customer support agent, agent for website, AI chat assistant, best AI agent, automated customer support agent" />
+  <title>AI Agent Use Cases for Customer Support | SiteWhizz</title>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="AI Chatbot Use Cases | SiteWhizz Customer Support Chatbot" />
-  <meta property="og:description" content="See how businesses use SiteWhizz AI chatbot to automate customer support day and night." />
+  <meta property="og:title" content="AI Agent Use Cases | SiteWhizz Customer Support Agent" />
+  <meta property="og:description" content="How businesses use the SiteWhizz AI agent: tax e-file providers, tax pros and CPA firms, SaaS, agencies, ecommerce and service businesses." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sitewhizz.io/use-cases/" />
 
@@ -94,6 +94,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       --gray-700: #334155;
       --gray-800: #1e293b;
       --gray-900: #0f172a;
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
       --radius-lg: 0.75rem;
       --radius-xl: 1rem;
       --radius-2xl: 1.5rem;
@@ -101,7 +104,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.04);
       --shadow-lg: 0 10px 15px -3px rgb(15 23 42 / 0.10), 0 4px 6px -2px rgb(15 23 42 / 0.05);
       --shadow-xl: 0 20px 25px -5px rgb(15 23 42 / 0.12), 0 10px 10px -5px rgb(15 23 42 / 0.04);
-      --shadow-blue: 0 8px 24px -4px rgba(14, 165, 233, 0.15);
+      --shadow-2xl: 0 25px 50px -12px rgb(15 23 42 / 0.25);
+      --shadow-blue: 0 8px 24px -4px rgba(29, 78, 216, 0.25);
+      --gradient-primary: #1d4ed8;
+      --gradient-cta: #0f1e3d;
       --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
       --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -112,6 +118,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       max-width: 100vw;
     }
 
+    body { background: white; }
+
+    section[id] { scroll-margin-top: 80px; }
+
+    /* ================= ANIMATIONS ================= */
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-20px); }
@@ -122,12 +133,34 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       to { opacity: 1; transform: translateY(0); }
     }
 
+    @keyframes pulse-slow {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+
+    @keyframes typing {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-4px); opacity: 1; }
+    }
+
     .animate-float { animation: float 6s ease-in-out infinite; }
-    .animate-fade-in-up { animation: fadeInUp 0.8s ease-out forwards; }
+    .animate-fade-in-up { opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
     .delay-100 { animation-delay: 0.1s; }
     .delay-200 { animation-delay: 0.2s; }
     .delay-300 { animation-delay: 0.3s; }
     .delay-400 { animation-delay: 0.4s; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-float, .animate-fade-in-up { animation: none; opacity: 1; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
 
     .bg-decoration {
       position: absolute;
@@ -138,12 +171,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     .gradient-text {
-      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+      background: var(--gradient-primary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
+    /* ================= LOGO ================= */
     .logo {
       display: inline-flex;
       align-items: center;
@@ -181,6 +215,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       48%, 52% { opacity: 1; }
     }
 
+    /* ================= NAVBAR ================= */
     .navbar {
       position: fixed;
       top: 0;
@@ -192,15 +227,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--gray-200);
       box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition-base);
     }
 
     .navbar-container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: 1rem 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+
+    @media (min-width: 768px) {
+      .navbar-container { padding: 1rem 1.5rem; }
     }
 
     .navbar-menu {
@@ -219,7 +259,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .navbar-link:hover { color: var(--primary-600); }
 
     .navbar-cta {
-      background: #1d4ed8;
+      background: var(--primary-600);
       color: white;
       padding: 0.625rem 1.5rem;
       border-radius: var(--radius-lg);
@@ -230,7 +270,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     .navbar-cta:hover {
-      background: var(--primary-700);
+      background: var(--primary-800);
       box-shadow: var(--shadow-blue);
       transform: translateY(-1px);
     }
@@ -269,49 +309,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       .navbar-menu.active { display: flex; }
     }
 
-    .hero {
-      position: relative;
-      padding-top: 8rem;
-      padding-bottom: 4rem;
-      background: linear-gradient(180deg, var(--gray-50) 0%, white 100%);
-      overflow: hidden;
-    }
-
-    @media (min-width: 768px) {
-      .hero { padding-top: 10rem; padding-bottom: 5rem; }
-    }
-
-    .use-case-card {
-      background: white;
-      border-radius: var(--radius-2xl);
-      padding: 2rem;
-      border: 1px solid var(--gray-200);
-      transition: all var(--transition-base);
-    }
-
-    .use-case-card:hover {
-      border-color: var(--primary-300);
-      box-shadow: var(--shadow-xl);
-      transform: translateY(-4px);
-    }
-
-    .use-case-icon {
-      width: 64px;
-      height: 64px;
-      border-radius: var(--radius-xl);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1.5rem;
-      font-size: 2rem;
-    }
-
-    .benefit-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-    }
-
+    /* ================= BUTTONS ================= */
     .btn {
       display: inline-flex;
       align-items: center;
@@ -322,320 +320,611 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transition: all var(--transition-base);
       text-decoration: none;
       cursor: pointer;
+      padding: 0.875rem 1.5rem;
+      font-size: 0.9375rem;
     }
 
     .btn-primary {
-      background: #1d4ed8;
+      background: var(--primary-600);
       color: white;
-      padding: 0.875rem 1.5rem;
-      font-size: 0.9375rem;
       box-shadow: var(--shadow-lg);
     }
 
     .btn-primary:hover {
       background: var(--primary-800);
-      box-shadow: var(--shadow-xl);
+      box-shadow: var(--shadow-blue);
       transform: translateY(-2px);
     }
 
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 2rem;
+    .btn-secondary {
+      background: white;
+      color: var(--gray-900);
+      border: 1px solid var(--gray-300);
     }
 
-    @media (min-width: 640px) {
-      .footer-grid { grid-template-columns: repeat(2, 1fr); }
+    .btn-secondary:hover {
+      border-color: var(--primary-400);
+      color: var(--primary-700);
+      transform: translateY(-2px);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary-50);
+      border: 1px solid var(--primary-100);
+      color: var(--primary-700);
+      padding: 0.375rem 0.875rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
+      font-weight: 600;
+    }
+
+    .eyebrow {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary-600);
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      position: relative;
+      padding-top: 7.5rem;
+      padding-bottom: 4rem;
+      background: var(--sw-surface-alt);
+      overflow: hidden;
     }
 
     @media (min-width: 768px) {
-      .footer-grid { grid-template-columns: 2fr repeat(4, 1fr); }
+      .hero { padding-top: 9rem; padding-bottom: 5rem; }
     }
 
-    .hover-primary-link:hover { color: var(--primary-600); }
-    .hover-primary-icon:hover { color: var(--primary-600); }
+    /* ================= CHAT WINDOW (hero + demo) ================= */
+    .chat-window {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-2xl);
+      overflow: hidden;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.875rem 1rem;
+      background: var(--gradient-primary);
+      color: white;
+    }
+
+    .chat-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .chat-name { font-weight: 700; font-size: 0.9375rem; line-height: 1.2; }
+
+    .chat-status {
+      font-size: 0.75rem;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    .chat-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: var(--radius-full);
+      background: #4ade80;
+    }
+
+    .chat-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      background: var(--gray-50);
+    }
+
+    .chat-bubble {
+      max-width: 88%;
+      padding: 0.625rem 0.875rem;
+      border-radius: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    .chat-bubble-bot {
+      align-self: flex-start;
+      background: white;
+      color: var(--gray-800);
+      border: 1px solid var(--gray-200);
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    .chat-bubble-user {
+      align-self: flex-end;
+      background: var(--primary-600);
+      color: white;
+      border-bottom-right-radius: 0.25rem;
+    }
+
+    .chat-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 0.5rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--primary-700);
+      background: var(--primary-50);
+      border-radius: var(--radius-full);
+      padding: 0.125rem 0.5rem;
+    }
+
+    .chat-system {
+      align-self: center;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--warning);
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: var(--radius-full);
+      padding: 0.25rem 0.75rem;
+    }
+
+    .chat-typing {
+      align-self: flex-start;
+      display: inline-flex;
+      gap: 4px;
+      padding: 0.75rem 0.875rem;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 1rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    .chat-typing span {
+      width: 6px;
+      height: 6px;
+      border-radius: var(--radius-full);
+      background: var(--gray-400);
+      animation: typing 1.2s infinite;
+    }
+    .chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+    .chat-typing span:nth-child(3) { animation-delay: 0.3s; }
+
+    .chat-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-top: 1px solid var(--gray-200);
+      background: white;
+    }
+
+    .chat-chip {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--primary-700);
+      background: var(--primary-50);
+      border: 1px solid var(--primary-200);
+      border-radius: var(--radius-full);
+      padding: 0.375rem 0.75rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      text-align: left;
+    }
+
+    .chat-chip:hover:not(:disabled) {
+      background: var(--primary-100);
+      border-color: var(--primary-400);
+    }
+
+    .chat-chip:disabled { opacity: 0.45; cursor: default; }
+
+    .chat-input {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-top: 1px solid var(--gray-200);
+      background: white;
+    }
+
+    .chat-input-field {
+      flex: 1;
+      font-size: 0.8125rem;
+      color: var(--gray-400);
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-full);
+      padding: 0.5rem 0.875rem;
+    }
+
+    .chat-send {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-full);
+      background: var(--primary-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    #demoBody {
+      height: 300px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    /* ================= CARDS ================= */
+    .card {
+      min-width: 0;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-2xl);
+      padding: 1.5rem;
+      transition: all var(--transition-base);
+    }
+
+    .card:hover {
+      border-color: var(--primary-300);
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-4px);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-xl);
+      background: var(--primary-50);
+      color: var(--primary-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .question-quote {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 0.625rem 0.875rem;
+      margin: 0.75rem 0;
+    }
+
+    .trained-on {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-500);
+    }
+
+    .form-chip {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 0.5rem 0.875rem;
+      white-space: nowrap;
+    }
+
+    .list-check, .list-cross {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      background: var(--gradient-primary);
+      color: white;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-blue);
+    }
+
+    /* ================= PRICING ================= */
+    .price-card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-2xl);
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-card-featured {
+      border: 2px solid var(--primary-600);
+      box-shadow: var(--shadow-blue);
+      position: relative;
+    }
+
+    /* ================= FAQ ================= */
+    .faq-item {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+    }
+
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.125rem 1.25rem;
+      text-align: left;
+      font-weight: 600;
+      color: var(--gray-900);
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+    .faq-question:hover { color: var(--primary-700); }
+    .faq-icon { transition: transform var(--transition-base); flex-shrink: 0; color: var(--gray-400); }
+    .faq-item.open .faq-icon { transform: rotate(180deg); color: var(--primary-600); }
+    .faq-answer { padding: 0 1.25rem 1.25rem; color: var(--gray-600); line-height: 1.65; }
+
+    /* ================= CTA ================= */
+    .cta-section {
+      background: var(--gradient-cta);
+      position: relative;
+      overflow: hidden;
+    }
   </style>
+  <link rel="stylesheet" href="../assets/theme.css">
 </head>
 <body class="antialiased text-gray-900">
+<a href="#main" class="skip-link">Skip to content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TG345ZX7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- Navigation -->
-<nav class="navbar">
+<!-- ================= NAVIGATION ================= -->
+<nav class="navbar" aria-label="Main">
   <div class="navbar-container">
     <a href="../index.html" class="logo">
       <div class="logo-icon" data-logo></div>
-      <span class="text-xl font-bold"><span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span></span>
+      <span class="logo-text font-bold text-xl">SiteWhizz</span>
     </a>
-    <button class="navbar-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+
+    <button class="navbar-toggle" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()" aria-label="Toggle menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
+
     <div class="navbar-menu" id="mobileMenu">
-      <a href="../tax-efile-chatbot/index.html" class="navbar-link">For Tax E-File</a>
+      <a href="../tax-efile-ai-agent/index.html" class="navbar-link">For Tax E-File</a>
+      <a href="../tax-preparer-cpa-ai-agent/index.html" class="navbar-link">For Tax Pros</a>
       <a href="../features/index.html" class="navbar-link">Features</a>
       <a href="../pricing/index.html" class="navbar-link">Pricing</a>
-      <a href="../blog/index.html" class="navbar-link">Blog</a>
       <a href="https://app.sitewhizz.io/" class="navbar-cta">Start Free Trial</a>
     </div>
   </div>
 </nav>
+<main id="main" tabindex="-1">
 
-<!-- Hero Section -->
-<section class="hero" style="padding-top: 8rem;">
-  <div class="bg-decoration animate-float" style="top: 10%; right: 5%; width: 300px; height: 300px; background: var(--primary-100);"></div>
-  <div class="bg-decoration animate-float" style="bottom: 10%; left: 5%; width: 250px; height: 250px; background: var(--primary-50); animation-delay: 2s;"></div>
-
-  <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-    <div class="animate-fade-in-up">
-      <span class="inline-flex items-center gap-2 bg-primary-50 px-4 py-2 rounded-full text-sm font-semibold text-primary-600 mb-6">
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-          <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"/>
-        </svg>
-        Use Cases
-      </span>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-        AI Chatbot for<br><span class="gradient-text">Every Business</span>
-      </h1>
-      <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-        See how businesses use the <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span> AI chatbot to answer customer questions from their own content, day and night.
-      </p>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+    <div class="max-w-3xl">
+      <p class="eyebrow mb-6">Use cases</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">AI agent for every business</h1>
+      <p class="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">See how businesses use the SiteWhizz AI agent to answer customer questions from their own content, day and night.</p>
+      <div class="flex flex-col sm:flex-row gap-3">
+          <a href="https://app.sitewhizz.io/" class="btn btn-primary text-base px-7 py-4">
+            Start Free Trial
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+          <a href="../pricing/index.html" class="btn btn-secondary text-base px-7 py-4">See pricing</a>
+      </div>
+        <p class="text-sm text-gray-500 mt-4">14-day free trial. No credit card required.</p>
     </div>
   </div>
 </section>
 
-<!-- Use Cases Grid -->
-<section class="py-16 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">How Teams Use SiteWhizz</h2>
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- SaaS Businesses -->
-      <div class="use-case-card animate-fade-in-up delay-100">
-        <div class="use-case-icon bg-blue-100">
-          <span>💻</span>
-        </div>
-        <h3 class="text-xl font-bold mb-3">SaaS Businesses</h3>
-        <p class="text-gray-600 mb-4">Deploy an AI chatbot for customer support that walks users through features and answers setup and troubleshooting questions from your docs.</p>
-        <ul class="space-y-2 text-sm text-gray-600">
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Feature documentation help</span>
-          </li>
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Automated onboarding assistance</span>
-          </li>
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Setup and troubleshooting answers</span>
-          </li>
-        </ul>
+<!-- ================= SECTION ================= -->
+<section class="py-16 md:py-24 bg-white">
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+      <p class="eyebrow mb-3">Who uses it</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Built first for tax, ready for any website</h2>
+      <p class="text-lg text-gray-600">Pick the one that sounds like you.</p>
+    </div>
+    <div class="feature-list">
+      <div class="feature-item">
+        <h3>Tax e-file software</h3>
+        <p>Answer rejection-code, refund-status and deadline questions from your help center, and send return-specific questions to your team. Never asks for SSNs or return details.</p>
+        <a href="../tax-efile-ai-agent/index.html" class="inline-block mt-2 text-sm font-semibold" style="color: var(--sw-accent);">See the agent for e-file providers &rarr;</a>
       </div>
-
-      <!-- Agencies -->
-      <div class="use-case-card animate-fade-in-up delay-200">
-        <div class="use-case-icon bg-purple-100">
-          <span>🏢</span>
-        </div>
-        <h3 class="text-xl font-bold mb-3">Agencies</h3>
-        <p class="text-gray-600 mb-4">Set up an AI chatbot for each client site, trained only on that client's content, and hide the "Powered by SiteWhizz" label.</p>
-        <ul class="space-y-2 text-sm text-gray-600">
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Hide SiteWhizz branding</span>
-          </li>
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>One chatbot per client site</span>
-          </li>
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>A service you can resell</span>
-          </li>
-        </ul>
+      <div class="feature-item">
+        <h3>Tax pros &amp; CPA firms</h3>
+        <p>Answer what-to-bring, fee and service questions from your firm's website, decline tax advice by your rules, and collect prospect details after hours.</p>
+        <a href="../tax-preparer-cpa-ai-agent/index.html" class="inline-block mt-2 text-sm font-semibold" style="color: var(--sw-accent);">See the agent for tax pros &rarr;</a>
       </div>
-
-      <!-- Ecommerce Stores -->
-      <div class="use-case-card animate-fade-in-up delay-300">
-        <div class="use-case-icon bg-orange-100">
-          <span>🛒</span>
-        </div>
-        <h3 class="text-xl font-bold mb-3">Ecommerce Stores</h3>
-        <p class="text-gray-600 mb-4">Add an AI chatbot trained on your product pages and policies to answer questions while shoppers are deciding to buy.</p>
-        <ul class="space-y-2 text-sm text-gray-600">
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Product questions answered 24/7</span>
-          </li>
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Shipping and returns answers</span>
-          </li>
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Shopper emails captured as leads</span>
-          </li>
-        </ul>
+      <div class="feature-item">
+        <h3>SaaS businesses</h3>
+        <p>Walk users through features and answer setup and troubleshooting questions from your docs, including onboarding help.</p>
       </div>
-
-      <!-- Service Businesses -->
-      <div class="use-case-card animate-fade-in-up delay-100">
-        <div class="use-case-icon bg-green-100">
-          <span>🛠️</span>
-        </div>
-        <h3 class="text-xl font-bold mb-3">Service Businesses</h3>
-        <p class="text-gray-600 mb-4">Let a customer support chatbot answer service questions, share your booking link and collect contact details around the clock.</p>
-        <ul class="space-y-2 text-sm text-gray-600">
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Shares your Calendly booking link</span>
-          </li>
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Service & pricing information</span>
-          </li>
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Lead capture</span>
-          </li>
-        </ul>
+      <div class="feature-item">
+        <h3>Agencies</h3>
+        <p>Set up an AI agent for a client's site, trained only on that client's content, and hide the "Powered by SiteWhizz" label.</p>
+        <a href="../agencies/index.html" class="inline-block mt-2 text-sm font-semibold" style="color: var(--sw-accent);">See the agency setup &rarr;</a>
       </div>
-
-      <!-- Knowledge & Documentation Platforms -->
-      <div class="use-case-card animate-fade-in-up delay-200">
-        <div class="use-case-icon bg-yellow-100">
-          <span>📚</span>
-        </div>
-        <h3 class="text-xl font-bold mb-3">Knowledge & Documentation Platforms</h3>
-        <p class="text-gray-600 mb-4">Turn your knowledge base into an AI chat assistant that helps users find answers instantly instead of searching through pages of docs.</p>
-        <ul class="space-y-2 text-sm text-gray-600">
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Chatbot trained on your content</span>
-          </li>
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Answers that point to the source article</span>
-          </li>
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Reduce repetitive support tickets</span>
-          </li>
-        </ul>
+      <div class="feature-item">
+        <h3>Ecommerce stores</h3>
+        <p>Answer product, shipping and returns questions while shoppers are deciding to buy, and capture shopper emails as leads.</p>
       </div>
-
-      <!-- Tax E-File Software -->
-      <div class="use-case-card animate-fade-in-up delay-300">
-        <div class="use-case-icon bg-red-100">
-          <span>🧾</span>
-        </div>
-        <h3 class="text-xl font-bold mb-3"><a href="../tax-efile-chatbot/index.html" class="hover:text-primary-600">Tax E-File Software</a></h3>
-        <p class="text-gray-600 mb-4">Answer rejection-code, refund-status and deadline questions from your help center, and send return-specific questions to your team.</p>
-        <ul class="space-y-2 text-sm text-gray-600">
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Rejection-code answers from your guides</span>
-          </li>
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>Never asks for SSNs or return details</span>
-          </li>
-          <li class="benefit-item">
-            <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-            <span>English and Spanish replies</span>
-          </li>
-        </ul>
-        <a href="../tax-efile-chatbot/index.html" class="inline-block mt-4 text-sm font-semibold text-primary-600 hover:underline">See the tax e-file chatbot &rarr;</a>
+      <div class="feature-item">
+        <h3>Service businesses</h3>
+        <p>Answer service and pricing questions, explain how to book using the steps on your website, and collect contact details when the agent can't help.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA Section -->
-<section class="py-16 md:py-24 bg-gradient-to-r from-primary-600 to-primary-800 text-white">
-  <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Deploy Your AI Chatbot?</h2>
-    <p class="text-lg md:text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-      Start your 14-day free trial and have your chatbot live in about 5 minutes. No credit card required.
-    </p>
+<!-- ================= FINAL CTA ================= -->
+<section class="cta-section py-16 md:py-24 text-white">
+  <div class="max-w-4xl mx-auto px-4 md:px-6 text-center relative z-10">
+    <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Ready to set up your AI agent?</h2>
+    <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Start your 14-day free trial and have your agent live in about 5 minutes.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="https://app.sitewhizz.io/" class="btn bg-white text-primary-600 hover:bg-gray-100 px-8 py-4 text-lg font-bold rounded-xl">
-        Try AI Chatbot Free
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-        </svg>
+      <a href="https://app.sitewhizz.io/" class="btn btn-primary text-lg px-8 py-4">
+        Start Free Trial
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
       </a>
-      <a href="../contact/index.html" class="btn border-2 border-white/50 text-white hover:bg-white/10 hover:border-white px-8 py-4 text-lg font-bold rounded-xl">
-        Contact Sales
-      </a>
+      <a href="../contact/index.html" class="btn border-2 border-white/50 text-white hover:bg-white/10 hover:border-white text-lg px-8 py-4">Talk to us</a>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="bg-gradient-to-b from-gray-50 to-gray-100 text-gray-700 py-10 md:py-16 border-t border-gray-200">
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="bg-gradient-to-b from-gray-900 to-gray-950 text-gray-300 py-10 md:py-16">
   <div class="max-w-7xl mx-auto px-4 md:px-6">
-    <div class="footer-grid">
-      <div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
+      <!-- Brand -->
+      <div class="col-span-2 md:col-span-3 lg:col-span-2">
         <a href="../index.html" class="logo mb-4">
           <div class="logo-icon" data-logo></div>
-          <span class="text-xl font-bold"><span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span></span>
+          <span class="text-xl font-bold">SiteWhizz</span>
         </a>
-        <p class="text-sm leading-relaxed mt-4 text-gray-600">
-          AI chatbot trained on your website content to automate customer support. Visitors get instant, accurate answers 24/7. No coding required.
+        <p class="text-sm leading-relaxed mt-4 text-gray-400 max-w-sm">
+          AI agent trained on your website content. It answers visitors around the clock and hands the rest to your team. No coding required.
         </p>
       </div>
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Product</h4>
+        <h2 class="footer-heading text-white font-semibold mb-4">Product</h2>
         <ul class="space-y-2">
-          <li><a href="../features/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Features</a></li>
-          <li><a href="../pricing/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Pricing</a></li>
-          <li><a href="../security/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Security</a></li>
-          <li><a href="../tax-efile-chatbot/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Tax e-file chatbot</a></li>
+          <li><a href="../features/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Features</a></li>
+          <li><a href="../pricing/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Pricing</a></li>
+          <li><a href="../security/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Security</a></li>
+          <li><a href="../tax-efile-ai-agent/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">For e-file providers</a></li>
+          <li><a href="../tax-preparer-cpa-ai-agent/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">For tax pros &amp; CPAs</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Resources</h4>
+        <h2 class="footer-heading text-white font-semibold mb-4">Resources</h2>
         <ul class="space-y-2">
-          <li><a href="../blog/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Blog</a></li>
-          <li><a href="../free-tools/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Free calculators</a></li>
-          <li><a href="index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Use cases</a></li>
-          <li><a href="../index.html#faq" class="text-gray-600 transition-colors text-sm hover-primary-link">FAQ</a></li>
+          <li><a href="../use-cases/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Use cases</a></li>
+          <li><a href="../index.html#faq" class="text-gray-400 transition-colors text-sm hover:text-blue-400">FAQ</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Company</h4>
+        <h2 class="footer-heading text-white font-semibold mb-4">Company</h2>
         <ul class="space-y-2">
-          <li><a href="../about/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">About</a></li>
-          <li><a href="../agencies/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">For agencies</a></li>
-          <li><a href="../careers/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Careers</a></li>
-          <li><a href="../contact/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Contact</a></li>
+          <li><a href="../about/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">About</a></li>
+          <li><a href="../agencies/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">For agencies</a></li>
+          <li><a href="../contact/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Legal</h4>
+        <h2 class="footer-heading text-white font-semibold mb-4">Legal</h2>
         <ul class="space-y-2">
-          <li><a href="../privacy/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Privacy Policy</a></li>
-          <li><a href="../terms/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Terms of Service</a></li>
+          <li><a href="../privacy/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Privacy Policy</a></li>
+          <li><a href="../terms/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Terms of Service</a></li>
         </ul>
       </div>
     </div>
-    <div class="mt-12 pt-8 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-sm text-gray-600">&copy; 2026 <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span>. All rights reserved.</p>
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-gray-500">&copy; 2026 SiteWhizz. All rights reserved.</p>
+      <p class="text-xs text-gray-500 text-center md:text-right max-w-md"></p>
     </div>
   </div>
 </footer>
 
 <script>
+  // ==================== MOBILE MENU ====================
   function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('active');
+    document.getElementById('mobileMenu').classList.toggle('active');
   }
+
+  // ==================== SMOOTH SCROLL ====================
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('mobileMenu').classList.remove('active');
+    });
+  });
+
+  // ==================== FAQ ACCORDION ====================
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(other => {
+        other.classList.remove('open');
+        other.querySelector('.faq-answer').classList.add('hidden');
+        other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        item.querySelector('.faq-answer').classList.remove('hidden');
+        button.setAttribute('aria-expanded', 'true');
+      }
+    });
+  });
+
+  // ==================== SCROLL REVEAL ====================
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ==================== NAVBAR SCROLL EFFECT ====================
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    navbar.style.boxShadow = window.pageYOffset > 100 ? '0 4px 20px rgba(0, 0, 0, 0.08)' : 'var(--shadow-sm)';
+  }, { passive: true });
+
 </script>
 
-<!-- Logo Component -->
+<!-- Logo Component (Single Source of Truth) -->
 <script src="../assets/logo.js"></script>
 </body>
 </html>

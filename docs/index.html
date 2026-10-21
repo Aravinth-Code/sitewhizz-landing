@@ -11,18 +11,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="google-site-verification" content="Dx1Ne2Fr87vmX2nSDAEJdHoXfL7nTTA5_Lfpt3CWkHk" />
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="SiteWhizz Documentation - Learn how to set up, customize, and deploy your AI chatbot for website customer support. Step-by-step guides, API reference, and best practices." />
-  <meta name="keywords" content="AI chatbot, AI chatbot for website, chatbot setup, deploy AI chatbot, SiteWhizz documentation, chatbot customer service, integration guide" />
-  <title>Documentation | AI Chatbot Setup Guide | SiteWhizz</title>
+  <meta name="description" content="Guides for setting up your SiteWhizz AI agent: adding content, installing the widget, human handoff and leads." />
+  <meta name="keywords" content="AI agent, AI agent for website, agent setup, deploy AI agent, SiteWhizz documentation, agent customer service, integration guide" />
+  <title>Documentation | AI Agent Setup Guide | SiteWhizz</title>
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Documentation | AI Chatbot Setup Guide | SiteWhizz" />
-  <meta property="og:description" content="Complete guides and documentation for setting up and deploying your AI chatbot for website customer support." />
+  <meta property="og:title" content="Documentation | AI Agent Setup Guide | SiteWhizz" />
+  <meta property="og:description" content="Guides for setting up your SiteWhizz AI agent: adding content, installing the widget, human handoff and leads." />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Documentation | AI Chatbot Setup Guide | SiteWhizz" />
-  <meta name="twitter:description" content="Complete guides and documentation for setting up and deploying your AI chatbot for website customer support." />
+  <meta name="twitter:title" content="Documentation | AI Agent Setup Guide | SiteWhizz" />
+  <meta name="twitter:description" content="Guides for setting up your SiteWhizz AI agent: adding content, installing the widget, human handoff and leads." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://sitewhizz.io/docs/" />
 
@@ -30,7 +30,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
   <link rel="shortcut icon" href="../favicon.ico">
-  <meta name="robots" content="noindex, follow" />
+  <meta name="robots" content="noindex, nofollow" />
   <link rel="canonical" href="https://sitewhizz.io/docs/" />
 
   <!-- Social sharing -->
@@ -346,33 +346,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .hover-primary-link:hover { color: var(--primary-600); }
     .hover-primary-icon:hover { color: var(--primary-600); }
   </style>
+  <link rel="stylesheet" href="../assets/theme.css">
 </head>
 <body class="antialiased text-gray-900">
+<a href="#main" class="skip-link">Skip to content</a>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TG345ZX7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- Navigation -->
-<nav class="navbar">
+<nav class="navbar" aria-label="Main">
   <div class="navbar-container">
     <a href="../index.html" class="logo">
       <div class="logo-icon" data-logo></div>
-      <span class="text-xl font-bold"><span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span></span>
+      <span class="text-xl font-bold">SiteWhizz</span>
     </a>
-    <button class="navbar-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+    <button class="navbar-toggle" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()" aria-label="Toggle menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
     <div class="navbar-menu" id="mobileMenu">
-      <a href="../tax-efile-chatbot/index.html" class="navbar-link">For Tax E-File</a>
+      <a href="../tax-efile-ai-agent/index.html" class="navbar-link">For Tax E-File</a>
+      <a href="../tax-preparer-cpa-ai-agent/index.html" class="navbar-link">For Tax Pros</a>
       <a href="../features/index.html" class="navbar-link">Features</a>
       <a href="../pricing/index.html" class="navbar-link">Pricing</a>
-      <a href="../blog/index.html" class="navbar-link">Blog</a>
       <a href="https://app.sitewhizz.io/" class="navbar-cta">Start Free Trial</a>
     </div>
   </div>
 </nav>
+<main id="main" tabindex="-1">
 
 <!-- Hero Section -->
 <section class="hero" style="padding-top: 8rem;">
@@ -381,17 +384,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
     <div class="animate-fade-in-up">
-      <span class="inline-flex items-center gap-2 bg-primary-50 px-4 py-2 rounded-full text-sm font-semibold text-primary-600 mb-6">
+      <span class="inline-flex items-center gap-2 bg-primary-50 px-4 py-2 rounded-full text-sm font-semibold text-primary-600 mb-6 eyebrow">
         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
           <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
         </svg>
         Documentation
       </span>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-        Learn How to Use<br><span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span>
+        Learn how to use<br>SiteWhizz
       </h1>
       <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">
-        Everything you need to set up, customize, and get the most out of your AI chatbot.
+        Everything you need to set up, customize, and get the most out of your AI agent.
       </p>
     </div>
 
@@ -417,8 +420,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
           </svg>
         </div>
-        <h3 class="text-xl font-bold mb-2 text-gray-900">Getting Started</h3>
-        <p class="text-gray-600">Quick start guide to set up your first AI chatbot in minutes.</p>
+        <h3 class="text-xl font-bold mb-2 text-gray-900">Getting started</h3>
+        <p class="text-gray-600">Quick start guide to set up your first AI agent in minutes.</p>
       </a>
 
       <a href="#installation" class="doc-card animate-fade-in-up delay-200">
@@ -428,7 +431,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </svg>
         </div>
         <h3 class="text-xl font-bold mb-2 text-gray-900">Installation</h3>
-        <p class="text-gray-600">Learn how to embed your AI chatbot on any website or platform.</p>
+        <p class="text-gray-600">Learn how to embed your AI agent on any website or platform.</p>
       </a>
 
       <a href="#customization" class="doc-card animate-fade-in-up delay-300">
@@ -438,7 +441,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </svg>
         </div>
         <h3 class="text-xl font-bold mb-2 text-gray-900">Customization</h3>
-        <p class="text-gray-600">Customize your chatbot's appearance, behavior, and responses.</p>
+        <p class="text-gray-600">Customize your agent's appearance, instructions and welcome message.</p>
       </a>
 
       <a href="#training" class="doc-card animate-fade-in-up delay-100">
@@ -447,8 +450,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
           </svg>
         </div>
-        <h3 class="text-xl font-bold mb-2 text-gray-900">Training Your Bot</h3>
-        <p class="text-gray-600">Best practices for training your AI chatbot with your content.</p>
+        <h3 class="text-xl font-bold mb-2 text-gray-900">Training your agent</h3>
+        <p class="text-gray-600">Best practices for training your AI agent on your content.</p>
       </a>
 
       <a href="#integrations" class="doc-card animate-fade-in-up delay-200">
@@ -457,8 +460,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z"/>
           </svg>
         </div>
-        <h3 class="text-xl font-bold mb-2 text-gray-900">Integrations</h3>
-        <p class="text-gray-600">Connect with CRMs, helpdesks, and other third-party tools.</p>
+        <h3 class="text-xl font-bold mb-2 text-gray-900">Human handoff</h3>
+        <p class="text-gray-600">Set up email alerts, working hours and an after-hours message.</p>
       </a>
 
       <a href="#api" class="doc-card animate-fade-in-up delay-300">
@@ -467,8 +470,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
           </svg>
         </div>
-        <h3 class="text-xl font-bold mb-2 text-gray-900">API Reference</h3>
-        <p class="text-gray-600">Complete API documentation for developers.</p>
+        <h3 class="text-xl font-bold mb-2 text-gray-900">Leads</h3>
+        <p class="text-gray-600">Choose lead form fields and export leads as CSV.</p>
       </a>
     </div>
   </div>
@@ -477,14 +480,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Quick Links -->
 <section class="py-16 bg-gray-50">
   <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Popular Articles</h2>
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center">Popular articles</h2>
 
     <div class="grid md:grid-cols-2 gap-4">
       <a href="#" class="quick-link">
         <svg class="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
         </svg>
-        <span class="text-gray-700 font-medium">How to create your first AI chatbot</span>
+        <span class="text-gray-700 font-medium">How to create your first AI agent</span>
       </a>
 
       <a href="#" class="quick-link">
@@ -498,21 +501,21 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <svg class="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
         </svg>
-        <span class="text-gray-700 font-medium">Embedding your chatbot on WordPress</span>
+        <span class="text-gray-700 font-medium">Embedding your agent on WordPress</span>
       </a>
 
       <a href="#" class="quick-link">
         <svg class="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
         </svg>
-        <span class="text-gray-700 font-medium">Customizing chatbot appearance</span>
+        <span class="text-gray-700 font-medium">Customizing your agent's appearance</span>
       </a>
 
       <a href="#" class="quick-link">
         <svg class="w-5 h-5 text-primary-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
         </svg>
-        <span class="text-gray-700 font-medium">Understanding analytics dashboard</span>
+        <span class="text-gray-700 font-medium">Reading conversations in your dashboard</span>
       </a>
 
       <a href="#" class="quick-link">
@@ -528,7 +531,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Help Section -->
 <section class="py-16 bg-white">
   <div class="max-w-4xl mx-auto px-6 text-center">
-    <h2 class="text-2xl md:text-3xl font-bold mb-4">Need More Help?</h2>
+    <h2 class="text-2xl md:text-3xl font-bold mb-4">Need more help?</h2>
     <p class="text-gray-600 text-lg mb-8">Our support team is here to assist you with any questions.</p>
     <div class="flex flex-col sm:flex-row gap-4 justify-center">
       <a href="../contact/index.html" class="inline-flex items-center justify-center gap-2 bg-primary-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-primary-700 transition-all">
@@ -547,6 +550,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 </section>
 
+</main>
+
 <!-- Footer -->
 <footer class="bg-gradient-to-b from-gray-50 to-gray-100 text-gray-700 py-10 md:py-16 border-t border-gray-200">
   <div class="max-w-7xl mx-auto px-4 md:px-6">
@@ -554,41 +559,39 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <div>
         <a href="../index.html" class="logo mb-4">
           <div class="logo-icon" data-logo></div>
-          <span class="text-xl font-bold"><span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span></span>
+          <span class="text-xl font-bold">SiteWhizz</span>
         </a>
         <p class="text-sm leading-relaxed mt-4 text-gray-600">
-          AI chatbot trained on your website content to automate customer support. Visitors get instant, accurate answers 24/7. No coding required.
+          AI agent trained on your website content. It answers visitors around the clock and hands the rest to your team. No coding required.
         </p>
       </div>
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Product</h4>
+        <h2 class="footer-heading text-gray-900 font-semibold mb-4">Product</h2>
         <ul class="space-y-2">
           <li><a href="../features/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Features</a></li>
           <li><a href="../pricing/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Pricing</a></li>
           <li><a href="../security/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Security</a></li>
-          <li><a href="../tax-efile-chatbot/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Tax e-file chatbot</a></li>
+          <li><a href="../tax-efile-ai-agent/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">For e-file providers</a></li>
+          <li><a href="../tax-preparer-cpa-ai-agent/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">For tax pros &amp; CPAs</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Resources</h4>
+        <h2 class="footer-heading text-gray-900 font-semibold mb-4">Resources</h2>
         <ul class="space-y-2">
-          <li><a href="../blog/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Blog</a></li>
-          <li><a href="../free-tools/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Free calculators</a></li>
           <li><a href="../use-cases/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Use cases</a></li>
           <li><a href="../index.html#faq" class="text-gray-600 transition-colors text-sm hover-primary-link">FAQ</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Company</h4>
+        <h2 class="footer-heading text-gray-900 font-semibold mb-4">Company</h2>
         <ul class="space-y-2">
           <li><a href="../about/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">About</a></li>
           <li><a href="../agencies/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">For agencies</a></li>
-          <li><a href="../careers/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Careers</a></li>
           <li><a href="../contact/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Legal</h4>
+        <h2 class="footer-heading text-gray-900 font-semibold mb-4">Legal</h2>
         <ul class="space-y-2">
           <li><a href="../privacy/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Privacy Policy</a></li>
           <li><a href="../terms/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Terms of Service</a></li>
@@ -596,7 +599,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </div>
     </div>
     <div class="mt-12 pt-8 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-sm text-gray-600">&copy; 2026 <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span>. All rights reserved.</p>
+      <p class="text-sm text-gray-600">&copy; 2026 SiteWhizz. All rights reserved.</p>
     </div>
   </div>
 </footer>

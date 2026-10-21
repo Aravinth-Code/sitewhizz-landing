@@ -10,12 +10,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="AI chatbots for agencies: set up a chatbot for each client site, trained on their content, with your branding. 14-day free trial." />
+  <meta name="description" content="AI agents for agencies: set up an agent for each client site, trained on their content, with your branding. 14-day free trial." />
   <link rel="canonical" href="https://sitewhizz.io/agencies/" />
 
   <!-- Social sharing -->
-  <meta property="og:title" content="White-Label AI Chatbot for Agencies | SiteWhizz" />
-  <meta property="og:description" content="AI chatbots for agencies: set up a chatbot for each client site, trained on their content, with your branding. 14-day free trial." />
+  <meta property="og:title" content="White-Label AI Agent for Agencies | SiteWhizz" />
+  <meta property="og:description" content="AI agents for agencies: set up an agent for each client site, trained on their content, with your branding. 14-day free trial." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="SiteWhizz" />
   <meta property="og:url" content="https://sitewhizz.io/agencies/" />
@@ -24,8 +24,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:image" content="https://sitewhizz.io/assets/og-image.png" />
-  <meta name="keywords" content="AI chatbot, white-label AI chatbot, AI chatbot for agencies, chatbot for website, customer support chatbot" />
-  <title>White-Label AI Chatbot for Agencies | SiteWhizz</title>
+  <meta name="keywords" content="AI agent, white-label AI agent, AI agent for agencies, agent for website, customer support agent" />
+  <title>White-Label AI Agent for Agencies | SiteWhizz</title>
 
   <!-- Favicon -->
   <link rel="icon" type="image/x-icon" href="../favicon.ico">
@@ -71,7 +71,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
 
-    /* CSS Variables */
     :root {
       --primary-50: #eff6ff;
       --primary-100: #dbeafe;
@@ -83,7 +82,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       --primary-700: #1d4ed8;
       --primary-800: #1e40af;
       --primary-900: #1e3a8a;
-
       --gray-50: #f8fafc;
       --gray-100: #f1f5f9;
       --gray-200: #e2e8f0;
@@ -94,88 +92,74 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       --gray-700: #334155;
       --gray-800: #1e293b;
       --gray-900: #0f172a;
-
-      --spacing-xs: 0.5rem;
-      --spacing-sm: 1rem;
-      --spacing-md: 1.5rem;
-      --spacing-lg: 2rem;
-      --spacing-xl: 3rem;
-      --spacing-2xl: 4rem;
-      --spacing-3xl: 6rem;
-
-      --text-sm: 0.875rem;
-      --text-base: 1rem;
-      --text-lg: 1.125rem;
-      --text-xl: 1.25rem;
-      --text-2xl: 1.5rem;
-      --text-3xl: 1.875rem;
-
+      --success: #16a34a;
+      --warning: #d97706;
+      --danger: #dc2626;
       --radius-lg: 0.75rem;
       --radius-xl: 1rem;
       --radius-2xl: 1.5rem;
-      --radius-3xl: 2rem;
       --radius-full: 9999px;
-
       --shadow-sm: 0 1px 2px 0 rgb(15 23 42 / 0.04);
-      --shadow-md: 0 4px 6px -1px rgb(15 23 42 / 0.08), 0 2px 4px -1px rgb(15 23 42 / 0.03);
       --shadow-lg: 0 10px 15px -3px rgb(15 23 42 / 0.10), 0 4px 6px -2px rgb(15 23 42 / 0.05);
       --shadow-xl: 0 20px 25px -5px rgb(15 23 42 / 0.12), 0 10px 10px -5px rgb(15 23 42 / 0.04);
-      --shadow-2xl: 0 25px 50px -12px rgb(15 23 42 / 0.18);
-      --shadow-blue: 0 8px 24px -4px rgba(14, 165, 233, 0.15);
-
+      --shadow-2xl: 0 25px 50px -12px rgb(15 23 42 / 0.25);
+      --shadow-blue: 0 8px 24px -4px rgba(29, 78, 216, 0.25);
+      --gradient-primary: #1d4ed8;
+      --gradient-cta: #0f1e3d;
       --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
       --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Global Styles */
     html, body {
       scroll-behavior: smooth;
       overflow-x: hidden;
       max-width: 100vw;
     }
 
-    @media (max-width: 768px) {
-      html {
-        scroll-padding-top: 80px;
-      }
-    }
+    body { background: white; }
 
-    /* Animations */
+    section[id] { scroll-margin-top: 80px; }
+
+    /* ================= ANIMATIONS ================= */
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-20px); }
     }
 
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
 
     @keyframes pulse-slow {
       0%, 100% { opacity: 1; }
-      50% { opacity: 0.5; }
+      50% { opacity: 0.6; }
     }
 
-    .animate-float {
-      animation: float 6s ease-in-out infinite;
+    @keyframes typing {
+      0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
+      30% { transform: translateY(-4px); opacity: 1; }
     }
 
-    .animate-fade-in-up {
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .animate-fade-in-up { opacity: 0; animation: fadeInUp 0.8s ease-out forwards; }
     .delay-100 { animation-delay: 0.1s; }
     .delay-200 { animation-delay: 0.2s; }
     .delay-300 { animation-delay: 0.3s; }
     .delay-400 { animation-delay: 0.4s; }
 
-    /* Background Decorations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .reveal.revealed { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-float, .animate-fade-in-up { animation: none; opacity: 1; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
     .bg-decoration {
       position: absolute;
       border-radius: var(--radius-full);
@@ -184,111 +168,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       pointer-events: none;
     }
 
-    .bg-decoration-primary {
-      background: var(--primary-50);
-    }
-
-    /* Buttons */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 0.5rem;
-      font-weight: 700;
-      border-radius: var(--radius-xl);
-      transition: all var(--transition-base);
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .btn-primary {
-      background: #1d4ed8;
-      color: white;
-      padding: 0.875rem 1.5rem;
-      font-size: 0.9375rem;
-      box-shadow: var(--shadow-lg);
-    }
-
-    @media (min-width: 640px) {
-      .btn-primary {
-        padding: 1.25rem 2.5rem;
-        font-size: var(--text-lg);
-      }
-    }
-
-    .btn-primary:hover {
-      background: var(--primary-800);
-      box-shadow: var(--shadow-xl);
-      transform: translateY(-2px);
-    }
-
-    .btn-green {
-      background: #16a34a;
-      color: white;
-      padding: 0.875rem 1.5rem;
-      font-size: 0.9375rem;
-      box-shadow: 0 10px 15px -3px rgba(22, 163, 74, 0.2), 0 4px 6px -2px rgba(22, 163, 74, 0.1);
-    }
-
-    @media (min-width: 640px) {
-      .btn-green {
-        padding: 1.25rem 2.5rem;
-        font-size: var(--text-lg);
-      }
-    }
-
-    .btn-green:hover {
-      background: #15803d;
-      box-shadow: 0 20px 25px -5px rgba(22, 163, 74, 0.25);
-      transform: translateY(-2px);
-    }
-
-    .btn-secondary {
-      border: 2px solid var(--gray-300);
-      color: var(--gray-700);
-      padding: 0.875rem 1.5rem;
-      font-size: 0.9375rem;
-    }
-
-    @media (min-width: 640px) {
-      .btn-secondary {
-        padding: 1.25rem 2.5rem;
-        font-size: var(--text-lg);
-      }
-    }
-
-    .btn-secondary:hover {
-      background: var(--gray-50);
-    }
-
-    .btn-outline-white {
-      border: 2px solid rgba(255, 255, 255, 0.5);
-      color: white;
-      padding: 0.875rem 1.5rem;
-      font-size: 0.9375rem;
-    }
-
-    @media (min-width: 640px) {
-      .btn-outline-white {
-        padding: 1.25rem 2.5rem;
-        font-size: var(--text-lg);
-      }
-    }
-
-    .btn-outline-white:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: white;
-    }
-
-    /* Gradient Text */
     .gradient-text {
-      background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+      background: var(--gradient-primary);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
     }
 
-    /* Logo Component */
+    /* ================= LOGO ================= */
     .logo {
       display: inline-flex;
       align-items: center;
@@ -303,28 +190,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transition: transform var(--transition-base);
     }
 
-    .logo:hover .logo-icon {
-      transform: scale(1.1);
-    }
+    .logo:hover .logo-icon { transform: scale(1.1); }
+    .logo-icon svg { width: 100%; height: 100%; }
 
-    .logo-icon svg {
-      width: 100%;
-      height: 100%;
-    }
-
-    /* Agent winking animation */
     .logo-icon .wink-eye {
       transform-origin: center;
       animation: winkEye 4s ease-in-out infinite;
     }
 
     @keyframes winkEye {
-      0%, 40%, 60%, 100% {
-        transform: scaleY(1);
-      }
-      48%, 52% {
-        transform: scaleY(0.1);
-      }
+      0%, 40%, 60%, 100% { transform: scaleY(1); }
+      48%, 52% { transform: scaleY(0.1); }
     }
 
     .logo-icon .wink-line {
@@ -333,15 +209,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     @keyframes winkLine {
-      0%, 40%, 60%, 100% {
-        opacity: 0;
-      }
-      48%, 52% {
-        opacity: 1;
-      }
+      0%, 40%, 60%, 100% { opacity: 0; }
+      48%, 52% { opacity: 1; }
     }
 
-    /* Navigation */
+    /* ================= NAVBAR ================= */
     .navbar {
       position: fixed;
       top: 0;
@@ -353,15 +225,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       -webkit-backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--gray-200);
       box-shadow: var(--shadow-sm);
+      transition: box-shadow var(--transition-base);
     }
 
     .navbar-container {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 1rem 1.5rem;
+      padding: 1rem 1rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+    }
+
+    @media (min-width: 768px) {
+      .navbar-container { padding: 1rem 1.5rem; }
     }
 
     .navbar-menu {
@@ -377,16 +254,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       transition: color var(--transition-fast);
     }
 
-    .navbar-link:hover {
-      color: var(--primary-600);
-    }
-
-    .navbar-link.active {
-      color: var(--primary-600);
-    }
+    .navbar-link:hover { color: var(--primary-600); }
 
     .navbar-cta {
-      background: #1d4ed8;
+      background: var(--primary-600);
       color: white;
       padding: 0.625rem 1.5rem;
       border-radius: var(--radius-lg);
@@ -397,7 +268,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     .navbar-cta:hover {
-      background: var(--primary-700);
+      background: var(--primary-800);
       box-shadow: var(--shadow-blue);
       transform: translateY(-1px);
     }
@@ -420,10 +291,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     @media (max-width: 768px) {
-      .navbar-toggle {
-        display: flex;
-      }
-
+      .navbar-toggle { display: flex; }
       .navbar-menu {
         display: none;
         position: absolute;
@@ -436,336 +304,477 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         border-bottom: 1px solid var(--gray-200);
         box-shadow: var(--shadow-lg);
       }
-
-      .navbar-menu.active {
-        display: flex;
-      }
+      .navbar-menu.active { display: flex; }
     }
 
-    /* Hero Section */
+    /* ================= BUTTONS ================= */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      border-radius: var(--radius-xl);
+      transition: all var(--transition-base);
+      text-decoration: none;
+      cursor: pointer;
+      padding: 0.875rem 1.5rem;
+      font-size: 0.9375rem;
+    }
+
+    .btn-primary {
+      background: var(--primary-600);
+      color: white;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-800);
+      box-shadow: var(--shadow-blue);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: var(--gray-900);
+      border: 1px solid var(--gray-300);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary-400);
+      color: var(--primary-700);
+      transform: translateY(-2px);
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary-50);
+      border: 1px solid var(--primary-100);
+      color: var(--primary-700);
+      padding: 0.375rem 0.875rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
+      font-weight: 600;
+    }
+
+    .eyebrow {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--primary-600);
+    }
+
+    /* ================= HERO ================= */
     .hero {
       position: relative;
-      padding-top: 8rem;
+      padding-top: 7.5rem;
       padding-bottom: 4rem;
-      background: linear-gradient(180deg, var(--gray-50) 0%, white 100%);
+      background: var(--sw-surface-alt);
       overflow: hidden;
     }
 
     @media (min-width: 768px) {
-      .hero {
-        padding-top: 10rem;
-        padding-bottom: 5rem;
-      }
+      .hero { padding-top: 9rem; padding-bottom: 5rem; }
     }
 
-    .hero-container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 1.5rem;
-      text-align: center;
-    }
-
-    /* Pricing Cards */
-    .pricing-card {
+    /* ================= CHAT WINDOW (hero + demo) ================= */
+    .chat-window {
       background: white;
-      border-radius: var(--radius-2xl);
-      padding: 2rem;
       border: 1px solid var(--gray-200);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-2xl);
+      overflow: hidden;
+      width: 100%;
+      max-width: 420px;
+    }
+
+    .chat-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 0.875rem 1rem;
+      background: var(--gradient-primary);
+      color: white;
+    }
+
+    .chat-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .chat-name { font-weight: 700; font-size: 0.9375rem; line-height: 1.2; }
+
+    .chat-status {
+      font-size: 0.75rem;
+      opacity: 0.9;
+      display: flex;
+      align-items: center;
+      gap: 0.375rem;
+    }
+
+    .chat-status-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: var(--radius-full);
+      background: #4ade80;
+    }
+
+    .chat-body {
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      background: var(--gray-50);
+    }
+
+    .chat-bubble {
+      max-width: 88%;
+      padding: 0.625rem 0.875rem;
+      border-radius: 1rem;
+      font-size: 0.875rem;
+      line-height: 1.5;
+    }
+
+    .chat-bubble-bot {
+      align-self: flex-start;
+      background: white;
+      color: var(--gray-800);
+      border: 1px solid var(--gray-200);
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    .chat-bubble-user {
+      align-self: flex-end;
+      background: var(--primary-600);
+      color: white;
+      border-bottom-right-radius: 0.25rem;
+    }
+
+    .chat-source {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      margin-top: 0.5rem;
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--primary-700);
+      background: var(--primary-50);
+      border-radius: var(--radius-full);
+      padding: 0.125rem 0.5rem;
+    }
+
+    .chat-system {
+      align-self: center;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--warning);
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-radius: var(--radius-full);
+      padding: 0.25rem 0.75rem;
+    }
+
+    .chat-typing {
+      align-self: flex-start;
+      display: inline-flex;
+      gap: 4px;
+      padding: 0.75rem 0.875rem;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: 1rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    .chat-typing span {
+      width: 6px;
+      height: 6px;
+      border-radius: var(--radius-full);
+      background: var(--gray-400);
+      animation: typing 1.2s infinite;
+    }
+    .chat-typing span:nth-child(2) { animation-delay: 0.15s; }
+    .chat-typing span:nth-child(3) { animation-delay: 0.3s; }
+
+    .chat-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-top: 1px solid var(--gray-200);
+      background: white;
+    }
+
+    .chat-chip {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--primary-700);
+      background: var(--primary-50);
+      border: 1px solid var(--primary-200);
+      border-radius: var(--radius-full);
+      padding: 0.375rem 0.75rem;
+      cursor: pointer;
+      transition: all var(--transition-fast);
+      text-align: left;
+    }
+
+    .chat-chip:hover:not(:disabled) {
+      background: var(--primary-100);
+      border-color: var(--primary-400);
+    }
+
+    .chat-chip:disabled { opacity: 0.45; cursor: default; }
+
+    .chat-input {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1rem;
+      border-top: 1px solid var(--gray-200);
+      background: white;
+    }
+
+    .chat-input-field {
+      flex: 1;
+      font-size: 0.8125rem;
+      color: var(--gray-400);
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-full);
+      padding: 0.5rem 0.875rem;
+    }
+
+    .chat-send {
+      width: 32px;
+      height: 32px;
+      border-radius: var(--radius-full);
+      background: var(--primary-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    #demoBody {
+      height: 300px;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    /* ================= CARDS ================= */
+    .card {
+      min-width: 0;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-2xl);
+      padding: 1.5rem;
       transition: all var(--transition-base);
-      height: 100%;
+    }
+
+    .card:hover {
+      border-color: var(--primary-300);
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-4px);
+    }
+
+    .card-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-xl);
+      background: var(--primary-50);
+      color: var(--primary-600);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+
+    .question-quote {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--gray-900);
+      background: var(--gray-50);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 0.625rem 0.875rem;
+      margin: 0.75rem 0;
+    }
+
+    .trained-on {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.375rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gray-500);
+    }
+
+    .form-chip {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--gray-700);
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      padding: 0.5rem 0.875rem;
+      white-space: nowrap;
+    }
+
+    .list-check, .list-cross {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+    }
+
+    .step-number {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-full);
+      background: var(--gradient-primary);
+      color: white;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-blue);
+    }
+
+    /* ================= PRICING ================= */
+    .price-card {
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-2xl);
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
     }
 
-    .pricing-card:hover {
-      border-color: var(--primary-300);
-      box-shadow: var(--shadow-xl);
-      transform: translateY(-4px);
-    }
-
-    .pricing-card.popular {
-      border: 2px solid #1d4ed8;
+    .price-card-featured {
+      border: 2px solid var(--primary-600);
+      box-shadow: var(--shadow-blue);
       position: relative;
-      box-shadow: var(--shadow-xl);
     }
 
-    .pricing-card.popular::before {
-      content: 'Most Popular';
-      position: absolute;
-      top: -12px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: #1d4ed8;
-      color: white;
-      padding: 0.25rem 1rem;
-      border-radius: var(--radius-full);
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .pricing-card-header {
-      text-align: center;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid var(--gray-200);
-      margin-bottom: 1.5rem;
-    }
-
-    .pricing-card-icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .pricing-card-name {
-      font-size: 1.25rem;
-      font-weight: 700;
-      color: var(--gray-900);
-      margin-bottom: 0.5rem;
-    }
-
-    .pricing-card-price {
-      font-size: 2.5rem;
-      font-weight: 800;
-      color: var(--gray-900);
-    }
-
-    .pricing-card-price span {
-      font-size: 1rem;
-      font-weight: 500;
-      color: var(--gray-500);
-    }
-
-    .pricing-card-features {
-      flex: 1;
-      margin-bottom: 1.5rem;
-    }
-
-    .pricing-card-features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.75rem;
-      margin-bottom: 0.75rem;
-      color: var(--gray-700);
-      font-size: 0.9375rem;
-    }
-
-    .pricing-card-features li svg {
-      width: 1.25rem;
-      height: 1.25rem;
-      color: #1d4ed8;
-      flex-shrink: 0;
-      margin-top: 0.125rem;
-    }
-
-    .pricing-card-btn {
-      width: 100%;
-      padding: 0.875rem 1.5rem;
-      border-radius: var(--radius-xl);
-      font-weight: 600;
-      text-align: center;
-      transition: all var(--transition-base);
-      text-decoration: none;
-      display: block;
-    }
-
-    .pricing-card-btn-primary {
-      background: #1d4ed8;
-      color: white;
-    }
-
-    .pricing-card-btn-primary:hover {
-      background: var(--primary-800);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-lg);
-    }
-
-    .pricing-card-btn-secondary {
-      background: var(--gray-100);
-      color: var(--gray-700);
+    /* ================= FAQ ================= */
+    .faq-item {
+      background: white;
       border: 1px solid var(--gray-200);
-    }
-
-    .pricing-card-btn-secondary:hover {
-      background: var(--gray-200);
-    }
-
-    /* CTA Section */
-    .cta-section {
-      position: relative;
-      background: linear-gradient(135deg, #1d4ed8, #1e40af);
-      color: white;
-      padding: var(--spacing-2xl) 0;
+      border-radius: var(--radius-xl);
       overflow: hidden;
     }
 
-    @media (min-width: 640px) {
-      .cta-section {
-        padding: var(--spacing-3xl) 0;
-      }
+    .faq-question {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1.125rem 1.25rem;
+      text-align: left;
+      font-weight: 600;
+      color: var(--gray-900);
+      background: none;
+      border: none;
+      cursor: pointer;
     }
 
-    /* Footer */
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--spacing-lg);
-      margin-bottom: var(--spacing-lg);
-    }
+    .faq-question:hover { color: var(--primary-700); }
+    .faq-icon { transition: transform var(--transition-base); flex-shrink: 0; color: var(--gray-400); }
+    .faq-item.open .faq-icon { transform: rotate(180deg); color: var(--primary-600); }
+    .faq-answer { padding: 0 1.25rem 1.25rem; color: var(--gray-600); line-height: 1.65; }
 
-    @media (min-width: 640px) {
-      .footer-grid {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      }
-    }
-
-    .footer-grid > div:first-child {
-      grid-column: 1 / -1;
-    }
-
-    @media (min-width: 640px) {
-      .footer-grid > div:first-child {
-        grid-column: auto;
-      }
-    }
-
-    /* Hover States */
-    .hover-primary-link:hover { color: #1d4ed8 !important; }
-    .hover-primary-icon:hover { color: #1d4ed8 !important; }
-
-    /* Step cards */
-    .step-card {
-      background: white;
-      border-radius: var(--radius-2xl);
-      padding: 2rem;
-      border: 1px solid var(--gray-200);
-      transition: all var(--transition-base);
-      text-align: center;
-    }
-
-    .step-card:hover {
-      border-color: var(--primary-300);
-      box-shadow: var(--shadow-xl);
-      transform: translateY(-4px);
-    }
-
-    /* Benefit cards */
-    .benefit-card {
-      background: white;
-      border-radius: var(--radius-2xl);
-      padding: 2rem;
-      border: 1px solid var(--gray-200);
-      transition: all var(--transition-base);
-    }
-
-    .benefit-card:hover {
-      border-color: var(--primary-300);
-      box-shadow: var(--shadow-xl);
-      transform: translateY(-4px);
-    }
-
-    /* Industry cards */
-    .industry-card {
-      background: white;
-      border-radius: var(--radius-xl);
-      padding: 1.5rem;
-      border: 1px solid var(--gray-200);
-      transition: all var(--transition-base);
-      text-align: center;
-    }
-
-    .industry-card:hover {
-      border-color: var(--primary-300);
-      box-shadow: var(--shadow-lg);
-      transform: translateY(-2px);
+    /* ================= CTA ================= */
+    .cta-section {
+      background: var(--gradient-cta);
+      position: relative;
+      overflow: hidden;
     }
   </style>
+  <link rel="stylesheet" href="../assets/theme.css">
 </head>
-
-<body class="bg-white text-gray-900 antialiased">
-
+<body class="antialiased text-gray-900">
+<a href="#main" class="skip-link">Skip to content</a>
 <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TG345ZX7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TG345ZX7" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
 <!-- ================= NAVIGATION ================= -->
-<nav class="navbar">
+<nav class="navbar" aria-label="Main">
   <div class="navbar-container">
     <a href="../index.html" class="logo">
       <div class="logo-icon" data-logo></div>
-      <span class="logo-text font-bold text-xl"><span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span></span>
+      <span class="logo-text font-bold text-xl">SiteWhizz</span>
     </a>
 
-    <button class="navbar-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+    <button class="navbar-toggle" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()" aria-label="Toggle menu">
       <span></span>
       <span></span>
       <span></span>
     </button>
 
     <div class="navbar-menu" id="mobileMenu">
-      <a href="../tax-efile-chatbot/index.html" class="navbar-link">For Tax E-File</a>
+      <a href="../tax-efile-ai-agent/index.html" class="navbar-link">For Tax E-File</a>
+      <a href="../tax-preparer-cpa-ai-agent/index.html" class="navbar-link">For Tax Pros</a>
       <a href="../features/index.html" class="navbar-link">Features</a>
       <a href="../pricing/index.html" class="navbar-link">Pricing</a>
-      <a href="../blog/index.html" class="navbar-link">Blog</a>
       <a href="https://app.sitewhizz.io/" class="navbar-cta">Start Free Trial</a>
     </div>
   </div>
 </nav>
+<main id="main" tabindex="-1">
 
-
-<!-- ================= HERO SECTION ================= -->
-<section class="hero" style="padding-top: 8rem; padding-bottom: 6rem;">
-  <div class="bg-decoration bg-decoration-primary hidden md:block" style="top: 5rem; left: 2.5rem; width: 18rem; height: 18rem;"></div>
-  <div class="bg-decoration bg-decoration-primary hidden md:block" style="bottom: 5rem; right: 2.5rem; width: 24rem; height: 24rem;"></div>
-
-  <div class="hero-container">
-    <div class="inline-flex items-center gap-2 bg-blue-50 px-3 md:px-4 py-2 rounded-full text-xs md:text-sm font-semibold mb-6 md:mb-8 animate-fade-in-up" style="color: #1d4ed8; border: 1px solid #dbeafe;">
-      <span class="w-2 h-2 rounded-full flex-shrink-0" style="background: #1d4ed8;"></span>
-      <span>FOR DIGITAL AGENCIES</span>
-    </div>
-
-    <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-tight animate-fade-in-up delay-100">
-      Offer AI Chatbots to Your Clients <span class="gradient-text">Without Building Them</span>
-    </h1>
-
-    <p class="text-lg md:text-xl lg:text-2xl text-gray-600 max-w-3xl mx-auto mb-8 md:mb-10 leading-relaxed animate-fade-in-up delay-200 px-4 md:px-0">
-      Set up an AI chatbot for each client in about 10 minutes, trained on that client's website and docs. You set the price and bill the client directly.
-    </p>
-
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up delay-300">
-      <a href="https://app.sitewhizz.io/" class="btn btn-green">
-        Start Free Trial
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-        </svg>
-      </a>
-      <a href="#how-it-works" class="btn btn-secondary">
-        See Demo
-      </a>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="max-w-7xl mx-auto px-4 md:px-6 relative z-10">
+    <div class="max-w-3xl">
+      <p class="eyebrow mb-6">For digital agencies</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight mb-6">Offer AI agents to your clients without building them</h1>
+      <p class="text-lg md:text-xl text-gray-600 leading-relaxed mb-8">Set up an AI agent for each client in about 10 minutes, trained on that client's website and docs. You set the price and bill the client directly.</p>
+      <div class="flex flex-col sm:flex-row gap-3">
+          <a href="https://app.sitewhizz.io/" class="btn btn-primary text-base px-7 py-4">
+            Start Free Trial
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+          </a>
+          <a href="#how-it-works" class="btn btn-secondary text-base px-7 py-4">See how it works</a>
+      </div>
+        <p class="text-sm text-gray-500 mt-4">14-day free trial. No credit card required.</p>
     </div>
   </div>
 </section>
 
-<!-- ================= PROBLEM SECTION ================= -->
+<!-- ================= SECTION ================= -->
 <section class="py-16 md:py-24 bg-white">
-  <div class="max-w-4xl mx-auto px-4 md:px-6 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
-      Your Clients Keep Asking About <span class="gradient-text">AI Chatbots</span>
-    </h2>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-      <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-        <div class="text-3xl mb-4">😩</div>
-        <p class="text-gray-700 font-medium">Clients want AI chatbots but you can't build them from scratch</p>
+  <div class="max-w-6xl mx-auto px-4 md:px-6">
+    <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+      <p class="eyebrow mb-3">The problem</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Your clients keep asking about AI agents</h2>
+    </div>
+    <div class="feature-list">
+      <div class="feature-item">
+        <h3>Clients ask, you have nothing ready</h3>
+        <p>An AI agent is now a common request, and building one per client is not realistic.</p>
       </div>
-      <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-        <div class="text-3xl mb-4">💸</div>
-        <p class="text-gray-700 font-medium">Building a chatbot from scratch eats developer time</p>
+      <div class="feature-item">
+        <h3>Building one eats developer time</h3>
+        <p>Retrieval, citations, handoff and a widget are weeks of work before the first client sees anything.</p>
       </div>
-      <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100">
-        <div class="text-3xl mb-4">🚫</div>
-        <p class="text-gray-700 font-medium">Many chatbot tools put their own branding on every widget</p>
+      <div class="feature-item">
+        <h3>Other tools brand every widget</h3>
+        <p>Many agent tools put their own name on every widget you ship to a client.</p>
       </div>
     </div>
   </div>
@@ -774,254 +783,168 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ================= HOW IT WORKS ================= -->
 <section id="how-it-works" class="py-16 md:py-24 bg-gray-50">
   <div class="max-w-6xl mx-auto px-4 md:px-6">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        How It <span class="gradient-text">Works</span>
-      </h2>
-      <p class="text-lg text-gray-600">Three steps per client</p>
+    <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+      <p class="eyebrow mb-3">How it works</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Three steps per client</h2>
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <!-- Step 1 -->
-      <div class="step-card">
-        <div class="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-5" style="background: #1d4ed8;">1</div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Add Your Client</h3>
-        <p class="text-gray-600">Create a workspace, upload their docs, FAQs, website content</p>
+    <div class="grid md:grid-cols-3 gap-6 lg:gap-8">
+      <div class="card reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="step-number">1</span>
+          <h3 class="text-lg font-bold">Add your client</h3>
+        </div>
+        <p class="text-gray-600">Add the client's website URL and upload their docs and FAQs.</p>
       </div>
-      <!-- Step 2 -->
-      <div class="step-card">
-        <div class="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-5" style="background: #1d4ed8;">2</div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Customize & Brand</h3>
-        <p class="text-gray-600">Set the client's colors, bot name and welcome message. Hide the "Powered by SiteWhizz" label</p>
+      <div class="card reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="step-number">2</span>
+          <h3 class="text-lg font-bold">Customize and brand</h3>
+        </div>
+        <p class="text-gray-600">Set the client's colors, agent name and welcome message, and hide the "Powered by SiteWhizz" label.</p>
       </div>
-      <!-- Step 3 -->
-      <div class="step-card">
-        <div class="w-14 h-14 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-5" style="background: #16a34a;">3</div>
-        <h3 class="text-xl font-bold text-gray-900 mb-3">Deploy &amp; Bill</h3>
-        <p class="text-gray-600">Paste one script tag on the client's site. You set the price and bill the client</p>
+      <div class="card reveal">
+        <div class="flex items-center gap-3 mb-4">
+          <span class="step-number">3</span>
+          <h3 class="text-lg font-bold">Deploy and bill</h3>
+        </div>
+        <p class="text-gray-600">Paste one script tag on the client's site. You set the price and bill the client.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= WHY AGENCIES CHOOSE SITEWHIZZ ================= -->
+<!-- ================= SECTION ================= -->
 <section class="py-16 md:py-24 bg-white">
   <div class="max-w-6xl mx-auto px-4 md:px-6">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        Why Agencies Choose <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span>
-      </h2>
+    <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+      <p class="eyebrow mb-3">Why agencies choose SiteWhizz</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Built to resell</h2>
     </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
-      <!-- Benefit 1 -->
-      <div class="benefit-card">
-        <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--primary-50);">
-            <svg class="w-6 h-6" style="color: #1d4ed8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">Your Branding</h3>
-            <p class="text-gray-600">Match each client's colors and hide the "Powered by SiteWhizz" label</p>
-          </div>
-        </div>
+    <div class="feature-list">
+      <div class="feature-item">
+        <h3>Your branding</h3>
+        <p>Match each client's colors and hide the "Powered by SiteWhizz" label.</p>
       </div>
-      <!-- Benefit 2 -->
-      <div class="benefit-card">
-        <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--primary-50);">
-            <svg class="w-6 h-6" style="color: #1d4ed8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">10-Minute Setup Per Client</h3>
-            <p class="text-gray-600">Upload docs, customize, deploy. No coding needed</p>
-          </div>
-        </div>
+      <div class="feature-item">
+        <h3>10-minute setup per client</h3>
+        <p>Upload docs, customize, deploy. No coding needed.</p>
       </div>
-      <!-- Benefit 3 -->
-      <div class="benefit-card">
-        <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style="background: var(--primary-50);">
-            <svg class="w-6 h-6" style="color: #1d4ed8;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">Conversations &amp; Leads</h3>
-            <p class="text-gray-600">Read what visitors ask and export leads as CSV to share with the client</p>
-          </div>
-        </div>
+      <div class="feature-item">
+        <h3>Conversations and leads</h3>
+        <p>Read what visitors ask and export leads as CSV to share with the client.</p>
       </div>
-      <!-- Benefit 4 -->
-      <div class="benefit-card">
-        <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-green-50">
-            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-            </svg>
-          </div>
-          <div>
-            <h3 class="text-lg font-bold text-gray-900 mb-2">Hand-off to the Client</h3>
-            <p class="text-gray-600">When the chatbot can't answer, it emails the client's team</p>
-          </div>
-        </div>
+      <div class="feature-item">
+        <h3>Hand-off to the client</h3>
+        <p>When the agent can't answer, it emails the client's team.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= DEPLOY FOR ANY INDUSTRY ================= -->
+<!-- ================= INDUSTRIES ================= -->
 <section class="py-16 md:py-24 bg-gray-50">
   <div class="max-w-6xl mx-auto px-4 md:px-6">
-    <div class="text-center mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-        Deploy for <span class="gradient-text">Any Industry</span>
-      </h2>
+    <div class="text-center max-w-3xl mx-auto mb-12 reveal">
+      <p class="eyebrow mb-3">Industries</p>
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Deploy for any industry</h2>
     </div>
-
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-      <div class="industry-card">
-        <div class="text-3xl mb-3">&#x1F37D;&#xFE0F;</div>
-        <h3 class="font-bold text-gray-900 mb-1">Restaurants</h3>
-        <p class="text-sm text-gray-500">Menu questions, reservations, hours</p>
-      </div>
-      <div class="industry-card">
-        <div class="text-3xl mb-3">&#x1F9B7;</div>
-        <h3 class="font-bold text-gray-900 mb-1">Dental Clinics</h3>
-        <p class="text-sm text-gray-500">Services, booking, insurance FAQ</p>
-      </div>
-      <div class="industry-card">
-        <div class="text-3xl mb-3">&#x1F6D2;</div>
-        <h3 class="font-bold text-gray-900 mb-1">E-commerce</h3>
-        <p class="text-sm text-gray-500">Product questions, shipping, returns</p>
-      </div>
-      <div class="industry-card">
-        <div class="text-3xl mb-3">&#x1F3E0;</div>
-        <h3 class="font-bold text-gray-900 mb-1">Real Estate</h3>
-        <p class="text-sm text-gray-500">Property details, scheduling tours</p>
-      </div>
-      <div class="industry-card">
-        <div class="text-3xl mb-3">&#x2696;&#xFE0F;</div>
-        <h3 class="font-bold text-gray-900 mb-1">Law Firms</h3>
-        <p class="text-sm text-gray-500">Practice areas, consultation booking</p>
-      </div>
-      <div class="industry-card">
-        <div class="text-3xl mb-3">&#x1F486;</div>
-        <h3 class="font-bold text-gray-900 mb-1">Salons & Spas</h3>
-        <p class="text-sm text-gray-500">Services, pricing, availability</p>
-      </div>
+    <div class="answers-table reveal">
+        <div class="answers-row">
+          <div><h3>Restaurants</h3><p class="question-quote">“Do you take reservations on Friday?”</p></div>
+          <p class="trained-on">Menu, reservations, hours</p>
+        </div>
+        <div class="answers-row">
+          <div><h3>Dental clinics</h3><p class="question-quote">“Do you accept my insurance?”</p></div>
+          <p class="trained-on">Services, booking, insurance FAQ</p>
+        </div>
+        <div class="answers-row">
+          <div><h3>E-commerce</h3><p class="question-quote">“How long does shipping take?”</p></div>
+          <p class="trained-on">Products, shipping, returns</p>
+        </div>
+        <div class="answers-row">
+          <div><h3>Real estate</h3><p class="question-quote">“Is this property still available?”</p></div>
+          <p class="trained-on">Listings, scheduling tours</p>
+        </div>
+        <div class="answers-row">
+          <div><h3>Law firms</h3><p class="question-quote">“Do you handle tenant disputes?”</p></div>
+          <p class="trained-on">Practice areas, consultation booking</p>
+        </div>
+        <div class="answers-row">
+          <div><h3>Salons and spas</h3><p class="question-quote">“How much is a balayage?”</p></div>
+          <p class="trained-on">Services, pricing, availability</p>
+        </div>
     </div>
   </div>
 </section>
 
-<!-- ================= AGENCY PRICING ================= -->
-<section class="py-16 md:py-24 bg-white">
-  <div class="max-w-3xl mx-auto px-4 md:px-6">
-    <div class="bg-white border-2 rounded-2xl p-8 md:p-10 text-center" style="border-color: #1d4ed8; box-shadow: var(--shadow-xl);">
-      <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
-        Running chatbots for <span class="gradient-text">several clients?</span>
-      </h2>
-      <p class="text-gray-600 mb-8">
-        Try SiteWhizz on your first client with a 14-day free trial. When you're ready to run more, tell us how many client sites you manage and we'll put together agency pricing.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <a href="https://app.sitewhizz.io/" class="btn btn-green">
-          Start Free Trial
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-          </svg>
-        </a>
-        <a href="../contact/index.html" class="btn btn-secondary">
-          Ask About Agency Pricing
-        </a>
-      </div>
-    </div>
-
-    <div class="text-center mt-8 text-gray-500 text-sm">
-      <p>14-day free trial. No credit card required. <a href="../pricing/index.html" class="underline hover:text-gray-700">See pricing</a>.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= FINAL CTA SECTION ================= -->
-<section class="cta-section">
-  <div class="bg-decoration hidden md:block" style="background: rgba(255,255,255,0.1); top: -5rem; right: -5rem; width: 20rem; height: 20rem;"></div>
-  <div class="bg-decoration hidden md:block" style="background: rgba(255,255,255,0.1); bottom: -5rem; left: -5rem; width: 16rem; height: 16rem;"></div>
-
+<!-- ================= FINAL CTA ================= -->
+<section class="cta-section py-16 md:py-24 text-white">
   <div class="max-w-4xl mx-auto px-4 md:px-6 text-center relative z-10">
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">
-      Start Offering AI Chatbots to Your Clients Today
-    </h2>
-    <p class="text-lg md:text-xl opacity-90 mb-6 md:mb-8 max-w-2xl mx-auto">
-      Set up your first client chatbot during your 14-day free trial, in about 10 minutes. No credit card required.
-    </p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-      <a href="https://app.sitewhizz.io/" class="btn btn-primary" style="background: white; color: #1d4ed8;">
+    <h2 class="text-3xl md:text-5xl font-extrabold mb-6">Running agents for several clients?</h2>
+    <p class="text-lg md:text-xl text-blue-100 mb-8 max-w-2xl mx-auto">Try SiteWhizz on your first client with a 14-day free trial. When you're ready for more, tell us how many client sites you manage and we'll put together agency pricing.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="https://app.sitewhizz.io/" class="btn btn-primary text-lg px-8 py-4">
         Start Free Trial
-        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
-        </svg>
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
       </a>
+      <a href="../contact/index.html" class="btn border-2 border-white/50 text-white hover:bg-white/10 hover:border-white text-lg px-8 py-4">Ask about agency pricing</a>
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ================= FOOTER ================= -->
-<footer class="bg-gradient-to-b from-gray-50 to-gray-100 text-gray-700 py-10 md:py-16 border-t border-gray-200">
+<footer class="bg-gradient-to-b from-gray-900 to-gray-950 text-gray-300 py-10 md:py-16">
   <div class="max-w-7xl mx-auto px-4 md:px-6">
-    <div class="footer-grid">
-      <div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-12">
+      <!-- Brand -->
+      <div class="col-span-2 md:col-span-3 lg:col-span-2">
         <a href="../index.html" class="logo mb-4">
           <div class="logo-icon" data-logo></div>
-          <span class="text-xl font-bold"><span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span></span>
+          <span class="text-xl font-bold">SiteWhizz</span>
         </a>
-        <p class="text-sm leading-relaxed mt-4 text-gray-600">
-          AI chatbot trained on your website content to automate customer support. Visitors get instant, accurate answers 24/7. No coding required.
+        <p class="text-sm leading-relaxed mt-4 text-gray-400 max-w-sm">
+          AI agent trained on your website content. It answers visitors around the clock and hands the rest to your team. No coding required.
         </p>
       </div>
-
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Product</h4>
+        <h2 class="footer-heading text-white font-semibold mb-4">Product</h2>
         <ul class="space-y-2">
-          <li><a href="../features/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Features</a></li>
-          <li><a href="../pricing/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Pricing</a></li>
-          <li><a href="../security/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Security</a></li>
-          <li><a href="../tax-efile-chatbot/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Tax e-file chatbot</a></li>
+          <li><a href="../features/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Features</a></li>
+          <li><a href="../pricing/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Pricing</a></li>
+          <li><a href="../security/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Security</a></li>
+          <li><a href="../tax-efile-ai-agent/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">For e-file providers</a></li>
+          <li><a href="../tax-preparer-cpa-ai-agent/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">For tax pros &amp; CPAs</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Resources</h4>
+        <h2 class="footer-heading text-white font-semibold mb-4">Resources</h2>
         <ul class="space-y-2">
-          <li><a href="../blog/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Blog</a></li>
-          <li><a href="../free-tools/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Free calculators</a></li>
-          <li><a href="../use-cases/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Use cases</a></li>
-          <li><a href="../index.html#faq" class="text-gray-600 transition-colors text-sm hover-primary-link">FAQ</a></li>
+          <li><a href="../use-cases/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Use cases</a></li>
+          <li><a href="../index.html#faq" class="text-gray-400 transition-colors text-sm hover:text-blue-400">FAQ</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Company</h4>
+        <h2 class="footer-heading text-white font-semibold mb-4">Company</h2>
         <ul class="space-y-2">
-          <li><a href="../about/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">About</a></li>
-          <li><a href="index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">For agencies</a></li>
-          <li><a href="../careers/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Careers</a></li>
-          <li><a href="../contact/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Contact</a></li>
+          <li><a href="../about/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">About</a></li>
+          <li><a href="../agencies/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">For agencies</a></li>
+          <li><a href="../contact/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Contact</a></li>
         </ul>
       </div>
       <div>
-        <h4 class="text-gray-900 font-semibold mb-4">Legal</h4>
+        <h2 class="footer-heading text-white font-semibold mb-4">Legal</h2>
         <ul class="space-y-2">
-          <li><a href="../privacy/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Privacy Policy</a></li>
-          <li><a href="../terms/index.html" class="text-gray-600 transition-colors text-sm hover-primary-link">Terms of Service</a></li>
+          <li><a href="../privacy/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Privacy Policy</a></li>
+          <li><a href="../terms/index.html" class="text-gray-400 transition-colors text-sm hover:text-blue-400">Terms of Service</a></li>
         </ul>
       </div>
     </div>
-
-    <div class="mt-12 pt-8 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-sm text-gray-600">&copy; 2026 <span class="text-gray-900">Site</span><span style="color: #1d4ed8;">Whizz</span>. All rights reserved.</p>
+    <!-- Bottom Bar -->
+    <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-gray-500">&copy; 2026 SiteWhizz. All rights reserved.</p>
+      <p class="text-xs text-gray-500 text-center md:text-right max-w-md"></p>
     </div>
   </div>
 </footer>
@@ -1029,31 +952,58 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>
   // ==================== MOBILE MENU ====================
   function toggleMenu() {
-    const menu = document.getElementById('mobileMenu');
-    menu.classList.toggle('active');
+    document.getElementById('mobileMenu').classList.toggle('active');
   }
 
   // ==================== SMOOTH SCROLL ====================
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-      e.preventDefault();
       const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-        const menu = document.getElementById('mobileMenu');
-        if (menu.classList.contains('active')) {
-          menu.classList.remove('active');
-        }
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      document.getElementById('mobileMenu').classList.remove('active');
+    });
+  });
+
+  // ==================== FAQ ACCORDION ====================
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.parentElement;
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(other => {
+        other.classList.remove('open');
+        other.querySelector('.faq-answer').classList.add('hidden');
+        other.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        item.querySelector('.faq-answer').classList.remove('hidden');
+        button.setAttribute('aria-expanded', 'true');
       }
     });
   });
+
+  // ==================== SCROLL REVEAL ====================
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ==================== NAVBAR SCROLL EFFECT ====================
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    navbar.style.boxShadow = window.pageYOffset > 100 ? '0 4px 20px rgba(0, 0, 0, 0.08)' : 'var(--shadow-sm)';
+  }, { passive: true });
+
 </script>
 
 <!-- Logo Component (Single Source of Truth) -->
 <script src="../assets/logo.js"></script>
-
 </body>
 </html>
